@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 ##  Paquetes NuGet necesarios
 
@@ -61,3 +62,6 @@ Al no tener datos, regístrate desde la app con:
 -  Notificaciones internas con WeakReferenceMessenger
 -  Navegación Shell con Flyout lateral
 -  Arquitectura en capas + MVVM Toolkit
+=======
+# ProyectoIGTI
+>>>>>>> 77cd76c8362e4846271724bbea8d00ae49bfc8da
