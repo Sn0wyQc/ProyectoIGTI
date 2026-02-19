@@ -1,0 +1,4 @@
+C:\Users\Yovany\OneDrive\Documentos\SkillSwap\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\SkillSwap.csproj.AssemblyReference.cache
+C:\Users\Yovany\OneDrive\Documentos\SkillSwap\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\mauiimage.inputs
+C:\Users\Yovany\OneDrive\Documentos\SkillSwap\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\mauifont.inputs
+C:\Users\Yovany\OneDrive\Documentos\SkillSwap\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\mauisplash.inputs

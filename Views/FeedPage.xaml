@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SkillSwap.ViewModels"
+             xmlns:models="clr-namespace:SkillSwap.Models"
+             x:Class="SkillSwap.Views.FeedPage"
+             x:DataType="vm:FeedViewModel"
+             Title="Anuncios"
+             BackgroundColor="#F0F4FF">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
+
+        <!-- Filtro de categorías -->
+        <ScrollView Grid.Row="0" Orientation="Horizontal" Margin="12,12,12,0">
+            <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Categorias}" Spacing="8">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Button Text="{Binding .}"
+                                BackgroundColor="#3B4CCA"
+                                TextColor="White"
+                                CornerRadius="20"
+                                Padding="14,6"
+                                FontSize="12"
+                                Clicked="OnCategoriaClicked"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </HorizontalStackLayout>
+        </ScrollView>
+
+        <!-- Formulario nuevo/editar anuncio -->
+        <Frame Grid.Row="1"
+               IsVisible="{Binding MostrandoFormulario}"
+               BackgroundColor="White"
+               CornerRadius="12"
+               Margin="12,10,12,0"
+               Padding="16"
+               HasShadow="True">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Publicar Anuncio"
+                       FontAttributes="Bold"
+                       FontSize="16"
+                       TextColor="#333"/>
+
+                <Entry Placeholder="Título del anuncio"
+                       Text="{Binding NuevoTitulo}"
+                       BackgroundColor="#F5F5F5"/>
+
+                <Editor Placeholder="Descripción..."
+                        Text="{Binding NuevaDescripcion}"
+                        HeightRequest="70"
+                        BackgroundColor="#F5F5F5"/>
+
+                <Picker Title="Categoría"
+                        ItemsSource="{Binding Categorias}"
+                        SelectedItem="{Binding NuevaCategoria}"/>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Button Text="Guardar"
+                            Command="{Binding GuardarPostCommand}"
+                            BackgroundColor="#3B4CCA"
+                            TextColor="White"
+                            CornerRadius="8"
+                            HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Cancelar"
+                            Command="{Binding CancelarFormularioCommand}"
+                            BackgroundColor="#cccccc"
+                            TextColor="#333333"
+                            CornerRadius="8"
+                            HorizontalOptions="FillAndExpand"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Lista de posts -->
+        <CollectionView Grid.Row="2"
+                        ItemsSource="{Binding Posts}"
+                        Margin="12,10,12,0">
+            <CollectionView.EmptyView>
+                <Label Text="No hay anuncios aun. Se el primero!"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       TextColor="#999999"
+                       Margin="0,40,0,0"/>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Post">
+                    <Frame BackgroundColor="White"
+                           CornerRadius="12"
+                           Margin="0,0,0,10"
+                           Padding="16"
+                           HasShadow="True">
+                        <VerticalStackLayout Spacing="6">
+
+                            <!-- Badges -->
+                            <HorizontalStackLayout Spacing="8">
+                                <Frame BackgroundColor="#3B4CCA" CornerRadius="6" Padding="8,3" HasShadow="False">
+                                    <Label Text="{Binding Categoria}" TextColor="White" FontSize="11"/>
+                                </Frame>
+                            </HorizontalStackLayout>
+
+                            <Label Text="{Binding Titulo}"
+                                   FontSize="15"
+                                   FontAttributes="Bold"
+                                   TextColor="#222222"/>
+
+                            <Label Text="{Binding Descripcion}"
+                                   FontSize="13"
+                                   TextColor="#555555"
+                                   LineBreakMode="WordWrap"/>
+
+                            <Label Text="{Binding NombreUsuario, StringFormat='Por: {0}'}"
+                                   FontSize="12"
+                                   TextColor="#888888"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Botón publicar -->
+        <Button Grid.Row="3"
+                Text="+ Publicar anuncio"
+                Command="{Binding MostrarFormularioCommand}"
+                BackgroundColor="#3B4CCA"
+                TextColor="White"
+                CornerRadius="10"
+                Margin="12,10,12,20"
+                HeightRequest="50"
+                FontAttributes="Bold"/>
+
+    </Grid>
+</ContentPage>
