@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Yovany\\OneDrive\\Documentos\\SkillSwap\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\yovany\\onedrive\\documentos\\skillswap\\platforms\\windows\\package.appxmanifest||{4D47164B-07B6-4A52-A855-728D6A2E2AA3}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:platforms\\windows\\package.appxmanifest||{4D47164B-07B6-4A52-A855-728D6A2E2AA3}"
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\yovany\\onedrive\\documentos\\skillswap\\views\\feedpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\feedpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\yovany\\onedrive\\documentos\\skillswap\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,20 +18,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 83,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Package.appxmanifest",
-              "DocumentMoniker": "C:\\Users\\Yovany\\OneDrive\\Documentos\\SkillSwap\\Platforms\\Windows\\Package.appxmanifest",
-              "RelativeDocumentMoniker": "Platforms\\Windows\\Package.appxmanifest",
-              "ToolTip": "C:\\Users\\Yovany\\OneDrive\\Documentos\\SkillSwap\\Platforms\\Windows\\Package.appxmanifest",
-              "RelativeToolTip": "Platforms\\Windows\\Package.appxmanifest",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001793|",
-              "WhenOpened": "2026-02-13T23:01:17.014Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -35,6 +27,35 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FeedPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Yovany\\OneDrive\\Documentos\\SkillSwap\\Views\\FeedPage.xaml",
+              "RelativeDocumentMoniker": "Views\\FeedPage.xaml",
+              "ToolTip": "C:\\Users\\Yovany\\OneDrive\\Documentos\\SkillSwap\\Views\\FeedPage.xaml",
+              "RelativeToolTip": "Views\\FeedPage.xaml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-21T00:20:25.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\Yovany\\OneDrive\\Documentos\\SkillSwap\\AppShell.xaml",
+              "RelativeDocumentMoniker": "AppShell.xaml",
+              "ToolTip": "C:\\Users\\Yovany\\OneDrive\\Documentos\\SkillSwap\\AppShell.xaml",
+              "RelativeToolTip": "AppShell.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-21T00:19:40.224Z"
             }
           ]
         }
