@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:SkillSwap.Views"
+       x:Class="SkillSwap.AppShell"
+       FlyoutBehavior="Flyout"
+       FlyoutBackgroundColor="#1E2A6E">
+
+    <!-- Header del Flyout -->
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout Padding="20,40,20,20" BackgroundColor="#3B4CCA" Spacing="6">
+            <Frame BackgroundColor="White"
+                   CornerRadius="35"
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   HasShadow="False">
+                <Label Text="SS"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="#3B4CCA"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </Frame>
+            <Label Text="SkillSwap"
+                   TextColor="White"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <Label Text="Intercambia lo que sabes"
+                   TextColor="#B0BEE8"
+                   FontSize="12"
+                   HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+    <!-- Login (oculto del menú) -->
+    <ShellContent Title="Login"
+                  Route="LoginPage"
+                  ContentTemplate="{DataTemplate views:LoginPage}"
+                  FlyoutItemIsVisible="False"
+                  Shell.NavBarIsVisible="False"/>
+
+    <!-- Anuncios -->
+    <FlyoutItem Title="Anuncios">
+        <ShellContent Route="FeedPage"
+                      ContentTemplate="{DataTemplate views:FeedPage}"/>
+    </FlyoutItem>
+
+    <!-- Mensajes -->
+    <FlyoutItem Title="Mensajes">
+        <ShellContent Route="ChatPage"
+                      ContentTemplate="{DataTemplate views:ChatPage}"/>
+    </FlyoutItem>
+
+    <!-- Perfil -->
+    <FlyoutItem Title="Mi Perfil">
+        <ShellContent Route="ProfilePage"
+                      ContentTemplate="{DataTemplate views:ProfilePage}"/>
+    </FlyoutItem>
+
+</Shell>
