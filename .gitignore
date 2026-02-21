@@ -1,0 +1,11 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/SkillSwap/FileContentIndex/62ba2037-7c3c-46bc-a43a-9067538789f0.vsidx
+/.vs/SkillSwap/FileContentIndex/094b1771-9a4a-47a0-a170-7eaf990869be.vsidx
+/.vs/SkillSwap/FileContentIndex/ec2280bc-7b3f-4443-a830-fe824383edc3.vsidx
+/.vs/SkillSwap/FileContentIndex/2b74d3dc-aff4-4e4a-976f-e83403366f53.vsidx
+/.vs/SkillSwap/FileContentIndex/b0a3ee72-20b5-40aa-a0a3-c96cd86ac813.vsidx
+.vs/
+obj/

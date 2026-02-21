@@ -1,13 +1,11 @@
-// Plataforma Windows — punto de entrada nativo MAUI
-namespace SkillSwap.Platforms.Windows
-{
-    public partial class App : MauiWinUIApplication
-    {
-        public App()
-        {
-            this.InitializeComponent();
-        }
+namespace SkillSwap.Platforms.Windows;
 
-        protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
+public partial class App : MauiWinUIApplication
+{
+    public App()
+    {
+        this.InitializeComponent();
     }
+
+    protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
 }

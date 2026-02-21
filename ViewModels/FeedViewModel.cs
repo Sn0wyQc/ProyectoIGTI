@@ -14,7 +14,7 @@ namespace SkillSwap.ViewModels
         private ObservableCollection<Post> posts = new();
 
         [ObservableProperty]
-        private List<string> categorias = Categorias.Lista;
+        private List<string> categorias = new(); 
 
         [ObservableProperty]
         private string categoriaSeleccionada = "Todas";
@@ -44,6 +44,7 @@ namespace SkillSwap.ViewModels
         public FeedViewModel(DatabaseService db)
         {
             _db = db;
+            Categorias = SkillSwap.Models.Categorias.Lista;
         }
 
         public async Task CargarPostsAsync()

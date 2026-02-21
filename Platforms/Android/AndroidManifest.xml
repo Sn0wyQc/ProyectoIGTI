@@ -6,17 +6,6 @@
         android:roundIcon="@mipmap/appicon_round"
         android:supportsRtl="true"
         android:label="SkillSwap">
-        <activity
-            android:name="com.microsoft.maui.MainActivity"
-            android:exported="true"
-            android:launchMode="singleTask"
-            android:theme="@style/Maui.SplashTheme"
-            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|density|uiMode|layoutDirection|locale|fontScale|screenLayout|navigation|keyboard|keyboardHidden">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />

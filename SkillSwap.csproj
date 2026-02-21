@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFrameworks>net9.0-android</TargetFrameworks>
@@ -28,33 +28,30 @@
 
     <!-- Recursos compartidos -->
     <ItemGroup>
-        <MauiIcon Include="Resources\AppIcon\appicon.svg"
-                  ForegroundFile="Resources\AppIcon\appiconfg.svg"
-                  Color="#3B4CCA" />
-        <MauiSplashScreen Include="Resources\Splash\splash.svg"
-                          Color="#3B4CCA"
-                          BaseSize="128,128" />
+        <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#3B4CCA" />
+        <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#3B4CCA" BaseSize="128,128" />
         <MauiImage Include="Resources\Images\*" />
         <MauiFont Include="Resources\Fonts\*" />
-        <MauiAsset Include="Resources\Raw\**"
-                   LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+        <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
     </ItemGroup>
 
-    <!-- Archivo de manifiesto Windows -->
-    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
-        <AppxManifest Include="Platforms\Windows\Package.appxmanifest">
-            <SubType>Designer</SubType>
-        </AppxManifest>
-    </ItemGroup>
+	<!-- 21/02/2026. Eliminamos el ItemGroup manual del AppxManifest en Windows, tenerlo explícito generaba una duplicación y no permitía compilar la aplicación. -->
 
-    <!-- NuGet Packages -->
-    <ItemGroup>
-        <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
-        <PackageReference Include="CommunityToolkit.Maui" Version="9.1.0" />
-        <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
-        <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.10" />
-    </ItemGroup>
+	<!-- NuGet Packages -->
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Maui.Resizetizer" Version="9.0.120" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.0" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.10" />
+	</ItemGroup>
+	<ItemGroup>
+		<MauiXaml Update="Platforms\Windows\App.xaml.cs and Platforms\Windows\App.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+	</ItemGroup>
 
 </Project>
+
