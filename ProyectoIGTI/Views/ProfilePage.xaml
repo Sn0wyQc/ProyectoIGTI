@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SkillSwap.ViewModels"
+             xmlns:models="clr-namespace:SkillSwap.Models"
+             x:Class="SkillSwap.Views.ProfilePage"
+             x:DataType="vm:ProfileViewModel"
+             Title="Mi Perfil"
+             BackgroundColor="#F0F4FF">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="14">
+
+            <!-- Avatar -->
+            <Frame BackgroundColor="#3B4CCA"
+                   CornerRadius="50"
+                   HeightRequest="80"
+                   WidthRequest="80"
+                   HorizontalOptions="Center"
+                   HasShadow="True"
+                   Padding="0">
+                <Label Text="👤"
+                       FontSize="36"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </Frame>
+
+            <!-- Correo (no editable) -->
+            <Label Text="{Binding Correo}"
+                   FontSize="13"
+                   TextColor="#666"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,10"/>
+
+            <!-- Tarjeta edición -->
+            <Frame BackgroundColor="White"
+                   CornerRadius="14"
+                   Padding="20"
+                   HasShadow="True">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="Información Personal"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#333"/>
+
+                    <Label Text="Nombre" FontSize="12" TextColor="#888"/>
+                    <Entry Text="{Binding Nombre}"
+                           BackgroundColor="#F5F5F5"
+                           Placeholder="Tu nombre"/>
+
+                    <Label Text="Descripción" FontSize="12" TextColor="#888"/>
+                    <Editor Text="{Binding Descripcion}"
+                            HeightRequest="80"
+                            BackgroundColor="#F5F5F5"
+                            Placeholder="Cuéntanos sobre ti..."/>
+
+                    <Label Text="Habilidades" FontSize="12" TextColor="#888"/>
+                    <Entry Text="{Binding Habilidades}"
+                           BackgroundColor="#F5F5F5"
+                           Placeholder="Python, Guitarra, Inglés..."/>
+
+                    <Label Text="{Binding MensajeEstado}"
+                           TextColor="#388E3C"
+                           IsVisible="{Binding MensajeEstado, Converter={StaticResource StringNotEmptyConverter}}"
+                           FontSize="12"/>
+
+                    <Button Text="Guardar cambios"
+                            Command="{Binding GuardarPerfilCommand}"
+                            BackgroundColor="#3B4CCA"
+                            TextColor="White"
+                            CornerRadius="10"
+                            IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"/>
+
+                    <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                       IsVisible="{Binding IsBusy}"
+                                       Color="#3B4CCA"
+                                       HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Mis publicaciones -->
+            <Label Text="Mis Publicaciones"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#333"
+                   Margin="0,10,0,0"/>
+
+            <CollectionView ItemsSource="{Binding MisPublicaciones}">
+                <CollectionView.EmptyView>
+                    <Label Text="Aún no tienes publicaciones."
+                           TextColor="#999"
+                           FontSize="13"
+                           HorizontalOptions="Center"
+                           Margin="0,10,0,0"/>
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Post">
+                        <Frame BackgroundColor="White"
+                               CornerRadius="10"
+                               Margin="0,0,0,8"
+                               Padding="14"
+                               HasShadow="True">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Titulo}"
+                                       FontAttributes="Bold"
+                                       TextColor="#222"
+                                       FontSize="14"/>
+                                <Label Text="{Binding Categoria}"
+                                       TextColor="#888"
+                                       FontSize="12"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Cerrar sesión -->
+            <Button Text="Cerrar sesión"
+                    Command="{Binding CerrarSesionCommand}"
+                    BackgroundColor="#FF5252"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Margin="0,10,0,20"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

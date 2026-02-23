@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SkillSwap.ViewModels"
+             xmlns:models="clr-namespace:SkillSwap.Models"
+             x:Class="SkillSwap.Views.ChatPage"
+             x:DataType="vm:ChatViewModel"
+             Title="Mensajes"
+             BackgroundColor="#F0F4FF">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <!-- Selector de contacto -->
+        <Frame Grid.Row="0"
+               BackgroundColor="White"
+               Padding="12,8"
+               HasShadow="True"
+               CornerRadius="0">
+            <Grid ColumnDefinitions="Auto,*">
+                <Label Grid.Column="0"
+                       Text="Chatear con:"
+                       VerticalOptions="Center"
+                       FontSize="14"
+                       TextColor="#666666"
+                       Margin="0,0,10,0"/>
+                <Picker Grid.Column="1"
+                        ItemsSource="{Binding Contactos}"
+                        ItemDisplayBinding="{Binding Nombre}"
+                        SelectedItem="{Binding ContactoSeleccionado}"
+                        Title="Selecciona un usuario"/>
+            </Grid>
+        </Frame>
+
+        <!-- Mensajes de la conversacion -->
+        <CollectionView Grid.Row="1"
+                        x:Name="MensajesCollection"
+                        ItemsSource="{Binding Mensajes}"
+                        Margin="10,8">
+            <CollectionView.EmptyView>
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Text="Selecciona un contacto para chatear"
+                           TextColor="#aaaaaa"
+                           HorizontalOptions="Center"
+                           FontSize="14"/>
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Message">
+                    <VerticalStackLayout Margin="0,4" Padding="4,0">
+                        <Frame BackgroundColor="#3B4CCA"
+                               CornerRadius="14"
+                               Padding="12,8"
+                               MaximumWidthRequest="280"
+                               HorizontalOptions="End"
+                               HasShadow="False">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding NombreEmisor}"
+                                       TextColor="#ccddff"
+                                       FontSize="11"
+                                       FontAttributes="Bold"/>
+                                <Label Text="{Binding Texto}"
+                                       TextColor="White"
+                                       FontSize="14"/>
+                                <Label Text="{Binding Fecha, StringFormat='{0:HH:mm}'}"
+                                       TextColor="#B0BEE8"
+                                       FontSize="10"
+                                       HorizontalOptions="End"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Input para escribir mensaje -->
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*,Auto"
+              BackgroundColor="White"
+              Padding="12,8">
+            <Entry Grid.Column="0"
+                   Placeholder="Escribe un mensaje..."
+                   Text="{Binding NuevoMensaje}"
+                   BackgroundColor="#F5F5F5"
+                   ReturnCommand="{Binding EnviarMensajeCommand}"
+                   VerticalOptions="Center"/>
+            <Button Grid.Column="1"
+                    Text="Enviar"
+                    Command="{Binding EnviarMensajeCommand}"
+                    BackgroundColor="#3B4CCA"
+                    TextColor="White"
+                    CornerRadius="8"
+                    Margin="8,0,0,0"
+                    FontSize="13"/>
+        </Grid>
+
+    </Grid>
+</ContentPage>

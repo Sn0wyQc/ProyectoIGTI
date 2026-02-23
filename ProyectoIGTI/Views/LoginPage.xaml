@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SkillSwap.ViewModels"
+             x:Class="SkillSwap.Views.LoginPage"
+             x:DataType="vm:LoginViewModel"
+             BackgroundColor="#F0F4FF"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="32,60,32,32" Spacing="0">
+
+            <!-- Header -->
+            <Label Text="SkillSwap"
+                   FontSize="36"
+                   FontAttributes="Bold"
+                   TextColor="#3B4CCA"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,6"/>
+
+            <Label Text="Intercambia lo que sabes"
+                   FontSize="14"
+                   TextColor="#666666"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,40"/>
+
+            <!-- Tarjeta LOGIN -->
+            <Frame IsVisible="{Binding MostrandoRegistro, Converter={StaticResource InvertedBoolConverter}}"
+                   BackgroundColor="White"
+                   CornerRadius="16"
+                   HasShadow="True"
+                   Padding="24">
+                <VerticalStackLayout Spacing="14">
+
+                    <Label Text="Iniciar Sesion"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#333333"/>
+
+                    <Entry Placeholder="Correo electronico"
+                           Text="{Binding Correo}"
+                           Keyboard="Email"
+                           BackgroundColor="#F5F5F5"/>
+
+                    <Entry Placeholder="Contrasena"
+                           Text="{Binding Password}"
+                           IsPassword="True"
+                           BackgroundColor="#F5F5F5"/>
+
+                    <Label Text="{Binding ErrorMessage}"
+                           TextColor="Red"
+                           IsVisible="{Binding ErrorMessage, Converter={StaticResource StringNotEmptyConverter}}"
+                           FontSize="12"/>
+
+                    <Button Text="Entrar"
+                            Command="{Binding IniciarSesionCommand}"
+                            BackgroundColor="#3B4CCA"
+                            TextColor="White"
+                            CornerRadius="10"
+                            IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"/>
+
+                    <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                       IsVisible="{Binding IsBusy}"
+                                       Color="#3B4CCA"
+                                       HorizontalOptions="Center"/>
+
+                    <Label Text="No tienes cuenta? Registrate"
+                           TextColor="#3B4CCA"
+                           HorizontalOptions="Center"
+                           FontSize="13">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ToggleRegistroCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Tarjeta REGISTRO -->
+            <Frame IsVisible="{Binding MostrandoRegistro}"
+                   BackgroundColor="White"
+                   CornerRadius="16"
+                   HasShadow="True"
+                   Padding="24">
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="Crear Cuenta"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#333333"/>
+
+                    <Entry Placeholder="Nombre completo"
+                           Text="{Binding RegNombre}"
+                           BackgroundColor="#F5F5F5"/>
+
+                    <Entry Placeholder="Correo electronico"
+                           Text="{Binding RegCorreo}"
+                           Keyboard="Email"
+                           BackgroundColor="#F5F5F5"/>
+
+                    <Entry Placeholder="Contrasena (min. 6 caracteres)"
+                           Text="{Binding RegPassword}"
+                           IsPassword="True"
+                           BackgroundColor="#F5F5F5"/>
+
+                    <Editor Placeholder="Descripcion breve de ti..."
+                            Text="{Binding RegDescripcion}"
+                            HeightRequest="70"
+                            BackgroundColor="#F5F5F5"/>
+
+                    <Entry Placeholder="Tus habilidades (ej: Python, Guitarra)"
+                           Text="{Binding RegHabilidades}"
+                           BackgroundColor="#F5F5F5"/>
+
+                    <Label Text="{Binding ErrorMessage}"
+                           TextColor="Red"
+                           IsVisible="{Binding ErrorMessage, Converter={StaticResource StringNotEmptyConverter}}"
+                           FontSize="12"/>
+
+                    <Button Text="Registrarme"
+                            Command="{Binding RegistrarCommand}"
+                            BackgroundColor="#3B4CCA"
+                            TextColor="White"
+                            CornerRadius="10"
+                            IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"/>
+
+                    <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                       IsVisible="{Binding IsBusy}"
+                                       Color="#3B4CCA"
+                                       HorizontalOptions="Center"/>
+
+                    <Label Text="Ya tienes cuenta? Inicia sesion"
+                           TextColor="#3B4CCA"
+                           HorizontalOptions="Center"
+                           FontSize="13">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ToggleRegistroCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

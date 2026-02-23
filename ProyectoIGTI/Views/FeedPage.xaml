@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SkillSwap.ViewModels"
+             xmlns:models="clr-namespace:SkillSwap.Models"
+             x:Class="SkillSwap.Views.FeedPage"
+             x:DataType="vm:FeedViewModel"
+             Title="Anuncios"
+             BackgroundColor="#F0F4FF">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
+
+        <ScrollView Grid.Row="0" Orientation="Horizontal" Margin="12,12,12,0">
+            <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Categorias}" Spacing="8">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Button Text="{Binding .}"
+                                BackgroundColor="#3B4CCA"
+                                TextColor="White"
+                                CornerRadius="20"
+                                Padding="14,6"
+                                FontSize="12"
+                                Clicked="OnCategoriaClicked"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </HorizontalStackLayout>
+        </ScrollView>
+
+
+        
+
+        <CollectionView Grid.Row="2"
+                        ItemsSource="{Binding Posts}"
+                        Margin="12,10,12,0">
+            <CollectionView.EmptyView>
+                <Label Text="No hay anuncios aún. ¡Sé el primero!"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       TextColor="#999999"
+                       Margin="0,40,0,0"/>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Post">
+                    <Frame BackgroundColor="White"
+                           CornerRadius="12"
+                           Margin="0,0,0,10"
+                           Padding="16"
+                           HasShadow="True">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <VerticalStackLayout Grid.Column="0" Spacing="6">
+                                <HorizontalStackLayout Spacing="8">
+                                    <Frame BackgroundColor="#3B4CCA" CornerRadius="6" Padding="8,3" HasShadow="False">
+                                        <Label Text="{Binding Categoria}" TextColor="White" FontSize="11"/>
+                                    </Frame>
+                                </HorizontalStackLayout>
+
+                                <Label Text="{Binding Titulo}"
+                                       FontSize="15"
+                                       FontAttributes="Bold"
+                                       TextColor="#222222"/>
+
+                                <Label Text="{Binding Descripcion}"
+                                       FontSize="13"
+                                       TextColor="#555555"
+                                       LineBreakMode="WordWrap"/>
+
+                                <Label Text="{Binding NombreUsuario, StringFormat='Por: {0}'}"
+                                       FontSize="12"
+                                       TextColor="#888888"/>
+                            </VerticalStackLayout>
+
+                            <Button Grid.Column="1"
+                                    Text="Ocultar"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:FeedViewModel}}, Path=OcultarAnuncioCommand}"
+                                    CommandParameter="{Binding .}"
+                                    BackgroundColor="#EEEEEE"
+                                    TextColor="#666666"
+                                    FontSize="10"
+                                    HeightRequest="30"
+                                    Padding="10,0"
+                                    VerticalOptions="Start"
+                                    CornerRadius="5"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Grid.Row="3"
+                Text="+ Publicar anuncio"
+                Command="{Binding MostrarFormularioCommand}"
+                BackgroundColor="#3B4CCA"
+                TextColor="White"
+                CornerRadius="10"
+                Margin="12,10,12,20"
+                HeightRequest="50"
+                FontAttributes="Bold"/>
+
+    </Grid>
+</ContentPage>
