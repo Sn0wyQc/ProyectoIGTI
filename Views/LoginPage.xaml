@@ -18,7 +18,7 @@
                    HorizontalOptions="Center"
                    Margin="0,0,0,6"/>
 
-            <Label Text="Intercambia lo que sabes"
+            <Label Text="Exchange. Learn. Grow"
                    FontSize="14"
                    TextColor="#666666"
                    HorizontalOptions="Center"
@@ -32,7 +32,7 @@
                    Padding="24">
                 <VerticalStackLayout Spacing="14">
 
-                    <Label Text="Iniciar Sesion"
+                    <Label Text="Iniciar Sesión"
                            FontSize="20"
                            FontAttributes="Bold"
                            TextColor="#333333"/>
@@ -42,12 +42,17 @@
                            Keyboard="Email"
                            BackgroundColor="#F5F5F5"/>
 
-                    <Entry Placeholder="Contrasena"
-                           Text="{Binding Password}"
-                           IsPassword="True"
-                           BackgroundColor="#F5F5F5"/>
+                    <Grid ColumnDefinitions="*, Auto" BackgroundColor="#F5F5F5">
+                        <Entry Placeholder="Contraseña" 
+                               Text="{Binding Password}" 
+                               IsPassword="{Binding IsPasswordHidden}" 
+                               Grid.Column="0" VerticalOptions="Center"/>
+                        <ImageButton Source="{Binding PasswordIcon}" 
+                                     Command="{Binding TogglePasswordCommand}"
+                                     Grid.Column="1" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"/>
+                        </Grid>
 
-                    <Label Text="{Binding ErrorMessage}"
+                        <Label Text="{Binding ErrorMessage}"
                            TextColor="Red"
                            IsVisible="{Binding ErrorMessage, Converter={StaticResource StringNotEmptyConverter}}"
                            FontSize="12"/>
@@ -97,10 +102,17 @@
                            Keyboard="Email"
                            BackgroundColor="#F5F5F5"/>
 
-                    <Entry Placeholder="Contrasena (min. 6 caracteres)"
-                           Text="{Binding RegPassword}"
-                           IsPassword="True"
-                           BackgroundColor="#F5F5F5"/>
+        
+                    <Grid ColumnDefinitions="*, Auto" BackgroundColor="#F5F5F5">
+                        <Entry Placeholder="Contrasena" 
+                               Text="{Binding RegPassword}" 
+                               IsPassword="{Binding IsPasswordHidden}" 
+                               Grid.Column="0" VerticalOptions="Center"/>
+                        <ImageButton Source="{Binding PasswordIcon}" 
+                                     Command="{Binding TogglePasswordCommand}"
+                                     Grid.Column="1" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"/>
+                    </Grid>
+
 
                     <Editor Placeholder="Descripcion breve de ti..."
                             Text="{Binding RegDescripcion}"

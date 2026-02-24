@@ -1,5 +1,5 @@
-using SQLite;
 using SkillSwap.Models;
+using SQLite;
 
 namespace SkillSwap.Services
 {
