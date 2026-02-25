@@ -1,0 +1,543 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SkillSwap</name>
+    </assembly>
+    <members>
+        <member name="T:SkillSwap.ViewModels.ChatViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ChatViewModel.Contactos">
+            <inheritdoc cref="F:SkillSwap.ViewModels.ChatViewModel.contactos"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ChatViewModel.Mensajes">
+            <inheritdoc cref="F:SkillSwap.ViewModels.ChatViewModel.mensajes"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ChatViewModel.ContactoSeleccionado">
+            <inheritdoc cref="F:SkillSwap.ViewModels.ChatViewModel.contactoSeleccionado"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ChatViewModel.NuevoMensaje">
+            <inheritdoc cref="F:SkillSwap.ViewModels.ChatViewModel.nuevoMensaje"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ChatViewModel.IsBusy">
+            <inheritdoc cref="F:SkillSwap.ViewModels.ChatViewModel.isBusy"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ChatViewModel.MensajesNoLeidos">
+            <inheritdoc cref="F:SkillSwap.ViewModels.ChatViewModel.mensajesNoLeidos"/>
+        </member>
+        <member name="F:SkillSwap.ViewModels.ChatViewModel.seleccionarContactoCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.ChatViewModel.SeleccionarContactoCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ChatViewModel.SeleccionarContactoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:SkillSwap.ViewModels.ChatViewModel.SeleccionarContactoAsync(SkillSwap.Models.User)"/>.</summary>
+        </member>
+        <member name="F:SkillSwap.ViewModels.ChatViewModel.enviarMensajeCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.ChatViewModel.EnviarMensajeCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ChatViewModel.EnviarMensajeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.ChatViewModel.EnviarMensajeAsync"/>.</summary>
+        </member>
+        <member name="T:SkillSwap.ViewModels.FeedViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.Posts">
+            <inheritdoc cref="F:SkillSwap.ViewModels.FeedViewModel.posts"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.Categorias">
+            <inheritdoc cref="F:SkillSwap.ViewModels.FeedViewModel.categorias"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.CategoriaSeleccionada">
+            <inheritdoc cref="F:SkillSwap.ViewModels.FeedViewModel.categoriaSeleccionada"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.IsBusy">
+            <inheritdoc cref="F:SkillSwap.ViewModels.FeedViewModel.isBusy"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.NuevoTitulo">
+            <inheritdoc cref="F:SkillSwap.ViewModels.FeedViewModel.nuevoTitulo"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.NuevaDescripcion">
+            <inheritdoc cref="F:SkillSwap.ViewModels.FeedViewModel.nuevaDescripcion"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.NuevaCategoria">
+            <inheritdoc cref="F:SkillSwap.ViewModels.FeedViewModel.nuevaCategoria"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.NuevoTipo">
+            <inheritdoc cref="F:SkillSwap.ViewModels.FeedViewModel.nuevoTipo"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.MostrandoFormulario">
+            <inheritdoc cref="F:SkillSwap.ViewModels.FeedViewModel.mostrandoFormulario"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.PostEditando">
+            <inheritdoc cref="F:SkillSwap.ViewModels.FeedViewModel.postEditando"/>
+        </member>
+        <member name="F:SkillSwap.ViewModels.FeedViewModel.filtrarPorCategoriaCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.FeedViewModel.FiltrarPorCategoriaCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.FiltrarPorCategoriaCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.FeedViewModel.FiltrarPorCategoriaAsync"/>.</summary>
+        </member>
+        <member name="F:SkillSwap.ViewModels.FeedViewModel.mostrarFormularioCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.FeedViewModel.MostrarFormularioCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.MostrarFormularioCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.FeedViewModel.MostrarFormulario"/>.</summary>
+        </member>
+        <member name="F:SkillSwap.ViewModels.FeedViewModel.editarPostCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.FeedViewModel.EditarPostCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.EditarPostCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:SkillSwap.ViewModels.FeedViewModel.EditarPost(SkillSwap.Models.Post)"/>.</summary>
+        </member>
+        <member name="F:SkillSwap.ViewModels.FeedViewModel.guardarPostCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.FeedViewModel.GuardarPostCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.GuardarPostCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.FeedViewModel.GuardarPostAsync"/>.</summary>
+        </member>
+        <member name="F:SkillSwap.ViewModels.FeedViewModel.eliminarPostCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.FeedViewModel.EliminarPostCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.EliminarPostCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:SkillSwap.ViewModels.FeedViewModel.EliminarPostAsync(SkillSwap.Models.Post)"/>.</summary>
+        </member>
+        <member name="F:SkillSwap.ViewModels.FeedViewModel.cancelarFormularioCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.FeedViewModel.CancelarFormularioCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.CancelarFormularioCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.FeedViewModel.CancelarFormulario"/>.</summary>
+        </member>
+        <member name="T:SkillSwap.ViewModels.LoginViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.LoginViewModel.Correo">
+            <inheritdoc cref="F:SkillSwap.ViewModels.LoginViewModel.correo"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.LoginViewModel.Password">
+            <inheritdoc cref="F:SkillSwap.ViewModels.LoginViewModel.password"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.LoginViewModel.ErrorMessage">
+            <inheritdoc cref="F:SkillSwap.ViewModels.LoginViewModel.errorMessage"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.LoginViewModel.IsBusy">
+            <inheritdoc cref="F:SkillSwap.ViewModels.LoginViewModel.isBusy"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.LoginViewModel.RegNombre">
+            <inheritdoc cref="F:SkillSwap.ViewModels.LoginViewModel.regNombre"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.LoginViewModel.RegCorreo">
+            <inheritdoc cref="F:SkillSwap.ViewModels.LoginViewModel.regCorreo"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.LoginViewModel.RegPassword">
+            <inheritdoc cref="F:SkillSwap.ViewModels.LoginViewModel.regPassword"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.LoginViewModel.RegDescripcion">
+            <inheritdoc cref="F:SkillSwap.ViewModels.LoginViewModel.regDescripcion"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.LoginViewModel.RegHabilidades">
+            <inheritdoc cref="F:SkillSwap.ViewModels.LoginViewModel.regHabilidades"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.LoginViewModel.MostrandoRegistro">
+            <inheritdoc cref="F:SkillSwap.ViewModels.LoginViewModel.mostrandoRegistro"/>
+        </member>
+        <member name="F:SkillSwap.ViewModels.LoginViewModel.iniciarSesionCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.LoginViewModel.IniciarSesionCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.LoginViewModel.IniciarSesionCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.LoginViewModel.IniciarSesionAsync"/>.</summary>
+        </member>
+        <member name="F:SkillSwap.ViewModels.LoginViewModel.registrarCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.LoginViewModel.RegistrarCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.LoginViewModel.RegistrarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.LoginViewModel.RegistrarAsync"/>.</summary>
+        </member>
+        <member name="F:SkillSwap.ViewModels.LoginViewModel.toggleRegistroCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.LoginViewModel.ToggleRegistroCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.LoginViewModel.ToggleRegistroCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.LoginViewModel.ToggleRegistro"/>.</summary>
+        </member>
+        <member name="T:SkillSwap.ViewModels.ProfileViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ProfileViewModel.Nombre">
+            <inheritdoc cref="F:SkillSwap.ViewModels.ProfileViewModel.nombre"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ProfileViewModel.Correo">
+            <inheritdoc cref="F:SkillSwap.ViewModels.ProfileViewModel.correo"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ProfileViewModel.Descripcion">
+            <inheritdoc cref="F:SkillSwap.ViewModels.ProfileViewModel.descripcion"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ProfileViewModel.Habilidades">
+            <inheritdoc cref="F:SkillSwap.ViewModels.ProfileViewModel.habilidades"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ProfileViewModel.MensajeEstado">
+            <inheritdoc cref="F:SkillSwap.ViewModels.ProfileViewModel.mensajeEstado"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ProfileViewModel.IsBusy">
+            <inheritdoc cref="F:SkillSwap.ViewModels.ProfileViewModel.isBusy"/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ProfileViewModel.MisPublicaciones">
+            <inheritdoc cref="F:SkillSwap.ViewModels.ProfileViewModel.misPublicaciones"/>
+        </member>
+        <member name="F:SkillSwap.ViewModels.ProfileViewModel.guardarPerfilCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.ProfileViewModel.GuardarPerfilCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ProfileViewModel.GuardarPerfilCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.ProfileViewModel.GuardarPerfilAsync"/>.</summary>
+        </member>
+        <member name="F:SkillSwap.ViewModels.ProfileViewModel.cerrarSesionCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.ProfileViewModel.CerrarSesionCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ProfileViewModel.CerrarSesionCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.ProfileViewModel.CerrarSesionAsync"/>.</summary>
+        </member>
+        <member name="T:SkillSwap.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_InputView.TextColorTo(Microsoft.Maui.Controls.InputView,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.Messaging.__Internals.__IMessengerExtensions">
+            <summary>
+            A helper type with generated registration stubs for types implementing <see cref="T:CommunityToolkit.Mvvm.Messaging.IRecipient`1"/>.
+            </summary>
+            <inheritdoc/>
+        </member>
+        <member name="M:CommunityToolkit.Mvvm.Messaging.__Internals.__IMessengerExtensions.CreateAllMessagesRegistrator(SkillSwap.ViewModels.ChatViewModel)">
+            <summary>
+            Creates a message registration stub for <see cref="T:SkillSwap.ViewModels.ChatViewModel"/> objects.
+            </summary>
+            <param name="_">Dummy parameter, only used to disambiguate the method signature.</param>
+            <returns>A message registration stub for <see cref="T:SkillSwap.ViewModels.ChatViewModel"/> objects.</returns>
+        </member>
+        <member name="M:CommunityToolkit.Mvvm.Messaging.__Internals.__IMessengerExtensions.CreateAllMessagesRegistratorWithToken``1(SkillSwap.ViewModels.ChatViewModel)">
+            <summary>
+            Creates a message registration stub for <see cref="T:SkillSwap.ViewModels.ChatViewModel"/> objects.
+            </summary>
+            <typeparam name="TToken">The type of tokens that will be used to register messages.</typeparam>
+            <param name="_">Dummy parameter, only used to disambiguate the method signature.</param>
+            <returns>A message registration stub for <see cref="T:SkillSwap.ViewModels.ChatViewModel"/> objects.</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Contactos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Contactos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Mensajes">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Mensajes" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ContactoSeleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ContactoSeleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NuevoMensaje">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NuevoMensaje" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MensajesNoLeidos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MensajesNoLeidos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Posts">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Posts" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Categorias">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Categorias" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CategoriaSeleccionada">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CategoriaSeleccionada" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NuevoTitulo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NuevoTitulo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NuevaDescripcion">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NuevaDescripcion" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NuevaCategoria">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NuevaCategoria" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NuevoTipo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NuevoTipo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MostrandoFormulario">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MostrandoFormulario" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PostEditando">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PostEditando" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Correo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Correo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ErrorMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ErrorMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RegNombre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RegNombre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RegCorreo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RegCorreo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RegPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RegPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RegDescripcion">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RegDescripcion" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RegHabilidades">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RegHabilidades" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MostrandoRegistro">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MostrandoRegistro" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Nombre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Nombre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Descripcion">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Descripcion" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Habilidades">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Habilidades" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MensajeEstado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MensajeEstado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MisPublicaciones">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MisPublicaciones" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Contactos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Contactos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Mensajes">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Mensajes" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ContactoSeleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ContactoSeleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NuevoMensaje">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NuevoMensaje" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MensajesNoLeidos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MensajesNoLeidos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Posts">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Posts" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Categorias">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Categorias" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CategoriaSeleccionada">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CategoriaSeleccionada" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NuevoTitulo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NuevoTitulo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NuevaDescripcion">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NuevaDescripcion" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NuevaCategoria">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NuevaCategoria" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NuevoTipo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NuevoTipo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MostrandoFormulario">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MostrandoFormulario" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PostEditando">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PostEditando" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Correo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Correo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ErrorMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ErrorMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RegNombre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RegNombre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RegCorreo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RegCorreo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RegPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RegPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RegDescripcion">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RegDescripcion" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RegHabilidades">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RegHabilidades" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MostrandoRegistro">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MostrandoRegistro" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Nombre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Nombre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Descripcion">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Descripcion" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Habilidades">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Habilidades" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MensajeEstado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MensajeEstado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MisPublicaciones">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MisPublicaciones" generated properties.</summary>
+        </member>
+    </members>
+</doc>
