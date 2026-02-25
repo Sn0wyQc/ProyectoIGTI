@@ -6,124 +6,195 @@
              x:Class="SkillSwap.Views.ProfilePage"
              x:DataType="vm:ProfileViewModel"
              Title="Mi Perfil"
-             BackgroundColor="#F0F4FF">
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#F0F4FF"
+             xmlns:converters="clr-namespace:SkillSwap.Converters">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="14">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
+            <converters:NotNullToBoolConverter x:Key="NotNullToBoolConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-            <!-- Avatar -->
-            <Frame BackgroundColor="#3B4CCA"
-                   CornerRadius="50"
-                   HeightRequest="80"
-                   WidthRequest="80"
-                   HorizontalOptions="Center"
-                   HasShadow="True"
-                   Padding="0">
-                <Label Text="👤"
-                       FontSize="36"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"/>
-            </Frame>
+    <Grid RowDefinitions="Auto, *">
 
-            <!-- Correo (no editable) -->
-            <Label Text="{Binding Correo}"
-                   FontSize="13"
-                   TextColor="#666"
-                   HorizontalOptions="Center"
-                   Margin="0,0,0,10"/>
+        <!-- Barra superior personalizada (Row 0) -->
+        <Grid Grid.Row="0"
+              BackgroundColor="#1E2A6E"
+              Padding="10,10,10,10"
+              ColumnDefinitions="50, *, 50">
 
-            <!-- Tarjeta edición -->
-            <Frame BackgroundColor="White"
-                   CornerRadius="14"
-                   Padding="20"
-                   HasShadow="True">
-
-                <VerticalStackLayout Spacing="12">
-
-                    <Label Text="Información Personal"
-                           FontSize="16"
-                           FontAttributes="Bold"
-                           TextColor="#333"/>
-
-                    <Label Text="Nombre" FontSize="12" TextColor="#888"/>
-                    <Entry Text="{Binding Nombre}"
-                           BackgroundColor="#F5F5F5"
-                           Placeholder="Tu nombre"/>
-
-                    <Label Text="Descripción" FontSize="12" TextColor="#888"/>
-                    <Editor Text="{Binding Descripcion}"
-                            HeightRequest="80"
-                            BackgroundColor="#F5F5F5"
-                            Placeholder="Cuéntanos sobre ti..."/>
-
-                    <Label Text="Habilidades" FontSize="12" TextColor="#888"/>
-                    <Entry Text="{Binding Habilidades}"
-                           BackgroundColor="#F5F5F5"
-                           Placeholder="Python, Guitarra, Inglés..."/>
-
-                    <Label Text="{Binding MensajeEstado}"
-                           TextColor="#388E3C"
-                           IsVisible="{Binding MensajeEstado, Converter={StaticResource StringNotEmptyConverter}}"
-                           FontSize="12"/>
-
-                    <Button Text="Guardar cambios"
-                            Command="{Binding GuardarPerfilCommand}"
-                            BackgroundColor="#3B4CCA"
-                            TextColor="White"
-                            CornerRadius="10"
-                            IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"/>
-
-                    <ActivityIndicator IsRunning="{Binding IsBusy}"
-                                       IsVisible="{Binding IsBusy}"
-                                       Color="#3B4CCA"
-                                       HorizontalOptions="Center"/>
-                </VerticalStackLayout>
-            </Frame>
-
-            <!-- Mis publicaciones -->
-            <Label Text="Mis Publicaciones"
-                   FontSize="16"
-                   FontAttributes="Bold"
-                   TextColor="#333"
-                   Margin="0,10,0,0"/>
-
-            <CollectionView ItemsSource="{Binding MisPublicaciones}">
-                <CollectionView.EmptyView>
-                    <Label Text="Aún no tienes publicaciones."
-                           TextColor="#999"
-                           FontSize="13"
-                           HorizontalOptions="Center"
-                           Margin="0,10,0,0"/>
-                </CollectionView.EmptyView>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Post">
-                        <Frame BackgroundColor="White"
-                               CornerRadius="10"
-                               Margin="0,0,0,8"
-                               Padding="14"
-                               HasShadow="True">
-                            <VerticalStackLayout>
-                                <Label Text="{Binding Titulo}"
-                                       FontAttributes="Bold"
-                                       TextColor="#222"
-                                       FontSize="14"/>
-                                <Label Text="{Binding Categoria}"
-                                       TextColor="#888"
-                                       FontSize="12"/>
-                            </VerticalStackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-
-            <!-- Cerrar sesión -->
-            <Button Text="Cerrar sesión"
-                    Command="{Binding CerrarSesionCommand}"
-                    BackgroundColor="#FF5252"
+            <Button Grid.Column="0"
+                    Text="☰"
                     TextColor="White"
-                    CornerRadius="10"
-                    Margin="0,10,0,20"/>
+                    FontSize="24"
+                    BackgroundColor="Transparent"
+                    Clicked="OnMenuClicked"/>
 
-        </VerticalStackLayout>
-    </ScrollView>
+            <Label Grid.Column="1"
+                   Text="Mi Perfil"
+                   TextColor="White"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+        </Grid>
+
+        <!-- Contenido (Row 1) -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20" Spacing="14">
+
+                <!-- Foto de perfil -->
+                <Grid HorizontalOptions="Center" WidthRequest="110" HeightRequest="110">
+
+                    <!-- Avatar por defecto -->
+                    <Border StrokeThickness="2" Stroke="#CCCCCC"
+                            HeightRequest="110" WidthRequest="110"
+                            IsVisible="{Binding FotoPerfil, Converter={StaticResource NullToBoolConverter}}"
+                            HorizontalOptions="Center"
+                            Padding="0"
+                            BackgroundColor="#3B4CCA">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="100"/>
+                        </Border.StrokeShape>
+                        <Label Text="👤"
+                               FontSize="48"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </Border>
+
+                    <!-- Foto real -->
+                    <Border StrokeThickness="1" Stroke="#CCCCCC"
+                            HeightRequest="110" WidthRequest="110"
+                            IsVisible="{Binding FotoPerfil, Converter={StaticResource NotNullToBoolConverter}}"
+                            HorizontalOptions="Center"
+                            Padding="0"
+                            Margin="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="100"/>
+                        </Border.StrokeShape>
+                        <Image Source="{Binding FotoPerfil}"
+                               Aspect="AspectFill"
+                               HeightRequest="110"
+                               WidthRequest="110"
+                               Margin="0"/>
+                    </Border>
+
+                </Grid>
+
+                <!-- Botones foto -->
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                    <Button Text="Cambiar foto"
+                            Command="{Binding CambiarFotoPerfilCommand}"
+                            FontSize="12"/>
+                    <Button Text="Eliminar foto"
+                            Command="{Binding EliminarFotoPerfilCommand}"
+                            FontSize="12"
+                            BackgroundColor="#CC3333"
+                            IsVisible="{Binding FotoPerfil, Converter={StaticResource NotNullToBoolConverter}}"/>
+                </HorizontalStackLayout>
+
+                <!-- Correo (no editable) -->
+                <Label Text="{Binding Correo}"
+                       FontSize="13"
+                       TextColor="#666"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,10"/>
+
+                <!-- Tarjeta edición -->
+                <Frame BackgroundColor="White"
+                       CornerRadius="14"
+                       Padding="20"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="12">
+
+                        <Label Text="Información Personal"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#333"/>
+
+                        <Label Text="Nombre" FontSize="12" TextColor="#888"/>
+                        <Entry Text="{Binding Nombre}"
+                               BackgroundColor="#F5F5F5"
+                               Placeholder="Tu nombre"/>
+
+                        <Label Text="Descripción" FontSize="12" TextColor="#888"/>
+                        <Editor Text="{Binding Descripcion}"
+                                HeightRequest="80"
+                                BackgroundColor="#F5F5F5"
+                                Placeholder="Cuéntanos sobre ti..."/>
+
+                        <Label Text="Habilidades" FontSize="12" TextColor="#888"/>
+                        <Entry Text="{Binding Habilidades}"
+                               BackgroundColor="#F5F5F5"
+                               Placeholder="Python, Guitarra, Inglés..."/>
+
+                        <Label Text="{Binding MensajeEstado}"
+                               TextColor="#388E3C"
+                               IsVisible="{Binding MensajeEstado, Converter={StaticResource StringNotEmptyConverter}}"
+                               FontSize="12"/>
+
+                        <Button Text="Guardar cambios"
+                                Command="{Binding GuardarPerfilCommand}"
+                                BackgroundColor="#3B4CCA"
+                                TextColor="White"
+                                CornerRadius="10"
+                                IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"/>
+
+                        <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                           IsVisible="{Binding IsBusy}"
+                                           Color="#3B4CCA"
+                                           HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Mis publicaciones -->
+                <Label Text="Mis Publicaciones"
+                       FontSize="16"
+                       FontAttributes="Bold"
+                       TextColor="#333"
+                       Margin="0,10,0,0"/>
+
+                <CollectionView ItemsSource="{Binding MisPublicaciones}">
+                    <CollectionView.EmptyView>
+                        <Label Text="Aún no tienes publicaciones."
+                               TextColor="#999"
+                               FontSize="13"
+                               HorizontalOptions="Center"
+                               Margin="0,10,0,0"/>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Post">
+                            <Frame BackgroundColor="White"
+                                   CornerRadius="10"
+                                   Margin="0,0,0,8"
+                                   Padding="14"
+                                   HasShadow="True">
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Titulo}"
+                                           FontAttributes="Bold"
+                                           TextColor="#222"
+                                           FontSize="14"/>
+                                    <Label Text="{Binding Categoria}"
+                                           TextColor="#888"
+                                           FontSize="12"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <!-- Cerrar sesión -->
+                <Button Text="Cerrar sesión"
+                        Command="{Binding CerrarSesionCommand}"
+                        BackgroundColor="#FF5252"
+                        TextColor="White"
+                        CornerRadius="10"
+                        Margin="0,10,0,20"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
 </ContentPage>

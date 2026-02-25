@@ -11,7 +11,11 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SkillSwap
+<<<<<<< Updated upstream
 build_property.ProjectDir = C:\Tareas\SkillSwap\
+=======
+build_property.ProjectDir = C:\Visual\Yovany\ProyectoIGTI\
+>>>>>>> Stashed changes
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotOptimizerEnabled = true
@@ -25,49 +29,81 @@ build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
+<<<<<<< Updated upstream
 [C:/Tareas/SkillSwap/App.xaml]
+=======
+[C:/Visual/Yovany/ProyectoIGTI/App.xaml]
+>>>>>>> Stashed changes
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
+<<<<<<< Updated upstream
 [C:/Tareas/SkillSwap/AppShell.xaml]
+=======
+[C:/Visual/Yovany/ProyectoIGTI/AppShell.xaml]
+>>>>>>> Stashed changes
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
+<<<<<<< Updated upstream
 [C:/Tareas/SkillSwap/Resources/Styles/Colors.xaml]
+=======
+[C:/Visual/Yovany/ProyectoIGTI/Resources/Styles/Colors.xaml]
+>>>>>>> Stashed changes
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
+<<<<<<< Updated upstream
 [C:/Tareas/SkillSwap/Resources/Styles/Styles.xaml]
+=======
+[C:/Visual/Yovany/ProyectoIGTI/Resources/Styles/Styles.xaml]
+>>>>>>> Stashed changes
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+<<<<<<< Updated upstream
 [C:/Tareas/SkillSwap/Views/ChatPage.xaml]
+=======
+[C:/Visual/Yovany/ProyectoIGTI/Views/ChatPage.xaml]
+>>>>>>> Stashed changes
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ChatPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ChatPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ChatPage.xaml
 
+<<<<<<< Updated upstream
 [C:/Tareas/SkillSwap/Views/FeedPage.xaml]
+=======
+[C:/Visual/Yovany/ProyectoIGTI/Views/FeedPage.xaml]
+>>>>>>> Stashed changes
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.FeedPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\FeedPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\FeedPage.xaml
 
+<<<<<<< Updated upstream
 [C:/Tareas/SkillSwap/Views/LoginPage.xaml]
+=======
+[C:/Visual/Yovany/ProyectoIGTI/Views/LoginPage.xaml]
+>>>>>>> Stashed changes
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
 
+<<<<<<< Updated upstream
 [C:/Tareas/SkillSwap/Views/ProfilePage.xaml]
+=======
+[C:/Visual/Yovany/ProyectoIGTI/Views/ProfilePage.xaml]
+>>>>>>> Stashed changes
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ProfilePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ProfilePage.xaml

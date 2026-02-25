@@ -17,7 +17,16 @@ namespace SkillSwap.Views
         {
             base.OnAppearing();
             _vm.CargarPerfil();
+            Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
             await _vm.CargarPublicacionesAsync();
+
+
+        }
+
+        private void OnMenuClicked(object sender, EventArgs e)
+        {
+            Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
+            Shell.Current.FlyoutIsPresented = true;
         }
     }
 }

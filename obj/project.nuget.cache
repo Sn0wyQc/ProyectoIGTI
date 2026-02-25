@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "Qbx9UjQwagg=",
   "success": true,
   "projectFilePath": "C:\\Tareas\\SkillSwap\\SkillSwap.csproj",
+=======
+  "dgSpecHash": "daYfCQ1VSpk=",
+  "success": true,
+  "projectFilePath": "C:\\Visual\\Yovany\\ProyectoIGTI\\SkillSwap.csproj",
+>>>>>>> Stashed changes
   "expectedPackageFiles": [
     "C:\\Users\\jmcas\\.nuget\\packages\\communitytoolkit.maui\\9.1.0\\communitytoolkit.maui.9.1.0.nupkg.sha512",
     "C:\\Users\\jmcas\\.nuget\\packages\\communitytoolkit.maui.core\\9.1.0\\communitytoolkit.maui.core.9.1.0.nupkg.sha512",
@@ -32,6 +38,12 @@
     "C:\\Users\\jmcas\\.nuget\\packages\\microsoft.web.webview2\\1.0.3179.45\\microsoft.web.webview2.1.0.3179.45.nupkg.sha512",
     "C:\\Users\\jmcas\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\jmcas\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250909003\\microsoft.windowsappsdk.1.7.250909003.nupkg.sha512",
+<<<<<<< Updated upstream
+=======
+    "C:\\Users\\jmcas\\.nuget\\packages\\skiasharp\\3.119.2\\skiasharp.3.119.2.nupkg.sha512",
+    "C:\\Users\\jmcas\\.nuget\\packages\\skiasharp.nativeassets.android\\3.119.2\\skiasharp.nativeassets.android.3.119.2.nupkg.sha512",
+    "C:\\Users\\jmcas\\.nuget\\packages\\skiasharp.nativeassets.win32\\3.119.2\\skiasharp.nativeassets.win32.3.119.2.nupkg.sha512",
+>>>>>>> Stashed changes
     "C:\\Users\\jmcas\\.nuget\\packages\\sqlite-net-pcl\\1.9.172\\sqlite-net-pcl.1.9.172.nupkg.sha512",
     "C:\\Users\\jmcas\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.1.10\\sqlitepclraw.bundle_green.2.1.10.nupkg.sha512",
     "C:\\Users\\jmcas\\.nuget\\packages\\sqlitepclraw.core\\2.1.10\\sqlitepclraw.core.2.1.10.nupkg.sha512",

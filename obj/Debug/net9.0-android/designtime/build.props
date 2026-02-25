@@ -24,8 +24,15 @@ androidgeneratejnimarshalmethods=false
 os=windows_nt
 androidincludedebugsymbols=true
 androidpackagenamingpolicy=lowercasecrc64
+<<<<<<< Updated upstream
 _nugetassetsfilehash=7d653864760f7748d1d24385b78ace0e1c523364174201410081b55afc0d12b7
 typemapkind=strings-asm
 androidmanifestplaceholders=
 projectfullpath=c:\tareas\skillswap\skillswap.csproj
+=======
+_nugetassetsfilehash=621eca68ca5576cf82dbc1d82597eebb4e3aecd643f680d1641f1a99253515e8
+typemapkind=strings-asm
+androidmanifestplaceholders=
+projectfullpath=c:\visual\yovany\proyectoigti\skillswap.csproj
+>>>>>>> Stashed changes
 androidusedesignerassembly=true

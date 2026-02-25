@@ -91,5 +91,15 @@ namespace SkillSwap.Services
             var hash = sha.ComputeHash(bytes);
             return Convert.ToBase64String(hash);
         }
+
+        public async Task<(bool exito, string mensaje)> ActualizarFotoPerfilAsync(string rutaFoto)
+        {
+            if (UsuarioActual is null)
+                return (false, "No hay sesión activa.");
+
+            UsuarioActual.FotoPerfil = rutaFoto;
+            await _db.SaveUserAsync(UsuarioActual);
+            return (true, "Foto actualizada.");
+        }
     }
 }

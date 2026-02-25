@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream
     "C:\\Tareas\\SkillSwap\\SkillSwap.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Tareas\\SkillSwap\\SkillSwap.csproj",
         "packagesPath": "C:\\Users\\jmcas\\.nuget\\packages\\",
         "outputPath": "C:\\Tareas\\SkillSwap\\obj\\",
+=======
+    "C:\\Visual\\Yovany\\ProyectoIGTI\\SkillSwap.csproj": {}
+  },
+  "projects": {
+    "C:\\Visual\\Yovany\\ProyectoIGTI\\SkillSwap.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Visual\\Yovany\\ProyectoIGTI\\SkillSwap.csproj",
+        "projectName": "SkillSwap",
+        "projectPath": "C:\\Visual\\Yovany\\ProyectoIGTI\\SkillSwap.csproj",
+        "packagesPath": "C:\\Users\\jmcas\\.nuget\\packages\\",
+        "outputPath": "C:\\Visual\\Yovany\\ProyectoIGTI\\obj\\",
+>>>>>>> Stashed changes
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -71,6 +85,13 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
+<<<<<<< Updated upstream
+=======
+              "version": "[9.0.120, )"
+            },
+            "Microsoft.Maui.Resizetizer": {
+              "target": "Package",
+>>>>>>> Stashed changes
               "version": "[9.0.120, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
@@ -82,6 +103,10 @@
             "SQLitePCLRaw.bundle_green": {
               "target": "Package",
               "version": "[2.1.10, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[3.119.2, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -140,11 +165,22 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
+<<<<<<< Updated upstream
+=======
+              "version": "[9.0.120, )"
+            },
+            "Microsoft.Maui.Resizetizer": {
+              "target": "Package",
+>>>>>>> Stashed changes
               "version": "[9.0.120, )"
             },
             "SQLitePCLRaw.bundle_green": {
               "target": "Package",
               "version": "[2.1.10, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[3.119.2, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",

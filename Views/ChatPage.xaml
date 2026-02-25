@@ -6,12 +6,35 @@
              x:Class="SkillSwap.Views.ChatPage"
              x:DataType="vm:ChatViewModel"
              Title="Mensajes"
+             Shell.NavBarIsVisible="False"
              BackgroundColor="#F0F4FF">
 
-    <Grid RowDefinitions="Auto,*,Auto">
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
 
-        <!-- Selector de contacto -->
-        <Frame Grid.Row="0"
+        <!-- Barra superior personalizada (Row 0) -->
+        <Grid Grid.Row="0"
+              BackgroundColor="#1E2A6E"
+              Padding="10,10,10,10"
+              ColumnDefinitions="50, *, 50">
+
+            <Button Grid.Column="0"
+                    Text="☰"
+                    TextColor="White"
+                    FontSize="24"
+                    BackgroundColor="Transparent"
+                    Clicked="OnMenuClicked"/>
+
+            <Label Grid.Column="1"
+                   Text="Mensajes"
+                   TextColor="White"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+        </Grid>
+
+        <!-- Selector de contacto (Row 1) -->
+        <Frame Grid.Row="1"
                BackgroundColor="White"
                Padding="12,8"
                HasShadow="True"
@@ -31,8 +54,8 @@
             </Grid>
         </Frame>
 
-        <!-- Mensajes de la conversacion -->
-        <CollectionView Grid.Row="1"
+        <!-- Mensajes de la conversacion (Row 2) -->
+        <CollectionView Grid.Row="2"
                         x:Name="MensajesCollection"
                         ItemsSource="{Binding Mensajes}"
                         Margin="10,8">
@@ -72,8 +95,8 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <!-- Input para escribir mensaje -->
-        <Grid Grid.Row="2"
+        <!-- Input para escribir mensaje (Row 3) -->
+        <Grid Grid.Row="3"
               ColumnDefinitions="*,Auto"
               BackgroundColor="White"
               Padding="12,8">
