@@ -6,32 +6,33 @@
              x:Class="SkillSwap.Views.ChatPage"
              x:DataType="vm:ChatViewModel"
              Title="Mensajes"
-             BackgroundColor="#F0F4FF">
+             BackgroundColor="{AppThemeBinding Light=#F0F4FF, Dark=#121212}">
 
     <Grid RowDefinitions="Auto,*,Auto">
-
-        <!-- Selector de contacto -->
+    <!--Selector de contacto-->
         <Frame Grid.Row="0"
-               BackgroundColor="White"
+               BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
                Padding="12,8"
                HasShadow="True"
-               CornerRadius="0">
+               CornerRadius="0"
+               BorderColor="{AppThemeBinding Light=Transparent, Dark=#333333}">
             <Grid ColumnDefinitions="Auto,*">
                 <Label Grid.Column="0"
                        Text="Chatear con:"
                        VerticalOptions="Center"
                        FontSize="14"
-                       TextColor="#666666"
+                       TextColor="{AppThemeBinding Light=#666666, Dark=#B0BEE8}"
                        Margin="0,0,10,0"/>
                 <Picker Grid.Column="1"
                         ItemsSource="{Binding Contactos}"
                         ItemDisplayBinding="{Binding Nombre}"
                         SelectedItem="{Binding ContactoSeleccionado}"
-                        Title="Selecciona un usuario"/>
+                        Title="Selecciona un usuario"
+                        TextColor="{AppThemeBinding Light=#222222, Dark=White}"
+                        TitleColor="{AppThemeBinding Light=#999999, Dark=#B0BEE8}"/>
             </Grid>
         </Frame>
-
-        <!-- Mensajes de la conversacion -->
+        <!--Mensajes de la conversación-->
         <CollectionView Grid.Row="1"
                         x:Name="MensajesCollection"
                         ItemsSource="{Binding Mensajes}"
@@ -39,7 +40,7 @@
             <CollectionView.EmptyView>
                 <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
                     <Label Text="Selecciona un contacto para chatear"
-                           TextColor="#aaaaaa"
+                           TextColor="{AppThemeBinding Light=#aaaaaa, Dark=#666666}"
                            HorizontalOptions="Center"
                            FontSize="14"/>
                 </VerticalStackLayout>
@@ -47,7 +48,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Message">
                     <VerticalStackLayout Margin="0,4" Padding="4,0">
-                        <Frame BackgroundColor="#3B4CCA"
+                        <Frame BackgroundColor="{StaticResource Primary}"
                                CornerRadius="14"
                                Padding="12,8"
                                MaximumWidthRequest="280"
@@ -71,26 +72,23 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
-        <!-- Input para escribir mensaje -->
+        <!--Input para nuevo mensaje-->
         <Grid Grid.Row="2"
               ColumnDefinitions="*,Auto"
-              BackgroundColor="White"
+              BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
               Padding="12,8">
             <Entry Grid.Column="0"
                    Placeholder="Escribe un mensaje..."
                    Text="{Binding NuevoMensaje}"
-                   BackgroundColor="#F5F5F5"
                    ReturnCommand="{Binding EnviarMensajeCommand}"
-                   VerticalOptions="Center"/>
+                   VerticalOptions="Center"
+                   BackgroundColor="Transparent"/>
             <Button Grid.Column="1"
                     Text="Enviar"
                     Command="{Binding EnviarMensajeCommand}"
-                    BackgroundColor="#3B4CCA"
-                    TextColor="White"
-                    CornerRadius="8"
                     Margin="8,0,0,0"
-                    FontSize="13"/>
+                    FontSize="13"
+                    HeightRequest="40"/>
         </Grid>
 
     </Grid>
