@@ -138,5 +138,40 @@ namespace SkillSwap.Services
                 .Where(m => m.ReceptorId == userId && !m.Leido)
                 .CountAsync();
         }
+        //─────────────────────────── REPORTES ───────────────────────────
+
+        public async Task<int> SaveReportAsync(Report report)
+        {
+            await InitAsync();
+            return await _database!.InsertAsync(report);
+        }
+
+        internal async Task InsertAsync(object conversation)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal IEnumerable<object> Table<T>()
+        {
+            throw new NotImplementedException();
+        }
+
+        // ─────────────────────────── Conversation ───────────────────────────
+        public async Task<Conversation?> GetConversationAsync(int user1Id, int user2Id)
+        {
+            await InitAsync();
+
+            return await _database!.Table<Conversation>()
+                .Where(c =>
+                    (c.User1Id == user1Id && c.User2Id == user2Id) ||
+                    (c.User1Id == user2Id && c.User2Id == user1Id))
+                .FirstOrDefaultAsync();
+        }
+        public async Task<int> SaveConversationAsync(Conversation conversation)
+        {
+            await InitAsync();
+            return await _database!.InsertAsync(conversation);
+        }
     }
+
 }

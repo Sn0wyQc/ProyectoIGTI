@@ -92,4 +92,8 @@
         </Grid>
 
     </Grid>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Reportar"
+             Clicked="OnReportClicked"/>
+    </ContentPage.ToolbarItems>
 </ContentPage>

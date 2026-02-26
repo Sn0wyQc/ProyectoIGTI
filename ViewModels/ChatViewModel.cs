@@ -1,9 +1,9 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
+using System.Collections.ObjectModel;
 using SkillSwap.Models;
 using SkillSwap.Services;
-using System.Collections.ObjectModel;
 
 namespace SkillSwap.ViewModels
 {
@@ -119,7 +119,18 @@ namespace SkillSwap.ViewModels
             if (UserService.UsuarioActual is null) return;
             MensajesNoLeidos = await _chatService.ObtenerNoLeidosAsync(UserService.UsuarioActual.Id);
         }
+        public async Task CrearReporteDesdeChatAsync(string reason, string? customReason = null)
+        {
+            if (ContactoSeleccionado is null || UserService.UsuarioActual is null)
+                return;
 
+            await _chatService.CrearReporteAsync(
+                UserService.UsuarioActual.Id,
+                ContactoSeleccionado.Id,
+                reason,
+                customReason
+            );
+        }
         public void Cleanup()
         {
             WeakReferenceMessenger.Default.Unregister<NuevoMensajeMessage>(this);
