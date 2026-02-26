@@ -28,5 +28,11 @@ namespace SkillSwap.Views
                 await _vm.CargarPostsAsync();
             }
         }
+
+        private void OnMenuClicked(object sender, EventArgs e)
+        {
+            Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
+            Shell.Current.FlyoutIsPresented = true;
+        }
     }
 }

@@ -16,8 +16,19 @@ namespace SkillSwap.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            _vm.CargarPerfil();
+            await _vm.CargarPerfilAsync();
+            Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
             await _vm.CargarPublicacionesAsync();
         }
+        private void OnMenuClicked(object sender, EventArgs e)
+        {
+            Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
+            Shell.Current.FlyoutIsPresented = true;
+        }
+        private async void OnCambiarFotoClicked(object sender, EventArgs e)
+        {
+            await _vm.CambiarFotoPerfilAsync();
+        }
+
     }
 }

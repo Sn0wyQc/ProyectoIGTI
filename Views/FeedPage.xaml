@@ -6,12 +6,35 @@
              x:Class="SkillSwap.Views.FeedPage"
              x:DataType="vm:FeedViewModel"
              Title="Anuncios"
+             Shell.NavBarIsVisible="False"
              BackgroundColor="#F0F4FF">
 
-    <Grid RowDefinitions="Auto,Auto,*,Auto">
+    <Grid RowDefinitions="Auto,Auto,Auto,*,Auto">
 
-        <!-- Filtro de categorías -->
-        <ScrollView Grid.Row="0" Orientation="Horizontal" Margin="12,12,12,0">
+        <!-- Barra superior personalizada (Row 0) -->
+        <Grid Grid.Row="0"
+              BackgroundColor="#1E2A6E"
+              Padding="10,10,10,10"
+              ColumnDefinitions="50, *, 50">
+
+            <Button Grid.Column="0"
+                    Text="☰"
+                    TextColor="White"
+                    FontSize="24"
+                    BackgroundColor="Transparent"
+                    Clicked="OnMenuClicked"/>
+
+            <Label Grid.Column="1"
+                   Text="Anuncios"
+                   TextColor="White"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+        </Grid>
+
+        <!-- Filtro de categorías (Row 1) -->
+        <ScrollView Grid.Row="1" Orientation="Horizontal" Margin="12,12,12,0">
             <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Categorias}" Spacing="8">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="x:String">
@@ -27,8 +50,8 @@
             </HorizontalStackLayout>
         </ScrollView>
 
-        <!-- Formulario nuevo/editar anuncio -->
-        <Frame Grid.Row="1"
+        <!-- Formulario nuevo/editar anuncio (Row 2) -->
+        <Frame Grid.Row="2"
                IsVisible="{Binding MostrandoFormulario}"
                BackgroundColor="White"
                CornerRadius="12"
@@ -71,8 +94,8 @@
             </VerticalStackLayout>
         </Frame>
 
-        <!-- Lista de posts -->
-        <CollectionView Grid.Row="2"
+        <!-- Lista de posts (Row 3) -->
+        <CollectionView Grid.Row="3"
                         ItemsSource="{Binding Posts}"
                         Margin="12,10,12,0">
             <CollectionView.EmptyView>
@@ -117,8 +140,8 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <!-- Botón publicar -->
-        <Button Grid.Row="3"
+        <!-- Botón publicar (Row 4) -->
+        <Button Grid.Row="4"
                 Text="+ Publicar anuncio"
                 Command="{Binding MostrarFormularioCommand}"
                 BackgroundColor="#3B4CCA"

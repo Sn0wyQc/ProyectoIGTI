@@ -3,7 +3,7 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:SkillSwap.Views"
        x:Class="SkillSwap.AppShell"
-       FlyoutBehavior="Flyout"
+       FlyoutBehavior="Disabled"
        FlyoutBackgroundColor="#1E2A6E">
 
     <!-- Header del Flyout -->
@@ -43,21 +43,23 @@
                   Shell.NavBarIsVisible="False"/>
 
     <!-- Anuncios -->
-    <FlyoutItem Title="Anuncios">
+    <FlyoutItem Title="Anuncios" Shell.NavBarIsVisible="False">
         <ShellContent Route="FeedPage"
-                      ContentTemplate="{DataTemplate views:FeedPage}"/>
+                  Shell.NavBarIsVisible="False"
+                  ContentTemplate="{DataTemplate views:FeedPage}"/>
     </FlyoutItem>
 
     <!-- Mensajes -->
     <FlyoutItem Title="Mensajes">
         <ShellContent Route="ChatPage"
-                      ContentTemplate="{DataTemplate views:ChatPage}"/>
+                  Shell.NavBarIsVisible="False"
+                  ContentTemplate="{DataTemplate views:ChatPage}"/>
     </FlyoutItem>
 
     <!-- Perfil -->
     <FlyoutItem Title="Mi Perfil">
         <ShellContent Route="ProfilePage"
-                      ContentTemplate="{DataTemplate views:ProfilePage}"/>
+                  Shell.NavBarIsVisible="False"
+                  ContentTemplate="{DataTemplate views:ProfilePage}"/>
     </FlyoutItem>
-
 </Shell>

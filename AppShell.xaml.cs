@@ -5,6 +5,14 @@ namespace SkillSwap
         public AppShell()
         {
             InitializeComponent();
+
+            this.PropertyChanged += (s, e) =>
+            {
+                if (e.PropertyName == nameof(FlyoutIsPresented) && !FlyoutIsPresented)
+                    FlyoutBehavior = FlyoutBehavior.Disabled;
+            };
+
         }
     }
+
 }
