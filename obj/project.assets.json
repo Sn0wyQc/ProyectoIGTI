@@ -17128,24 +17128,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jmcas\\.nuget\\packages\\": {},
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jmcas\\Downloads\\SK2\\SkillSwap\\SkillSwap.csproj",
+      "projectUniqueName": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\SkillSwap.csproj",
       "projectName": "SkillSwap",
-      "projectPath": "C:\\Users\\jmcas\\Downloads\\SK2\\SkillSwap\\SkillSwap.csproj",
-      "packagesPath": "C:\\Users\\jmcas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jmcas\\Downloads\\SK2\\SkillSwap\\obj\\",
+      "projectPath": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\SkillSwap.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\jmcas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
