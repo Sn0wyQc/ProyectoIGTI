@@ -24,5 +24,40 @@ namespace SkillSwap.Views
             base.OnDisappearing();
             _vm.Cleanup();
         }
+        private async void OnReportClicked(object sender, EventArgs e)
+        {
+            if (_vm.ContactoSeleccionado == null)
+                return;
+
+            string action = await DisplayActionSheet(
+                "Razón del reporte",
+                "Cancelar",
+                null,
+                "Acoso",
+                "Uso indebido del chat",
+                "Mensajes hirientes",
+                "Otro"
+            );
+
+            if (action == "Cancelar")
+                return;
+
+            string? customReason = null;
+
+            if (action == "Otro")
+            {
+                customReason = await DisplayPromptAsync(
+                    "Describe el motivo",
+                    "Escribe la razón específica:"
+                );
+
+                if (string.IsNullOrWhiteSpace(customReason))
+                    return;
+            }
+
+            await _vm.CrearReporteDesdeChatAsync(action, customReason);
+
+            await DisplayAlert("Reporte enviado", "Gracias por tu reporte.", "OK");
+        }
     }
 }

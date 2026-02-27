@@ -67,5 +67,40 @@ namespace SkillSwap.Services
             var idEmisorIds = mensajes.Select(m => m.EmisorId).Distinct().ToList();
             return todosUsuarios.Where(u => idEmisorIds.Contains(u.Id) || u.Id != userId).ToList();
         }
+        // Crear reporte de usuario
+        public async Task CrearReporteAsync(int reporterId, int reportedUserId, string reason, string customReason = null)
+        {
+            var report = new Report
+            {
+                ReporterId = reporterId,
+                ReportedUserId = reportedUserId,
+                Reason = reason,
+                CustomReason = customReason,
+                CreatedAt = DateTime.Now
+            };
+
+            await _db.SaveReportAsync(report);
+        }
+        // Crear conversación
+        public async Task<Conversation> GetOrCreateConversationAsync(int user1Id, int user2Id)
+        {
+            var conversation = await _db.GetConversationAsync(user1Id, user2Id);
+
+            if (conversation == null)
+            {
+                conversation = new Conversation
+                {
+                    User1Id = user1Id,
+                    User2Id = user2Id,
+                    CreatedAt = DateTime.Now
+                };
+
+                await _db.SaveConversationAsync(conversation);
+            }
+
+            return conversation;
+        }
+        //Enviar mensaje dentro de una conversación
+
     }
 }
