@@ -20,7 +20,21 @@ namespace SkillSwap.ViewModels
         [ObservableProperty]
         private bool isBusy = false;
 
-        // Campos para el registro
+        // --- LÓGICA DE MOSTRAR/OCULTAR ---
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(PasswordIcon))]
+        private bool isPasswordHidden = true;
+
+        // Esta propiedad cambia el nombre del archivo de imagen automáticamente
+        public string PasswordIcon => IsPasswordHidden ? "ojo_cerrado.png" : "ojo_abierto.png";
+
+        [RelayCommand]
+        private void TogglePassword()
+        {
+            IsPasswordHidden = !IsPasswordHidden;
+        }
+        // ---------------------------------
+
         [ObservableProperty]
         private string regNombre = string.Empty;
 
@@ -49,25 +63,13 @@ namespace SkillSwap.ViewModels
         {
             ErrorMessage = string.Empty;
             IsBusy = true;
-
             try
             {
                 var (exito, mensaje) = await _userService.IniciarSesionAsync(Correo, Password);
-
-                if (exito)
-                {
-                    // Navegar al Shell principal
-                    await Shell.Current.GoToAsync("//FeedPage");
-                }
-                else
-                {
-                    ErrorMessage = mensaje;
-                }
+                if (exito) await Shell.Current.GoToAsync("//FeedPage");
+                else ErrorMessage = mensaje;
             }
-            finally
-            {
-                IsBusy = false;
-            }
+            finally { IsBusy = false; }
         }
 
         [RelayCommand]
@@ -75,29 +77,18 @@ namespace SkillSwap.ViewModels
         {
             ErrorMessage = string.Empty;
             IsBusy = true;
-
             try
             {
                 var (exito, mensaje) = await _userService.RegistrarAsync(RegNombre, RegCorreo, RegPassword, RegDescripcion, RegHabilidades);
-
                 if (exito)
                 {
-                    await Shell.Current.DisplayAlert("¡Listo!", "Cuenta creada. Ya puedes iniciar sesión.", "OK");
+                    await Shell.Current.DisplayAlert("¡Listo!", "Cuenta creada.", "OK");
                     MostrandoRegistro = false;
-
-                    // Pre-llenar login
                     Correo = RegCorreo;
-                    Password = string.Empty;
                 }
-                else
-                {
-                    ErrorMessage = mensaje;
-                }
+                else ErrorMessage = mensaje;
             }
-            finally
-            {
-                IsBusy = false;
-            }
+            finally { IsBusy = false; }
         }
 
         [RelayCommand]
@@ -108,3 +99,5 @@ namespace SkillSwap.ViewModels
         }
     }
 }
+
+

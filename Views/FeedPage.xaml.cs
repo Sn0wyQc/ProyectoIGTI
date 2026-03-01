@@ -19,7 +19,7 @@ namespace SkillSwap.Views
             await _vm.CargarPostsAsync();
         }
 
-        // Handler para el filtro de categorías (evita binding complejo dentro de BindableLayout)
+        // filtro de categorías 
         private async void OnCategoriaClicked(object sender, EventArgs e)
         {
             if (sender is Button btn)
@@ -27,6 +27,26 @@ namespace SkillSwap.Views
                 _vm.CategoriaSeleccionada = btn.Text;
                 await _vm.CargarPostsAsync();
             }
+
+        }
+        private async void IrInicio(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//FeedPage");
+        }
+
+        private async void IrMensajes(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//ChatPage");
+        }
+
+        private async void IrNotificationPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NotificationPage());
+        }
+
+        private async void IrPerfil(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//ProfilePage");
         }
     }
 }

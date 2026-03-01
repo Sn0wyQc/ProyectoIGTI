@@ -6,13 +6,12 @@
              x:Class="SkillSwap.Views.ProfilePage"
              x:DataType="vm:ProfileViewModel"
              Title="Mi Perfil"
-             BackgroundColor="#F0F4FF">
+             BackgroundColor="{AppThemeBinding Light=#F0F4FF, Dark=#121212}">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="14">
 
-            <!-- Avatar -->
-            <Frame BackgroundColor="#3B4CCA"
+            <Frame BackgroundColor="{StaticResource Primary}"
                    CornerRadius="50"
                    HeightRequest="80"
                    WidthRequest="80"
@@ -25,40 +24,36 @@
                        VerticalOptions="Center"/>
             </Frame>
 
-            <!-- Correo (no editable) -->
             <Label Text="{Binding Correo}"
                    FontSize="13"
-                   TextColor="#666"
+                   TextColor="{AppThemeBinding Light=#666, Dark=#B0BEE8}"
                    HorizontalOptions="Center"
                    Margin="0,0,0,10"/>
 
-            <!-- Tarjeta edición -->
-            <Frame BackgroundColor="White"
+            <Frame BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
                    CornerRadius="14"
                    Padding="20"
-                   HasShadow="True">
+                   HasShadow="True"
+                   BorderColor="{AppThemeBinding Light=Transparent, Dark=#333333}">
 
                 <VerticalStackLayout Spacing="12">
 
                     <Label Text="Información Personal"
                            FontSize="16"
                            FontAttributes="Bold"
-                           TextColor="#333"/>
+                           TextColor="{AppThemeBinding Light=#333, Dark=White}"/>
 
-                    <Label Text="Nombre" FontSize="12" TextColor="#888"/>
+                    <Label Text="Nombre" FontSize="12" TextColor="{AppThemeBinding Light=#888, Dark=#B0BEE8}"/>
                     <Entry Text="{Binding Nombre}"
-                           BackgroundColor="#F5F5F5"
                            Placeholder="Tu nombre"/>
 
-                    <Label Text="Descripción" FontSize="12" TextColor="#888"/>
+                    <Label Text="Descripción" FontSize="12" TextColor="{AppThemeBinding Light=#888, Dark=#B0BEE8}"/>
                     <Editor Text="{Binding Descripcion}"
                             HeightRequest="80"
-                            BackgroundColor="#F5F5F5"
                             Placeholder="Cuéntanos sobre ti..."/>
 
-                    <Label Text="Habilidades" FontSize="12" TextColor="#888"/>
+                    <Label Text="Habilidades" FontSize="12" TextColor="{AppThemeBinding Light=#888, Dark=#B0BEE8}"/>
                     <Entry Text="{Binding Habilidades}"
-                           BackgroundColor="#F5F5F5"
                            Placeholder="Python, Guitarra, Inglés..."/>
 
                     <Label Text="{Binding MensajeEstado}"
@@ -68,9 +63,6 @@
 
                     <Button Text="Guardar cambios"
                             Command="{Binding GuardarPerfilCommand}"
-                            BackgroundColor="#3B4CCA"
-                            TextColor="White"
-                            CornerRadius="10"
                             IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"/>
 
                     <ActivityIndicator IsRunning="{Binding IsBusy}"
@@ -80,35 +72,35 @@
                 </VerticalStackLayout>
             </Frame>
 
-            <!-- Mis publicaciones -->
             <Label Text="Mis Publicaciones"
                    FontSize="16"
                    FontAttributes="Bold"
-                   TextColor="#333"
+                   TextColor="{AppThemeBinding Light=#333, Dark=White}"
                    Margin="0,10,0,0"/>
 
             <CollectionView ItemsSource="{Binding MisPublicaciones}">
                 <CollectionView.EmptyView>
                     <Label Text="Aún no tienes publicaciones."
-                           TextColor="#999"
+                           TextColor="{AppThemeBinding Light=#999, Dark=#666}"
                            FontSize="13"
                            HorizontalOptions="Center"
                            Margin="0,10,0,0"/>
                 </CollectionView.EmptyView>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Post">
-                        <Frame BackgroundColor="White"
+                        <Frame BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
                                CornerRadius="10"
                                Margin="0,0,0,8"
                                Padding="14"
-                               HasShadow="True">
+                               HasShadow="True"
+                               BorderColor="{AppThemeBinding Light=Transparent, Dark=#333333}">
                             <VerticalStackLayout>
                                 <Label Text="{Binding Titulo}"
                                        FontAttributes="Bold"
-                                       TextColor="#222"
+                                       TextColor="{AppThemeBinding Light=#222, Dark=White}"
                                        FontSize="14"/>
                                 <Label Text="{Binding Categoria}"
-                                       TextColor="#888"
+                                       TextColor="{AppThemeBinding Light=#888, Dark=#B0BEE8}"
                                        FontSize="12"/>
                             </VerticalStackLayout>
                         </Frame>
@@ -116,7 +108,6 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <!-- Cerrar sesión -->
             <Button Text="Cerrar sesión"
                     Command="{Binding CerrarSesionCommand}"
                     BackgroundColor="#FF5252"

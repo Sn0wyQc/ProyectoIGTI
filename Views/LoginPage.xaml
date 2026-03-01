@@ -4,48 +4,50 @@
              xmlns:vm="clr-namespace:SkillSwap.ViewModels"
              x:Class="SkillSwap.Views.LoginPage"
              x:DataType="vm:LoginViewModel"
-             BackgroundColor="#F0F4FF"
-             Shell.NavBarIsVisible="False">
+             BackgroundColor="{AppThemeBinding Light=#F0F4FF, Dark=#121212}"
+             Shell.NavBarIsVisible="True"
+             Shell.FlyoutBehavior="Disabled">
 
     <ScrollView>
         <VerticalStackLayout Padding="32,60,32,32" Spacing="0">
 
-            <!-- Header -->
             <Label Text="SkillSwap"
                    FontSize="36"
                    FontAttributes="Bold"
-                   TextColor="#3B4CCA"
+                   TextColor="{AppThemeBinding Light=#3B4CCA, Dark=#B0BEE8}"
                    HorizontalOptions="Center"
                    Margin="0,0,0,6"/>
 
-            <Label Text="Intercambia lo que sabes"
+            <Label Text="Exchange. Learn. Grow"
                    FontSize="14"
-                   TextColor="#666666"
+                   TextColor="{AppThemeBinding Light=#666666, Dark=#B0BEE8}"
                    HorizontalOptions="Center"
                    Margin="0,0,0,40"/>
 
-            <!-- Tarjeta LOGIN -->
             <Frame IsVisible="{Binding MostrandoRegistro, Converter={StaticResource InvertedBoolConverter}}"
-                   BackgroundColor="White"
+                   BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
                    CornerRadius="16"
                    HasShadow="True"
                    Padding="24">
                 <VerticalStackLayout Spacing="14">
 
-                    <Label Text="Iniciar Sesion"
-                           FontSize="20"
-                           FontAttributes="Bold"
-                           TextColor="#333333"/>
+                    <Label Text="Iniciar Sesión" Style="{StaticResource TitleLabel}"/>
 
                     <Entry Placeholder="Correo electronico"
                            Text="{Binding Correo}"
-                           Keyboard="Email"
-                           BackgroundColor="#F5F5F5"/>
+                           Keyboard="Email"/>
 
-                    <Entry Placeholder="Contrasena"
-                           Text="{Binding Password}"
-                           IsPassword="True"
-                           BackgroundColor="#F5F5F5"/>
+                    <Grid ColumnDefinitions="*, Auto" 
+                          BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2C2C2C}">
+                        <Entry Placeholder="Contraseña" 
+                               Text="{Binding Password}" 
+                               IsPassword="{Binding IsPasswordHidden}" 
+                               Grid.Column="0" VerticalOptions="Center"
+                               BackgroundColor="Transparent"/>
+                        <ImageButton Source="{Binding PasswordIcon}" 
+                                     Command="{Binding TogglePasswordCommand}"
+                                     Grid.Column="1" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"/>
+                    </Grid>
 
                     <Label Text="{Binding ErrorMessage}"
                            TextColor="Red"
@@ -54,9 +56,6 @@
 
                     <Button Text="Entrar"
                             Command="{Binding IniciarSesionCommand}"
-                            BackgroundColor="#3B4CCA"
-                            TextColor="White"
-                            CornerRadius="10"
                             IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"/>
 
                     <ActivityIndicator IsRunning="{Binding IsBusy}"
@@ -75,41 +74,40 @@
                 </VerticalStackLayout>
             </Frame>
 
-            <!-- Tarjeta REGISTRO -->
             <Frame IsVisible="{Binding MostrandoRegistro}"
-                   BackgroundColor="White"
+                   BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
                    CornerRadius="16"
                    HasShadow="True"
                    Padding="24">
                 <VerticalStackLayout Spacing="12">
 
-                    <Label Text="Crear Cuenta"
-                           FontSize="20"
-                           FontAttributes="Bold"
-                           TextColor="#333333"/>
+                    <Label Text="Crear Cuenta" Style="{StaticResource TitleLabel}"/>
 
                     <Entry Placeholder="Nombre completo"
-                           Text="{Binding RegNombre}"
-                           BackgroundColor="#F5F5F5"/>
+                           Text="{Binding RegNombre}"/>
 
                     <Entry Placeholder="Correo electronico"
                            Text="{Binding RegCorreo}"
-                           Keyboard="Email"
-                           BackgroundColor="#F5F5F5"/>
+                           Keyboard="Email"/>
 
-                    <Entry Placeholder="Contrasena (min. 6 caracteres)"
-                           Text="{Binding RegPassword}"
-                           IsPassword="True"
-                           BackgroundColor="#F5F5F5"/>
+                    <Grid ColumnDefinitions="*, Auto" 
+                          BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2C2C2C}">
+                        <Entry Placeholder="Contrasena" 
+                               Text="{Binding RegPassword}" 
+                               IsPassword="{Binding IsPasswordHidden}" 
+                               Grid.Column="0" VerticalOptions="Center"
+                               BackgroundColor="Transparent"/>
+                        <ImageButton Source="{Binding PasswordIcon}" 
+                                     Command="{Binding TogglePasswordCommand}"
+                                     Grid.Column="1" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"/>
+                    </Grid>
 
                     <Editor Placeholder="Descripcion breve de ti..."
                             Text="{Binding RegDescripcion}"
-                            HeightRequest="70"
-                            BackgroundColor="#F5F5F5"/>
+                            HeightRequest="70"/>
 
                     <Entry Placeholder="Tus habilidades (ej: Python, Guitarra)"
-                           Text="{Binding RegHabilidades}"
-                           BackgroundColor="#F5F5F5"/>
+                           Text="{Binding RegHabilidades}"/>
 
                     <Label Text="{Binding ErrorMessage}"
                            TextColor="Red"
@@ -118,9 +116,6 @@
 
                     <Button Text="Registrarme"
                             Command="{Binding RegistrarCommand}"
-                            BackgroundColor="#3B4CCA"
-                            TextColor="White"
-                            CornerRadius="10"
                             IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"/>
 
                     <ActivityIndicator IsRunning="{Binding IsBusy}"

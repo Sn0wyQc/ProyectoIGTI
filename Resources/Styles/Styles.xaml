@@ -4,20 +4,20 @@
 
     <Style TargetType="Entry">
         <Setter Property="PlaceholderColor" Value="{StaticResource TextHint}"/>
-        <Setter Property="TextColor" Value="{StaticResource TextPrimary}"/>
-        <Setter Property="BackgroundColor" Value="{StaticResource InputBackground}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextPrimary}, Dark=White}"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource InputBackground}, Dark=#2C2C2C}"/>
         <Setter Property="MinimumHeightRequest" Value="44"/>
     </Style>
 
     <Style TargetType="Editor">
         <Setter Property="PlaceholderColor" Value="{StaticResource TextHint}"/>
-        <Setter Property="TextColor" Value="{StaticResource TextPrimary}"/>
-        <Setter Property="BackgroundColor" Value="{StaticResource InputBackground}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextPrimary}, Dark=White}"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource InputBackground}, Dark=#2C2C2C}"/>
     </Style>
 
     <Style TargetType="Button">
-        <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
-        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryLight}}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light=White, Dark=#121212}"/>
         <Setter Property="CornerRadius" Value="10"/>
         <Setter Property="MinimumHeightRequest" Value="44"/>
         <Setter Property="FontAttributes" Value="Bold"/>
@@ -26,7 +26,7 @@
     <Style TargetType="Label" x:Key="TitleLabel">
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontAttributes" Value="Bold"/>
-        <Setter Property="TextColor" Value="{StaticResource TextPrimary}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextPrimary}, Dark=White}"/>
     </Style>
 
 </ResourceDictionary>

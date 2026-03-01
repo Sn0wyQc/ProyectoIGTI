@@ -1,8 +1,8 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.Collections.ObjectModel;
 using SkillSwap.Models;
 using SkillSwap.Services;
+using System.Collections.ObjectModel;
 
 namespace SkillSwap.ViewModels
 {
@@ -14,7 +14,7 @@ namespace SkillSwap.ViewModels
         private ObservableCollection<Post> posts = new();
 
         [ObservableProperty]
-        private List<string> categorias = new(); 
+        private List<string> categorias = new();
 
         [ObservableProperty]
         private string categoriaSeleccionada = "Todas";

@@ -48,8 +48,16 @@
 		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.10" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Compile Update="Views\NotificationPage.xaml.cs">
+	    <DependentUpon>NotificationPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
 		<MauiXaml Update="Platforms\Windows\App.xaml.cs and Platforms\Windows\App.xaml">
 			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\NotificationPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 	</ItemGroup>
 
