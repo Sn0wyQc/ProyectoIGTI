@@ -1,5 +1,5 @@
-using SQLite;
 using SkillSwap.Models;
+using SQLite;
 
 namespace SkillSwap.Services
 {
@@ -89,12 +89,7 @@ namespace SkillSwap.Services
             await InitAsync();
             return await _database!.DeleteAsync(post);
         }
-        public async Task<List<Post>> GetPostsAsync()
-        {
-            await InitAsync();
-            return await _database!.Table<Post>().OrderByDescending(p => p.FechaPublicacion).ToListAsync();
-        }
-        
+
         // ─────────────────────────── MENSAJES ───────────────────────────
 
         public async Task<List<Message>> GetConversacionAsync(int userId1, int userId2)

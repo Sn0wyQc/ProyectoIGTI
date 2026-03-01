@@ -41,7 +41,6 @@ namespace SkillSwap
             builder.Services.AddTransient<FeedPage>();
             builder.Services.AddTransient<ProfilePage>();
             builder.Services.AddTransient<ChatPage>();
-            builder.Services.AddTransient<PublicarPage>();
 
             // ─── Shell ───
             builder.Services.AddSingleton<AppShell>();

@@ -1,15 +1,14 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.Collections.ObjectModel;
 using SkillSwap.Models;
 using SkillSwap.Services;
+using System.Collections.ObjectModel;
 
 namespace SkillSwap.ViewModels
 {
     public partial class FeedViewModel : ObservableObject
     {
         private readonly DatabaseService _db;
-        private readonly HashSet<int> _postsOcultosIds = new();
 
         [ObservableProperty]
         private ObservableCollection<Post> posts = new();
@@ -20,10 +19,24 @@ namespace SkillSwap.ViewModels
         [ObservableProperty]
         private string categoriaSeleccionada = "Todas";
 
-        [ObservableProperty] private string nuevoTitulo = string.Empty;
-        [ObservableProperty] private string nuevaDescripcion = string.Empty;
-        [ObservableProperty] private string nuevaCategoria = "Tecnología";
-        [ObservableProperty] private Post? postEditando = null;
+        [ObservableProperty]
+        private bool isBusy = false;
+
+        // Campos para nuevo/editar anuncio
+        [ObservableProperty]
+        private string nuevoTitulo = string.Empty;
+
+        [ObservableProperty]
+        private string nuevaDescripcion = string.Empty;
+
+        [ObservableProperty]
+        private string nuevaCategoria = "Tecnología";
+
+        [ObservableProperty]
+        private TipoAnuncio nuevoTipo = TipoAnuncio.Ofrezco;
+
+        [ObservableProperty]
+        private Post? postEditando = null;
 
         public FeedViewModel(DatabaseService db)
         {
@@ -33,27 +46,49 @@ namespace SkillSwap.ViewModels
 
         public async Task CargarPostsAsync()
         {
-            List<Post> lista;
-            if (CategoriaSeleccionada == "Todas")
+            IsBusy = true;
+            try
             {
-                lista = await _db.GetPostsAsync();
+                var lista = await _db.GetPostsByCategoriaAsync(CategoriaSeleccionada);
+                Posts = new ObservableCollection<Post>(lista);
             }
-            else
+            finally
             {
-                lista = await _db.GetPostsByCategoriaAsync(CategoriaSeleccionada);
+                IsBusy = false;
             }
-            var filtrados = lista.Where(p => !_postsOcultosIds.Contains(p.Id)).ToList();
-            Posts = new ObservableCollection<Post>(filtrados);
+        }
+
+        [RelayCommand]
+        private async Task FiltrarPorCategoriaAsync()
+        {
+            await CargarPostsAsync();
         }
 
         [RelayCommand]
         private async Task MostrarFormulario()
         {
+            // Limpiamos datos
             PostEditando = null;
             NuevoTitulo = string.Empty;
             NuevaDescripcion = string.Empty;
             NuevaCategoria = "Tecnología";
-            await Shell.Current.GoToAsync("PublicarPage");
+            NuevoTipo = TipoAnuncio.Ofrezco;
+
+            // NAVEGACIÓN A LA NUEVA PÁGINA
+            await Shell.Current.GoToAsync("PostEditPage");
+        }
+
+        [RelayCommand]
+        private async Task EditarPost(Post post)
+        {
+            PostEditando = post;
+            NuevoTitulo = post.Titulo;
+            NuevaDescripcion = post.Descripcion;
+            NuevaCategoria = post.Categoria;
+            NuevoTipo = post.Tipo;
+
+            // NAVEGACIÓN A LA NUEVA PÁGINA
+            await Shell.Current.GoToAsync("PostEditPage");
         }
 
         [RelayCommand]
@@ -61,48 +96,68 @@ namespace SkillSwap.ViewModels
         {
             if (string.IsNullOrWhiteSpace(NuevoTitulo))
             {
-                await Shell.Current.DisplayAlert("Error", "El título es obligatorio", "OK");
+                await Shell.Current.DisplayAlert("Error", "El título es obligatorio.", "OK");
                 return;
             }
 
             var usuario = UserService.UsuarioActual;
-            if (usuario == null) return;
+            if (usuario is null) return;
 
-            var post = new Post
+            string mensaje = "";
+
+            if (PostEditando is not null)
             {
-                Titulo = NuevoTitulo.Trim(),
-                Descripcion = NuevaDescripcion,
-                Categoria = NuevaCategoria,
-                UsuarioId = usuario.Id,
-                NombreUsuario = usuario.Nombre,
-                FechaPublicacion = DateTime.Now
-            };
+                PostEditando.Titulo = NuevoTitulo.Trim();
+                PostEditando.Descripcion = NuevaDescripcion;
+                PostEditando.Categoria = NuevaCategoria;
+                PostEditando.Tipo = NuevoTipo;
+                await _db.SavePostAsync(PostEditando);
+                mensaje = "Anuncio actualizado correctamente.";
+            }
+            else
+            {
+                var post = new Post
+                {
+                    Titulo = NuevoTitulo.Trim(),
+                    Descripcion = NuevaDescripcion,
+                    Categoria = NuevaCategoria,
+                    Tipo = NuevoTipo,
+                    UsuarioId = usuario.Id,
+                    NombreUsuario = usuario.Nombre,
+                    FechaPublicacion = DateTime.Now
+                };
+                await _db.SavePostAsync(post);
+                mensaje = "¡Anuncio publicado con éxito!";
+            }
 
-            // Guardar en la base de datos
-            await _db.SavePostAsync(post);
+            // Mostrar confirmación
+            await Shell.Current.DisplayAlert("Éxito", mensaje, "OK");
 
-            // Limpiar el formulario para la próxima vez
-            NuevoTitulo = string.Empty;
-            NuevaDescripcion = string.Empty;
-
-            // Regresar al Feed
+            // VOLVER ATRÁS Y RECARGAR
             await Shell.Current.GoToAsync("..");
-
-            // FORZAR RECARGA: Esto es lo que hace que aparezca de inmediato
             await CargarPostsAsync();
         }
 
         [RelayCommand]
-        private async Task CancelarFormulario() => await Shell.Current.GoToAsync("..");
-
-        [RelayCommand]
-
-        private void OcultarAnuncio(Post post)
+        private async Task EliminarPostAsync(Post post)
         {
-            if (post == null) return;
-            _postsOcultosIds.Add(post.Id);
-            Posts.Remove(post);
+            bool confirmar = await Shell.Current.DisplayAlert("Eliminar", $"¿Eliminar '{post.Titulo}'?", "Sí", "No");
+            if (!confirmar) return;
+
+            await _db.DeletePostAsync(post);
+            await CargarPostsAsync();
         }
 
+        [RelayCommand]
+        private async Task CancelarFormulario()
+        {
+            // VOLVER ATRÁS SIN GUARDAR
+            await Shell.Current.GoToAsync("..");
+        }
+
+        public bool EsDelUsuarioActual(Post post)
+        {
+            return UserService.UsuarioActual?.Id == post.UsuarioId;
+        }
     }
 }

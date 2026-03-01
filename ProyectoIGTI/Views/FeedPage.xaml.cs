@@ -1,33 +1,53 @@
+using SkillSwap.ViewModels;
+
 namespace SkillSwap.Views
 {
     public partial class FeedPage : ContentPage
     {
-        public FeedPage(ViewModels.FeedViewModel viewModel)
+        private readonly FeedViewModel _vm;
+
+        public FeedPage(FeedViewModel vm)
         {
             InitializeComponent();
-            BindingContext = viewModel;
+            _vm = vm;
+            BindingContext = vm;
         }
+
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
-            // Verificamos que el BindingContext sea nuestro ViewModel
-            if (BindingContext is SkillSwap.ViewModels.FeedViewModel vm)
-            {
-                // Forzamos la carga de anuncios desde la DB
-                await vm.CargarPostsAsync();
-            }
+            await _vm.CargarPostsAsync();
         }
 
-        // Maneja el clic de "Todas" y las demás categorías
         private async void OnCategoriaClicked(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-            if (BindingContext is ViewModels.FeedViewModel vm)
+            if (sender is Button btn)
             {
-                vm.CategoriaSeleccionada = button.Text;
-                await vm.CargarPostsAsync();
+                // 1. Buscamos el contenedor que tiene todos los botones de categorías
+                // Como el botón está dentro del BindableLayout del HorizontalStackLayout:
+                var contenedor = btn.Parent as HorizontalStackLayout;
+
+                if (contenedor != null)
+                {
+                    // 2. RECORREMOS todos los botones y les quitamos el borde (los apagamos)
+                    foreach (var hijo in contenedor.Children)
+                    {
+                        if (hijo is Button botonHijo)
+                        {
+                            botonHijo.BorderWidth = 0;
+                            botonHijo.BorderColor = Colors.Transparent;
+                        }
+                    }
+                }
+
+                // 3. ENCENDEMOS solo el botón que se acaba de presionar
+                btn.BorderWidth = 2;
+                btn.BorderColor = Color.FromArgb("#512BD4"); // Tu color Primary
+
+                // 4. Actualizamos el ViewModel y cargamos los posts
+                _vm.CategoriaSeleccionada = btn.Text;
+                await _vm.CargarPostsAsync();
             }
         }
     }
-}   
+}

@@ -8,25 +8,6 @@ namespace SkillSwap.Models
         Busco
     }
 
-    /// <summary>
-    /// Clase auxiliar para centralizar las ramas/categorías del sistema
-    /// </summary>
-    public static class Categorias
-    {
-        public static List<string> Lista = new()
-        {
-            "Todas",
-            "Tecnología",
-            "Música",
-            "Matemáticas",
-            "Deportes",
-            "Idiomas",
-            "Arte",
-            "Cocina",
-            "Otros"
-        };
-    }
-
     [Table("Posts")]
     public class Post
     {
