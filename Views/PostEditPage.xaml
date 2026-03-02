@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SkillSwap.ViewModels"
+             x:Class="SkillSwap.Views.PostEditPage"
+             x:DataType="vm:FeedViewModel"
+             Title="Publicar Anuncio">
+
+    <ScrollView BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}">
+
+        <VerticalStackLayout Spacing="15" Padding="20">
+
+            <Label Text="Detalles del Anuncio"
+                   FontAttributes="Bold"
+                   FontSize="18"
+                   TextColor="{AppThemeBinding Light=#333, Dark=White}"/>
+
+            <Entry Placeholder="Título del anuncio"
+                   Text="{Binding NuevoTitulo}"
+                   MaxLength="50"/>
+
+            <Editor Placeholder="Describe tu habilidad o lo que buscas..."
+                    Text="{Binding NuevaDescripcion}"
+                    HeightRequest="150"
+                    AutoSize="Disabled"/>
+
+            <Label Text="Categoría" FontAttributes="Bold" Margin="0,5,0,0"/>
+            <Picker Title="Selecciona una categoría"
+                    ItemsSource="{Binding Categorias}"
+                    SelectedItem="{Binding NuevaCategoria}"
+                    TextColor="{AppThemeBinding Light=#333, Dark=White}"/>
+
+            <Label Text="Modalidad" FontAttributes="Bold" Margin="0,5,0,0"/>
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="📍 Presencial"
+                        Command="{Binding SeleccionarModalidadCommand}"
+                        CommandParameter="Presencial"
+                        BackgroundColor="{Binding ModalidadColorPresencial}"
+                        TextColor="{Binding ModalidadTextoPresencial}"
+                        CornerRadius="10"
+                        HeightRequest="45"
+                        Padding="15,0"/>
+
+                <Button Text="🌐 Virtual"
+                        Command="{Binding SeleccionarModalidadCommand}"
+                        CommandParameter="Virtual"
+                        BackgroundColor="{Binding ModalidadColorVirtual}"
+                        TextColor="{Binding ModalidadTextoVirtual}"
+                        CornerRadius="10"
+                        HeightRequest="45"
+                        Padding="15,0"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Precio / Valor del intercambio" FontAttributes="Bold" Margin="0,5,0,0"/>
+            <Grid ColumnDefinitions="*, Auto" ColumnSpacing="10">
+
+                <Entry Grid.Column="0"
+                       Placeholder="Escribe el monto..."
+                       Text="{Binding NuevoPrecio}"
+                       Keyboard="Numeric"
+                       IsEnabled="{Binding PuedeEditarPrecio}"
+                       VerticalOptions="Center"/>
+
+                <Button Grid.Column="1"
+                        Text="Es Gratuito"
+                        Command="{Binding AlternarGratisCommand}"
+                        BackgroundColor="{Binding ColorBotonGratis}"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HeightRequest="45"
+                        Padding="15,0"/>
+            </Grid>
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="15" Margin="0,20,0,0">
+                <Button Grid.Column="0"
+                        Text="Guardar"
+                        Command="{Binding GuardarPostCommand}"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HeightRequest="50">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.95" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
+
+                <Button Grid.Column="1"
+                        Text="Cancelar"
+                        Command="{Binding CancelarFormularioCommand}"
+                        BackgroundColor="{AppThemeBinding Light=#E0E0E0, Dark=#333333}"
+                        TextColor="{AppThemeBinding Light=#333333, Dark=White}"
+                        CornerRadius="10"
+                        HeightRequest="50">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.95" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
