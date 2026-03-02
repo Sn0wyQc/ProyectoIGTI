@@ -3,6 +3,8 @@ using CommunityToolkit.Mvvm.Input;
 using SkillSwap.Models;
 using SkillSwap.Services;
 using System.Collections.ObjectModel;
+using SkillSwap.Views; // Agregado para acceder a tus Popups
+using CommunityToolkit.Maui.Views; // Agregado para usar ShowPopup y ShowPopupAsync
 
 namespace SkillSwap.ViewModels
 {
@@ -94,12 +96,17 @@ namespace SkillSwap.ViewModels
         {
             if (string.IsNullOrWhiteSpace(NuevoTitulo))
             {
-                await Shell.Current.DisplayAlert("Error", "El título es obligatorio.", "OK");
+                // Popup de Error (antes era DisplayAlert)
+                var popupError = new ResultadoPopup("El título es obligatorio.");
+                Shell.Current.CurrentPage.ShowPopup(popupError);
                 return;
             }
 
             var usuario = UserService.UsuarioActual;
             if (usuario is null) return;
+
+            // Variable para saber si editamos o creamos 
+            string mensajeExito = "";
 
             if (PostEditando is not null)
             {
@@ -108,6 +115,7 @@ namespace SkillSwap.ViewModels
                 PostEditando.Categoria = NuevaCategoria;
                 PostEditando.Tipo = NuevoTipo;
                 await _db.SavePostAsync(PostEditando);
+                mensajeExito = "Anuncio actualizado exitosamente";
             }
             else
             {
@@ -122,20 +130,32 @@ namespace SkillSwap.ViewModels
                     FechaPublicacion = DateTime.Now
                 };
                 await _db.SavePostAsync(post);
+                mensajeExito = "Anuncio creado exitosamente";
             }
 
             MostrandoFormulario = false;
             await CargarPostsAsync();
+
+            // Popup de Éxito 
+            var popupExito = new ResultadoPopup(mensajeExito);
+            Shell.Current.CurrentPage.ShowPopup(popupExito);
         }
 
         [RelayCommand]
         private async Task EliminarPostAsync(Post post)
         {
-            bool confirmar = await Shell.Current.DisplayAlert("Eliminar", $"¿Eliminar '{post.Titulo}'?", "Sí", "No");
-            if (!confirmar) return;
+            // Popup de Confirmación de 2 botones (antes era DisplayAlert)
+            var popup = new ConfirmacionPopup("Eliminar anuncio", $"¿Estás seguro de que deseas eliminar '{post.Titulo}'?");
+            bool? confirmar = await Shell.Current.CurrentPage.ShowPopupAsync(popup) as bool?;
+
+            if (confirmar != true) return;
 
             await _db.DeletePostAsync(post);
             await CargarPostsAsync();
+
+            // Avisar que se eliminó correctamente
+            var popupEliminado = new ResultadoPopup("Anuncio eliminado");
+            Shell.Current.CurrentPage.ShowPopup(popupEliminado);
         }
 
         [RelayCommand]

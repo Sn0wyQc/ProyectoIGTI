@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "PmgSEcwKGqA=",
+  "dgSpecHash": "ey00WMX0DUA=",
   "success": true,
   "projectFilePath": "C:\\Users\\Yovany\\Downloads\\ProyectoIGTI-Yovany (1)\\ProyectoIGTI-Yovany\\SkillSwap.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Yovany\\.nuget\\packages\\communitytoolkit.diagnostics\\8.4.0\\communitytoolkit.diagnostics.8.4.0.nupkg.sha512",
+    "C:\\Users\\Yovany\\.nuget\\packages\\communitytoolkit.highperformance\\8.4.0\\communitytoolkit.highperformance.8.4.0.nupkg.sha512",
     "C:\\Users\\Yovany\\.nuget\\packages\\communitytoolkit.maui\\9.1.0\\communitytoolkit.maui.9.1.0.nupkg.sha512",
     "C:\\Users\\Yovany\\.nuget\\packages\\communitytoolkit.maui.core\\9.1.0\\communitytoolkit.maui.core.9.1.0.nupkg.sha512",
-    "C:\\Users\\Yovany\\.nuget\\packages\\communitytoolkit.mvvm\\8.3.2\\communitytoolkit.mvvm.8.3.2.nupkg.sha512",
+    "C:\\Users\\Yovany\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512",
     "C:\\Users\\Yovany\\.nuget\\packages\\googlegson\\2.13.0.1\\googlegson.2.13.0.1.nupkg.sha512",
     "C:\\Users\\Yovany\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.8\\microsoft.extensions.configuration.9.0.8.nupkg.sha512",
     "C:\\Users\\Yovany\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.8\\microsoft.extensions.configuration.abstractions.9.0.8.nupkg.sha512",

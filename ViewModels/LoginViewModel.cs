@@ -1,6 +1,8 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using SkillSwap.Services;
+using SkillSwap.Views; 
+using CommunityToolkit.Maui.Views; 
 
 namespace SkillSwap.ViewModels
 {
@@ -71,7 +73,6 @@ namespace SkillSwap.ViewModels
             }
             finally { IsBusy = false; }
         }
-
         [RelayCommand]
         private async Task RegistrarAsync()
         {
@@ -82,14 +83,22 @@ namespace SkillSwap.ViewModels
                 var (exito, mensaje) = await _userService.RegistrarAsync(RegNombre, RegCorreo, RegPassword, RegDescripcion, RegHabilidades);
                 if (exito)
                 {
-                    await Shell.Current.DisplayAlert("¡Listo!", "Cuenta creada.", "OK");
+                    var popup = new ResultadoPopup("¡Registro Exitoso!");
+                    Shell.Current.CurrentPage.ShowPopup(popup);
+
                     MostrandoRegistro = false;
                     Correo = RegCorreo;
                 }
-                else ErrorMessage = mensaje;
+                else
+                {
+                    ErrorMessage = mensaje;
+                }
             }
-            finally { IsBusy = false; }
-        }
+            finally
+            {
+                IsBusy = false;
+            }
+        } 
 
         [RelayCommand]
         private void ToggleRegistro()
@@ -97,7 +106,5 @@ namespace SkillSwap.ViewModels
             MostrandoRegistro = !MostrandoRegistro;
             ErrorMessage = string.Empty;
         }
-    }
-}
-
-
+    } 
+} 

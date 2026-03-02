@@ -3,6 +3,8 @@ using CommunityToolkit.Mvvm.Input;
 using SkillSwap.Models;
 using SkillSwap.Services;
 using System.Collections.ObjectModel;
+using SkillSwap.Views; // Agregado para el Popup
+using CommunityToolkit.Maui.Views; // Agregado para ShowPopup
 
 namespace SkillSwap.ViewModels
 {
@@ -67,7 +69,18 @@ namespace SkillSwap.ViewModels
             try
             {
                 var (exito, mensaje) = await _userService.ActualizarPerfilAsync(Nombre, Descripcion, Habilidades);
-                MensajeEstado = mensaje;
+
+                if (exito)
+                {
+                   
+                    var popup = new ResultadoPopup("Cambios guardados correctamente");
+                    Shell.Current.CurrentPage.ShowPopup(popup);
+                }
+                else
+                {
+                    
+                    MensajeEstado = mensaje;
+                }
             }
             finally
             {
@@ -78,8 +91,14 @@ namespace SkillSwap.ViewModels
         [RelayCommand]
         private async Task CerrarSesionAsync()
         {
-            bool confirmar = await Shell.Current.DisplayAlert("Cerrar sesión", "¿Deseas cerrar sesión?", "Sí", "No");
-            if (!confirmar) return;
+            // Creamos nuestro popup de confirmación personalizado
+            var popup = new ConfirmacionPopup("Cerrar sesión", "¿Estás seguro de que deseas salir de tu cuenta?");
+
+            // Lo mostramos y esperamos a que el usuario toque Sí o No. Devuelve un object, así que lo convertimos a bool?
+            bool? confirmar = await Shell.Current.CurrentPage.ShowPopupAsync(popup) as bool?;
+
+            // Si tocó "No" o cerró el popup tocando fuera, confirmar será false o null
+            if (confirmar != true) return;
 
             _userService.CerrarSesion();
             await Shell.Current.GoToAsync("//LoginPage");

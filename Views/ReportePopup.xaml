@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="SkillSwap.Views.ReportePopup"
+               Color="Transparent">
+
+    <Frame BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}" 
+           CornerRadius="20" Padding="24" WidthRequest="320" HasShadow="True">
+
+        <VerticalStackLayout Spacing="15">
+            <Label Text="Reportar" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" TextColor="{AppThemeBinding Light=#E53935, Dark=#FF6B6B}"/>
+
+            <Label Text="Selecciona el motivo principal:" FontSize="14" TextColor="{AppThemeBinding Light=#666, Dark=#B0BEE8}"/>
+
+            <Picker x:Name="MotivoPicker" Title="Toca para elegir..." 
+                    TextColor="{AppThemeBinding Light=Black, Dark=White}" 
+                    TitleColor="Gray">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Acoso o insultos</x:String>
+                        <x:String>Spam / Publicidad</x:String>
+                        <x:String>Contenido inapropiado</x:String>
+                        <x:String>Uso indebido de la app</x:String>
+                        <x:String>Otro</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Entry x:Name="DetallesEntry" Placeholder="Detalles (opcional)..." 
+                   TextColor="{AppThemeBinding Light=Black, Dark=White}" 
+                   PlaceholderColor="Gray" />
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="15" Margin="0,15,0,0">
+                <Button Grid.Column="0" Text="Cancelar" Command="{Binding CancelarCommand}" 
+                        BackgroundColor="Transparent" TextColor="#3B4CCA" 
+                        BorderColor="#3B4CCA" BorderWidth="1" CornerRadius="12"/>
+
+                <Button Grid.Column="1" Text="Enviar" Command="{Binding EnviarCommand}" 
+                        BackgroundColor="#E53935" TextColor="White" CornerRadius="12"/>
+            </Grid>
+        </VerticalStackLayout>
+    </Frame>
+</toolkit:Popup>
