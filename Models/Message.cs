@@ -24,5 +24,8 @@ namespace SkillSwap.Models
         public string NombreReceptor { get; set; } = string.Empty;
 
         public bool Leido { get; set; } = false;
+
+        [Ignore] // IMPORTANTE para que SQLite no lo guarde
+        public bool EsMio { get; set; }
     }
 }

@@ -114,6 +114,7 @@ namespace SkillSwap.ViewModels
                 usuario.Id, usuario.Nombre,
                 ContactoSeleccionado.Id, ContactoSeleccionado.Nombre,
                 texto);
+            await CargarMensajesAsync();
         }
 
         private async Task ActualizarNoLeidosAsync()
