@@ -35,6 +35,7 @@
 
                     <Entry Placeholder="Correo electronico"
                            Text="{Binding Correo}"
+                           ReturnType="Next"
                            Keyboard="Email"/>
 
                     <Grid ColumnDefinitions="*, Auto" 
@@ -43,7 +44,9 @@
                                Text="{Binding Password}" 
                                IsPassword="{Binding IsPasswordHidden}" 
                                Grid.Column="0" VerticalOptions="Center"
-                               BackgroundColor="Transparent"/>
+                               BackgroundColor="Transparent"
+                               ReturnType="Go"
+                               ReturnCommand="{Binding IniciarSesionCommand}"/>
                         <ImageButton Source="{Binding PasswordIcon}" 
                                      Command="{Binding TogglePasswordCommand}"
                                      Grid.Column="1" WidthRequest="40" HeightRequest="40" BackgroundColor="Transparent"/>

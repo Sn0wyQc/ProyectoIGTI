@@ -1,5 +1,11 @@
 is_global = true
 build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
+build_property._MvvmToolkitIsUsingWindowsRuntimePack = true
+build_property.CsWinRTComponent = 
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotWarningLevel = 
+build_property.CsWinRTAotWarningLevel = 
 build_property.TargetFramework = net9.0-windows10.0.19041.0
 build_property.TargetPlatformMinVersion = 10.0.17763.0
 build_property.UsingMicrosoftNETSdkWeb = 
@@ -12,13 +18,11 @@ build_property.RootNamespace = SkillSwap
 build_property.ProjectDir = C:\Users\Yovany\Downloads\ProyectoIGTI-Yovany (1)\ProyectoIGTI-Yovany\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.CsWinRTAotOptimizerEnabled = true
 build_property.CsWinRTAotExportsEnabled = 
 build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptIn = 
 build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptOut = 
 build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
 build_property.CsWinRTMergeReferencedActivationFactories = 
-build_property.CsWinRTAotWarningLevel = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
@@ -53,6 +57,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ChatPage.x
 build_metadata.AdditionalFiles.TargetPath = Views\ChatPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ChatPage.xaml
 
+[C:/Users/Yovany/Downloads/ProyectoIGTI-Yovany (1)/ProyectoIGTI-Yovany/Views/ConfirmaciónPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ConfirmaciónPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ConfirmaciónPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ConfirmaciónPopup.xaml
+
 [C:/Users/Yovany/Downloads/ProyectoIGTI-Yovany (1)/ProyectoIGTI-Yovany/Views/FeedPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.FeedPage.xaml
@@ -70,3 +80,15 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ProfilePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ProfilePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ProfilePage.xaml
+
+[C:/Users/Yovany/Downloads/ProyectoIGTI-Yovany (1)/ProyectoIGTI-Yovany/Views/ReportePopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ReportePopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ReportePopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ReportePopup.xaml
+
+[C:/Users/Yovany/Downloads/ProyectoIGTI-Yovany (1)/ProyectoIGTI-Yovany/Views/ResultadoPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ResultadoPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ResultadoPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ResultadoPopup.xaml

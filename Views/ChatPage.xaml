@@ -94,6 +94,6 @@
     </Grid>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Reportar"
-             Clicked="OnReportClicked"/>
+             Command="{Binding AbrirReporteCommand}"/>
     </ContentPage.ToolbarItems>
 </ContentPage>
