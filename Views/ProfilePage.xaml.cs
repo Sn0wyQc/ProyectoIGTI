@@ -22,7 +22,6 @@ namespace SkillSwap.Views
         }
         private void OnMenuClicked(object sender, EventArgs e)
         {
-            Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
             Shell.Current.FlyoutIsPresented = true;
         }
         private async void OnCambiarFotoClicked(object sender, EventArgs e)

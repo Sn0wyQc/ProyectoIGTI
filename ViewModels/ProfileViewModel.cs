@@ -1,8 +1,10 @@
+using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.Collections.ObjectModel;
 using SkillSwap.Models;
 using SkillSwap.Services;
+using SkillSwap.Views;
+using System.Collections.ObjectModel;
 
 namespace SkillSwap.ViewModels
 {
@@ -84,7 +86,16 @@ namespace SkillSwap.ViewModels
             try
             {
                 var (exito, mensaje) = await _userService.ActualizarPerfilAsync(Nombre, Descripcion, Habilidades);
-                MensajeEstado = mensaje;
+
+                if (exito)
+                {
+                    var popup = new ResultadoPopup("Cambios guardados correctamente.");
+                    Shell.Current.CurrentPage.ShowPopup(popup);
+                }
+                else
+                {
+                    MensajeEstado = mensaje;
+                }
             }
             finally
             {
@@ -95,8 +106,9 @@ namespace SkillSwap.ViewModels
         [RelayCommand]
         private async Task CerrarSesionAsync()
         {
-            bool confirmar = await Shell.Current.DisplayAlert("Cerrar sesión", "¿Deseas cerrar sesión?", "Sí", "No");
-            if (!confirmar) return;
+            var popup = new ConfirmacionPopup("Cerrar sesión", "¿Estás seguro de que deseas salir?");
+            bool? confirmar = await Shell.Current.CurrentPage.ShowPopupAsync(popup) as bool?;
+            if (confirmar != true) return;
 
             _userService.CerrarSesion();
             await Shell.Current.GoToAsync("//LoginPage");
@@ -105,8 +117,6 @@ namespace SkillSwap.ViewModels
         [RelayCommand]
         public async Task CambiarFotoPerfilAsync()
         {
-            System.Diagnostics.Debug.WriteLine("[FOTO] Comando iniciado");
-
 #if ANDROID || IOS
             var status = await Permissions.RequestAsync<Permissions.Photos>();
             if (status != PermissionStatus.Granted)
@@ -137,7 +147,6 @@ namespace SkillSwap.ViewModels
                 var filePath = Path.Combine(folder, $"profile_{UserService.UsuarioActual!.Id}_{DateTimeOffset.UtcNow.ToUnixTimeSeconds()}.jpg");
                 await File.WriteAllBytesAsync(filePath, bytes);
 
-                // Borrar foto anterior si existe
                 if (!string.IsNullOrEmpty(UserService.UsuarioActual.FotoPerfil) &&
                     File.Exists(UserService.UsuarioActual.FotoPerfil) &&
                     UserService.UsuarioActual.FotoPerfil != filePath)
@@ -146,7 +155,6 @@ namespace SkillSwap.ViewModels
                 UserService.UsuarioActual.FotoPerfil = filePath;
                 await _userService.ActualizarFotoPerfilAsync(filePath);
 
-                // Actualizar UI en hilo principal
                 await MainThread.InvokeOnMainThreadAsync(() =>
                 {
                     TieneFoto = false;
@@ -161,7 +169,6 @@ namespace SkillSwap.ViewModels
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"[FOTO] ERROR: {ex.Message}\n{ex.StackTrace}");
                 await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
             }
             finally
@@ -173,8 +180,9 @@ namespace SkillSwap.ViewModels
         [RelayCommand]
         private async Task EliminarFotoPerfilAsync()
         {
-            bool confirmar = await Shell.Current.DisplayAlert("Eliminar foto", "¿Deseas eliminar tu foto de perfil?", "Sí", "No");
-            if (!confirmar) return;
+            var popup = new ConfirmacionPopup("Eliminar foto", "¿Deseas eliminar tu foto de perfil?");
+            bool? confirmar = await Shell.Current.CurrentPage.ShowPopupAsync(popup) as bool?;
+            if (confirmar != true) return;
 
             if (!string.IsNullOrEmpty(UserService.UsuarioActual!.FotoPerfil) &&
                 File.Exists(UserService.UsuarioActual.FotoPerfil))
@@ -191,7 +199,6 @@ namespace SkillSwap.ViewModels
 
         private static byte[] ResizeImage(byte[] imageBytes, int maxWidth, int maxHeight)
         {
-
             using var inputStream = new MemoryStream(imageBytes);
             using var bitmap = SkiaSharp.SKBitmap.Decode(inputStream);
 
@@ -207,7 +214,6 @@ namespace SkillSwap.ViewModels
             using var image = SkiaSharp.SKImage.FromBitmap(resized);
             using var data = image.Encode(SkiaSharp.SKEncodedImageFormat.Jpeg, 85);
             return data.ToArray();
-           
         }
     }
 }

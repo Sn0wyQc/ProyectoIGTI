@@ -24,9 +24,10 @@ namespace SkillSwap.Services
             await _database.CreateTableAsync<Post>();
             await _database.CreateTableAsync<Message>();
             await _database.CreateTableAsync<Skill>();
+            await _database.CreateTableAsync<Report>();
         }
 
-        // ─────────────────────────── USUARIOS ───────────────────────────
+        // ——————————————————————————— USUARIOS ———————————————————————————
 
         public async Task<User?> GetUserByEmailAsync(string correo)
         {
@@ -54,7 +55,7 @@ namespace SkillSwap.Services
             return await _database!.Table<User>().ToListAsync();
         }
 
-        // ─────────────────────────── POSTS ───────────────────────────
+        // ——————————————————————————— POSTS ———————————————————————————
 
         public async Task<List<Post>> GetAllPostsAsync()
         {
@@ -90,7 +91,7 @@ namespace SkillSwap.Services
             return await _database!.DeleteAsync(post);
         }
 
-        // ─────────────────────────── MENSAJES ───────────────────────────
+        // ——————————————————————————— MENSAJES ———————————————————————————
 
         public async Task<List<Message>> GetConversacionAsync(int userId1, int userId2)
         {
@@ -137,6 +138,14 @@ namespace SkillSwap.Services
             return await _database!.Table<Message>()
                 .Where(m => m.ReceptorId == userId && !m.Leido)
                 .CountAsync();
+        }
+
+        // ——————————————————————————— REPORTES ———————————————————————————
+
+        public async Task<int> SaveReportAsync(Report report)
+        {
+            await InitAsync();
+            return await _database!.InsertAsync(report);
         }
     }
 }

@@ -4,6 +4,7 @@
        xmlns:views="clr-namespace:SkillSwap.Views"
        x:Class="SkillSwap.AppShell"
        FlyoutBehavior="Disabled"
+       FlyoutIcon="{x:Null}"
        FlyoutBackgroundColor="#1E2A6E">
 
     <!-- Header del Flyout -->
@@ -43,23 +44,43 @@
                   Shell.NavBarIsVisible="False"/>
 
     <!-- Anuncios -->
-    <FlyoutItem Title="Anuncios" Shell.NavBarIsVisible="False">
+    <FlyoutItem Title="Anuncios">
         <ShellContent Route="FeedPage"
-                  Shell.NavBarIsVisible="False"
-                  ContentTemplate="{DataTemplate views:FeedPage}"/>
+                      Shell.NavBarIsVisible="False"
+                      ContentTemplate="{DataTemplate views:FeedPage}"/>
     </FlyoutItem>
 
     <!-- Mensajes -->
     <FlyoutItem Title="Mensajes">
         <ShellContent Route="ChatPage"
-                  Shell.NavBarIsVisible="False"
-                  ContentTemplate="{DataTemplate views:ChatPage}"/>
+                      Shell.NavBarIsVisible="False"
+                      ContentTemplate="{DataTemplate views:ChatPage}"/>
     </FlyoutItem>
 
     <!-- Perfil -->
     <FlyoutItem Title="Mi Perfil">
         <ShellContent Route="ProfilePage"
-                  Shell.NavBarIsVisible="False"
-                  ContentTemplate="{DataTemplate views:ProfilePage}"/>
+                      Shell.NavBarIsVisible="False"
+                      ContentTemplate="{DataTemplate views:ProfilePage}"/>
     </FlyoutItem>
+
+    <!-- Modo Oscuro (al final del menú) -->
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout Padding="20,10,20,30" BackgroundColor="#1E2A6E">
+            <BoxView HeightRequest="1" BackgroundColor="#3B4CCA" Margin="0,0,0,15"/>
+            <Grid ColumnDefinitions="*, Auto">
+                <Label Grid.Column="0"
+                       Text="Modo oscuro"
+                       TextColor="White"
+                       FontSize="15"
+                       VerticalOptions="Center"/>
+                <Switch Grid.Column="1"
+                        x:Name="DarkModeSwitch"
+                        OnColor="#3B4CCA"
+                        ThumbColor="White"
+                        Toggled="OnDarkModeToggled"/>
+            </Grid>
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
+
 </Shell>

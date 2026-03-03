@@ -7,13 +7,13 @@
              x:DataType="vm:ChatViewModel"
              Title="Mensajes"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="#F0F4FF">
+             BackgroundColor="{AppThemeBinding Light=#F0F4FF, Dark=#121212}">
 
     <Grid RowDefinitions="Auto,Auto,*,Auto">
 
-        <!-- Barra superior personalizada (Row 0) -->
+        <!-- Barra superior (Row 0) -->
         <Grid Grid.Row="0"
-              BackgroundColor="#1E2A6E"
+              BackgroundColor="{AppThemeBinding Light=#1E2A6E, Dark=#0A0A1A}"
               Padding="10,10,10,10"
               ColumnDefinitions="50, *, 50">
 
@@ -31,30 +31,41 @@
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"/>
+
+            <Button Grid.Column="2"
+                    Text="⚑"
+                    TextColor="#FF6B6B"
+                    FontSize="20"
+                    BackgroundColor="Transparent"
+                    Command="{Binding AbrirReporteCommand}"
+                    IsVisible="{Binding ContactoSeleccionado, Converter={StaticResource IsNotNullConverter}}"/>
         </Grid>
 
         <!-- Selector de contacto (Row 1) -->
         <Frame Grid.Row="1"
-               BackgroundColor="White"
+               BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
                Padding="12,8"
                HasShadow="True"
-               CornerRadius="0">
+               CornerRadius="0"
+               BorderColor="{AppThemeBinding Light=Transparent, Dark=#333333}">
             <Grid ColumnDefinitions="Auto,*">
                 <Label Grid.Column="0"
                        Text="Chatear con:"
                        VerticalOptions="Center"
                        FontSize="14"
-                       TextColor="#666666"
+                       TextColor="{AppThemeBinding Light=#666666, Dark=#B0BEE8}"
                        Margin="0,0,10,0"/>
                 <Picker Grid.Column="1"
                         ItemsSource="{Binding Contactos}"
                         ItemDisplayBinding="{Binding Nombre}"
                         SelectedItem="{Binding ContactoSeleccionado}"
-                        Title="Selecciona un usuario"/>
+                        Title="Selecciona un usuario"
+                        TextColor="{AppThemeBinding Light=#222222, Dark=White}"
+                        TitleColor="{AppThemeBinding Light=#999999, Dark=#666666}"/>
             </Grid>
         </Frame>
 
-        <!-- Mensajes de la conversacion (Row 2) -->
+        <!-- Mensajes (Row 2) -->
         <CollectionView Grid.Row="2"
                         x:Name="MensajesCollection"
                         ItemsSource="{Binding Mensajes}"
@@ -62,7 +73,7 @@
             <CollectionView.EmptyView>
                 <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
                     <Label Text="Selecciona un contacto para chatear"
-                           TextColor="#aaaaaa"
+                           TextColor="{AppThemeBinding Light=#aaaaaa, Dark=#555555}"
                            HorizontalOptions="Center"
                            FontSize="14"/>
                 </VerticalStackLayout>
@@ -95,15 +106,17 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <!-- Input para escribir mensaje (Row 3) -->
+        <!-- Input mensaje (Row 3) -->
         <Grid Grid.Row="3"
               ColumnDefinitions="*,Auto"
-              BackgroundColor="White"
+              BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
               Padding="12,8">
             <Entry Grid.Column="0"
                    Placeholder="Escribe un mensaje..."
                    Text="{Binding NuevoMensaje}"
-                   BackgroundColor="#F5F5F5"
+                   BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2A2A2A}"
+                   TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                   PlaceholderColor="{AppThemeBinding Light=#999, Dark=#555}"
                    ReturnCommand="{Binding EnviarMensajeCommand}"
                    VerticalOptions="Center"/>
             <Button Grid.Column="1"

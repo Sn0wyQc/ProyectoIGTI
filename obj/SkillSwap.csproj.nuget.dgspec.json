@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Visual\\Yovany\\ProyectoIGTI\\SkillSwap.csproj": {}
+    "C:\\Users\\jmcas\\source\\repos\\ProyectoIGTITest\\SkillSwap.csproj": {}
   },
   "projects": {
-    "C:\\Visual\\Yovany\\ProyectoIGTI\\SkillSwap.csproj": {
+    "C:\\Users\\jmcas\\source\\repos\\ProyectoIGTITest\\SkillSwap.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Visual\\Yovany\\ProyectoIGTI\\SkillSwap.csproj",
+        "projectUniqueName": "C:\\Users\\jmcas\\source\\repos\\ProyectoIGTITest\\SkillSwap.csproj",
         "projectName": "SkillSwap",
-        "projectPath": "C:\\Visual\\Yovany\\ProyectoIGTI\\SkillSwap.csproj",
+        "projectPath": "C:\\Users\\jmcas\\source\\repos\\ProyectoIGTITest\\SkillSwap.csproj",
         "packagesPath": "C:\\Users\\jmcas\\.nuget\\packages\\",
-        "outputPath": "C:\\Visual\\Yovany\\ProyectoIGTI\\obj\\",
+        "outputPath": "C:\\Users\\jmcas\\source\\repos\\ProyectoIGTITest\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

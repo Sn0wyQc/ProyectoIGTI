@@ -17489,11 +17489,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Visual\\Yovany\\ProyectoIGTI\\SkillSwap.csproj",
+      "projectUniqueName": "C:\\Users\\jmcas\\source\\repos\\ProyectoIGTITest\\SkillSwap.csproj",
       "projectName": "SkillSwap",
-      "projectPath": "C:\\Visual\\Yovany\\ProyectoIGTI\\SkillSwap.csproj",
+      "projectPath": "C:\\Users\\jmcas\\source\\repos\\ProyectoIGTITest\\SkillSwap.csproj",
       "packagesPath": "C:\\Users\\jmcas\\.nuget\\packages\\",
-      "outputPath": "C:\\Visual\\Yovany\\ProyectoIGTI\\obj\\",
+      "outputPath": "C:\\Users\\jmcas\\source\\repos\\ProyectoIGTITest\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
@@ -17688,13 +17688,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Visual\\Yovany\\ProyectoIGTI\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
-    }
-  ]
+  }
 }

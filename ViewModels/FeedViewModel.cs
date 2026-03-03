@@ -1,8 +1,10 @@
+using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.Collections.ObjectModel;
 using SkillSwap.Models;
 using SkillSwap.Services;
+using SkillSwap.Views;
+using System.Collections.ObjectModel;
 
 namespace SkillSwap.ViewModels
 {
@@ -14,7 +16,7 @@ namespace SkillSwap.ViewModels
         private ObservableCollection<Post> posts = new();
 
         [ObservableProperty]
-        private List<string> categorias = new(); 
+        private List<string> categorias = new();
 
         [ObservableProperty]
         private string categoriaSeleccionada = "Todas";
@@ -22,7 +24,6 @@ namespace SkillSwap.ViewModels
         [ObservableProperty]
         private bool isBusy = false;
 
-        // Campos para nuevo/editar anuncio
         [ObservableProperty]
         private string nuevoTitulo = string.Empty;
 
@@ -101,9 +102,11 @@ namespace SkillSwap.ViewModels
             var usuario = UserService.UsuarioActual;
             if (usuario is null) return;
 
-            if (PostEditando is not null)
+            bool esEdicion = PostEditando is not null;
+
+            if (esEdicion)
             {
-                PostEditando.Titulo = NuevoTitulo.Trim();
+                PostEditando!.Titulo = NuevoTitulo.Trim();
                 PostEditando.Descripcion = NuevaDescripcion;
                 PostEditando.Categoria = NuevaCategoria;
                 PostEditando.Tipo = NuevoTipo;
@@ -126,13 +129,18 @@ namespace SkillSwap.ViewModels
 
             MostrandoFormulario = false;
             await CargarPostsAsync();
+
+            // Popup resultado
+            var popup = new ResultadoPopup(esEdicion ? "Anuncio actualizado." : "Anuncio publicado.");
+            Shell.Current.CurrentPage.ShowPopup(popup);
         }
 
         [RelayCommand]
         private async Task EliminarPostAsync(Post post)
         {
-            bool confirmar = await Shell.Current.DisplayAlert("Eliminar", $"¿Eliminar '{post.Titulo}'?", "Sí", "No");
-            if (!confirmar) return;
+            var popup = new ConfirmacionPopup("Eliminar anuncio", $"¿Deseas eliminar '{post.Titulo}'?");
+            bool? confirmar = await Shell.Current.CurrentPage.ShowPopupAsync(popup) as bool?;
+            if (confirmar != true) return;
 
             await _db.DeletePostAsync(post);
             await CargarPostsAsync();

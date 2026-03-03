@@ -17,20 +17,17 @@ namespace SkillSwap.Views
         {
             base.OnAppearing();
             Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
-                        await _vm.CargarContactosAsync();
-
+            await _vm.CargarContactosAsync();
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             _vm.Cleanup();
-
         }
 
         private void OnMenuClicked(object sender, EventArgs e)
         {
-            Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
             Shell.Current.FlyoutIsPresented = true;
         }
     }

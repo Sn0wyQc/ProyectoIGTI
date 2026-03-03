@@ -31,7 +31,6 @@ namespace SkillSwap.Views
 
         private void OnMenuClicked(object sender, EventArgs e)
         {
-            Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
             Shell.Current.FlyoutIsPresented = true;
         }
     }

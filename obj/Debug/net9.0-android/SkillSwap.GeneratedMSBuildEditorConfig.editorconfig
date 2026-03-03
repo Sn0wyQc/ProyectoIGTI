@@ -15,56 +15,74 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SkillSwap
-build_property.ProjectDir = C:\Visual\Yovany\ProyectoIGTI\
+build_property.ProjectDir = C:\Users\jmcas\source\repos\ProyectoIGTITest\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Visual/Yovany/ProyectoIGTI/App.xaml]
+[C:/Users/jmcas/source/repos/ProyectoIGTITest/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Visual/Yovany/ProyectoIGTI/AppShell.xaml]
+[C:/Users/jmcas/source/repos/ProyectoIGTITest/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Visual/Yovany/ProyectoIGTI/Resources/Styles/Colors.xaml]
+[C:/Users/jmcas/source/repos/ProyectoIGTITest/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Visual/Yovany/ProyectoIGTI/Resources/Styles/Styles.xaml]
+[C:/Users/jmcas/source/repos/ProyectoIGTITest/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Visual/Yovany/ProyectoIGTI/Views/ChatPage.xaml]
+[C:/Users/jmcas/source/repos/ProyectoIGTITest/Views/ChatPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ChatPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ChatPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ChatPage.xaml
 
-[C:/Visual/Yovany/ProyectoIGTI/Views/FeedPage.xaml]
+[C:/Users/jmcas/source/repos/ProyectoIGTITest/Views/ConfirmaciónPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ConfirmaciónPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ConfirmaciónPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ConfirmaciónPopup.xaml
+
+[C:/Users/jmcas/source/repos/ProyectoIGTITest/Views/FeedPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.FeedPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\FeedPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\FeedPage.xaml
 
-[C:/Visual/Yovany/ProyectoIGTI/Views/LoginPage.xaml]
+[C:/Users/jmcas/source/repos/ProyectoIGTITest/Views/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
 
-[C:/Visual/Yovany/ProyectoIGTI/Views/ProfilePage.xaml]
+[C:/Users/jmcas/source/repos/ProyectoIGTITest/Views/ProfilePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ProfilePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ProfilePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ProfilePage.xaml
+
+[C:/Users/jmcas/source/repos/ProyectoIGTITest/Views/ReportePopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ReportePopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ReportePopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ReportePopup.xaml
+
+[C:/Users/jmcas/source/repos/ProyectoIGTITest/Views/ResultadoPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ResultadoPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ResultadoPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ResultadoPopup.xaml

@@ -14,6 +14,7 @@
             <!-- Converters globales -->
             <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter"/>
             <toolkit:IsStringNotNullOrEmptyConverter x:Key="StringNotEmptyConverter"/>
+            <toolkit:IsNotNullConverter x:Key="IsNotNullConverter"/>
 
         </ResourceDictionary>
     </Application.Resources>

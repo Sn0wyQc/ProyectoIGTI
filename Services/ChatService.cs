@@ -22,7 +22,7 @@ namespace SkillSwap.Services
         public async Task<List<Message>> ObtenerConversacionAsync(int emisorId, int receptorId)
         {
             var mensajes = await _db.GetConversacionAsync(emisorId, receptorId);
-            await _db.MarcarMensajesComoLeidosAsync(receptorId, emisorId); // marcar como leídos al abrir chat
+            await _db.MarcarMensajesComoLeidosAsync(receptorId, emisorId);
             return mensajes;
         }
 
@@ -60,12 +60,25 @@ namespace SkillSwap.Services
             return await _db.GetMensajesNoLeidosAsync(userId);
         }
 
-        // Obtener lista de contactos (usuarios con los que se ha conversado)
         public async Task<List<User>> ObtenerContactosAsync(int userId, List<User> todosUsuarios)
         {
             var mensajes = await _db.GetMensajesRecibidosAsync(userId);
             var idEmisorIds = mensajes.Select(m => m.EmisorId).Distinct().ToList();
             return todosUsuarios.Where(u => idEmisorIds.Contains(u.Id) || u.Id != userId).ToList();
+        }
+
+        public async Task CrearReporteAsync(int reporterId, int reportedUserId, string reason, string? customReason = null)
+        {
+            var report = new Report
+            {
+                ReporterId = reporterId,
+                ReportedUserId = reportedUserId,
+                Reason = reason,
+                CustomReason = customReason,
+                CreatedAt = DateTime.Now
+            };
+
+            await _db.SaveReportAsync(report);
         }
     }
 }

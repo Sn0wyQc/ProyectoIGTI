@@ -1,6 +1,8 @@
+using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using SkillSwap.Services;
+using SkillSwap.Views;
 
 namespace SkillSwap.ViewModels
 {
@@ -20,7 +22,6 @@ namespace SkillSwap.ViewModels
         [ObservableProperty]
         private bool isBusy = false;
 
-        // Campos para el registro
         [ObservableProperty]
         private string regNombre = string.Empty;
 
@@ -56,7 +57,6 @@ namespace SkillSwap.ViewModels
 
                 if (exito)
                 {
-                    // Navegar al Shell principal
                     await Shell.Current.GoToAsync("//FeedPage");
                 }
                 else
@@ -78,16 +78,18 @@ namespace SkillSwap.ViewModels
 
             try
             {
-                var (exito, mensaje) = await _userService.RegistrarAsync(RegNombre, RegCorreo, RegPassword, RegDescripcion, RegHabilidades);
+                var (exito, mensaje) = await _userService.RegistrarAsync(
+                    RegNombre, RegCorreo, RegPassword, RegDescripcion, RegHabilidades);
 
                 if (exito)
                 {
-                    await Shell.Current.DisplayAlert("¡Listo!", "Cuenta creada. Ya puedes iniciar sesión.", "OK");
                     MostrandoRegistro = false;
-
-                    // Pre-llenar login
                     Correo = RegCorreo;
                     Password = string.Empty;
+
+                    // Popup de éxito
+                    var popup = new ResultadoPopup("¡Cuenta creada! Ya puedes iniciar sesión.");
+                    Shell.Current.CurrentPage.ShowPopup(popup);
                 }
                 else
                 {
