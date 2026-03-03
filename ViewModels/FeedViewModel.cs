@@ -168,5 +168,49 @@ namespace SkillSwap.ViewModels
         {
             return UserService.UsuarioActual?.Id == post.UsuarioId;
         }
+
+        [RelayCommand]
+        private async Task MostrarOpcionesAsync(Post post)
+        {
+            if (post == null) return;
+
+            //  Determina si es suyo o no
+            bool esSuyo = EsDelUsuarioActual(post);
+
+            var viewModelMenu = new OpcionesAnuncioViewModel(esSuyo);
+            var popupMenu = new OpcionesAnuncioPopup(viewModelMenu);
+            var accion = await Shell.Current.CurrentPage.ShowPopupAsync(popupMenu) as string;
+
+            // Evalua qué boton presionó
+            if (accion == "Editar")
+            {
+                EditarPost(post);
+            }
+            else if (accion == "Eliminar")
+            {
+                await EliminarPostAsync(post);
+            }
+            else if (accion == "Guardar")
+            {
+                var usuario = UserService.UsuarioActual;
+                if (usuario is null) return;
+
+                await _db.GuardarAnuncioAsync(usuario.Id, post.Id);
+
+                var popupExito = new ResultadoPopup("Anuncio guardado correctamente.");
+                Shell.Current.CurrentPage.ShowPopup(popupExito);
+            }
+            else if (accion == "Reportar")
+            {
+                var popupReporte = new ReportePopup();
+                var resultado = await Shell.Current.CurrentPage.ShowPopupAsync(popupReporte) as DatosReporte;
+
+                if (resultado != null)
+                {
+                    var popupExito = new ResultadoPopup("Reporte enviado. Revisaremos el anuncio.");
+                    Shell.Current.CurrentPage.ShowPopup(popupExito);
+                }
+            }
+        }
     }
 }

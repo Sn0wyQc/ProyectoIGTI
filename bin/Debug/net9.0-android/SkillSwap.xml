@@ -8,6 +8,7 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:SkillSwap.ViewModels.ChatViewModel.Contactos">
             <inheritdoc cref="F:SkillSwap.ViewModels.ChatViewModel.contactos"/>
@@ -39,7 +40,14 @@
         <member name="P:SkillSwap.ViewModels.ChatViewModel.EnviarMensajeCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.ChatViewModel.EnviarMensajeAsync"/>.</summary>
         </member>
+        <member name="F:SkillSwap.ViewModels.ChatViewModel.abrirReporteCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.ChatViewModel.AbrirReporteCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.ChatViewModel.AbrirReporteCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.ChatViewModel.AbrirReporteAsync"/>.</summary>
+        </member>
         <member name="T:SkillSwap.ViewModels.FeedViewModel">
+            <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
@@ -114,6 +122,12 @@
         <member name="P:SkillSwap.ViewModels.FeedViewModel.CancelarFormularioCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.FeedViewModel.CancelarFormulario"/>.</summary>
         </member>
+        <member name="F:SkillSwap.ViewModels.FeedViewModel.mostrarOpcionesCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.FeedViewModel.MostrarOpcionesCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.FeedViewModel.MostrarOpcionesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:SkillSwap.ViewModels.FeedViewModel.MostrarOpcionesAsync(SkillSwap.Models.Post)"/>.</summary>
+        </member>
         <member name="T:SkillSwap.ViewModels.LoginViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -178,6 +192,19 @@
         <member name="P:SkillSwap.ViewModels.LoginViewModel.ToggleRegistroCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.LoginViewModel.ToggleRegistro"/>.</summary>
         </member>
+        <member name="T:SkillSwap.ViewModels.OpcionesAnuncioViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.OpcionesAnuncioViewModel.EsPropio">
+            <inheritdoc cref="F:SkillSwap.ViewModels.OpcionesAnuncioViewModel.esPropio"/>
+        </member>
+        <member name="F:SkillSwap.ViewModels.OpcionesAnuncioViewModel.seleccionarOpcionCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.OpcionesAnuncioViewModel.SeleccionarOpcionCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.OpcionesAnuncioViewModel.SeleccionarOpcionCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:SkillSwap.ViewModels.OpcionesAnuncioViewModel.SeleccionarOpcion(System.Object)"/>.</summary>
+        </member>
         <member name="T:SkillSwap.ViewModels.ProfileViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -215,6 +242,19 @@
         </member>
         <member name="P:SkillSwap.ViewModels.ProfileViewModel.CerrarSesionCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.ProfileViewModel.CerrarSesionAsync"/>.</summary>
+        </member>
+        <member name="T:SkillSwap.ViewModels.SavedPostViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:SkillSwap.ViewModels.SavedPostViewModel.PostsGuardados">
+            <inheritdoc cref="F:SkillSwap.ViewModels.SavedPostViewModel.postsGuardados"/>
+        </member>
+        <member name="F:SkillSwap.ViewModels.SavedPostViewModel.cargarPostsGuardadosCommand">
+            <summary>The backing field for <see cref="P:SkillSwap.ViewModels.SavedPostViewModel.CargarPostsGuardadosCommand"/>.</summary>
+        </member>
+        <member name="P:SkillSwap.ViewModels.SavedPostViewModel.CargarPostsGuardadosCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SkillSwap.ViewModels.SavedPostViewModel.CargarPostsGuardadosAsync"/>.</summary>
         </member>
         <member name="T:SkillSwap.Resource">
             <summary>
@@ -447,6 +487,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MostrandoRegistro">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MostrandoRegistro" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EsPropio">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EsPropio" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EsAjeno">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EsAjeno" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Nombre">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Nombre" generated properties.</summary>
         </member>
@@ -461,6 +507,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MisPublicaciones">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MisPublicaciones" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PostsGuardados">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PostsGuardados" generated properties.</summary>
         </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
@@ -546,6 +595,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MostrandoRegistro">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MostrandoRegistro" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EsPropio">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EsPropio" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EsAjeno">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EsAjeno" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Nombre">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Nombre" generated properties.</summary>
         </member>
@@ -560,6 +615,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MisPublicaciones">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MisPublicaciones" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PostsGuardados">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PostsGuardados" generated properties.</summary>
         </member>
     </members>
 </doc>
