@@ -22,7 +22,7 @@ namespace SkillSwap.Services
         public async Task<List<Message>> ObtenerConversacionAsync(int emisorId, int receptorId)
         {
             var mensajes = await _db.GetConversacionAsync(emisorId, receptorId);
-            await _db.MarcarMensajesComoLeidosAsync(receptorId, emisorId); // marcar como leídos al abrir chat
+            await _db.MarcarMensajesComoLeidosAsync(receptorId, emisorId);
             return mensajes;
         }
 
@@ -60,15 +60,14 @@ namespace SkillSwap.Services
             return await _db.GetMensajesNoLeidosAsync(userId);
         }
 
-        // Obtener lista de contactos (usuarios con los que se ha conversado)
         public async Task<List<User>> ObtenerContactosAsync(int userId, List<User> todosUsuarios)
         {
             var mensajes = await _db.GetMensajesRecibidosAsync(userId);
             var idEmisorIds = mensajes.Select(m => m.EmisorId).Distinct().ToList();
             return todosUsuarios.Where(u => idEmisorIds.Contains(u.Id) || u.Id != userId).ToList();
         }
-        // Crear reporte de usuario
-        public async Task CrearReporteAsync(int reporterId, int reportedUserId, string reason, string customReason = null)
+
+        public async Task CrearReporteAsync(int reporterId, int reportedUserId, string reason, string? customReason = null)
         {
             var report = new Report
             {
@@ -81,26 +80,5 @@ namespace SkillSwap.Services
 
             await _db.SaveReportAsync(report);
         }
-        // Crear conversación
-        public async Task<Conversation> GetOrCreateConversationAsync(int user1Id, int user2Id)
-        {
-            var conversation = await _db.GetConversationAsync(user1Id, user2Id);
-
-            if (conversation == null)
-            {
-                conversation = new Conversation
-                {
-                    User1Id = user1Id,
-                    User2Id = user2Id,
-                    CreatedAt = DateTime.Now
-                };
-
-                await _db.SaveConversationAsync(conversation);
-            }
-
-            return conversation;
-        }
-        //Enviar mensaje dentro de una conversación
-
     }
 }

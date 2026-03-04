@@ -25,18 +25,18 @@ namespace SkillSwap
             builder.Logging.AddDebug();
 #endif
 
-            // ─── Registro de Servicios (Singleton) ───
+            // ——— Registro de Servicios (Singleton) ———
             builder.Services.AddSingleton<DatabaseService>();
             builder.Services.AddSingleton<UserService>();
             builder.Services.AddSingleton<ChatService>();
 
-            // ─── Registro de ViewModels (Transient) ───
+            // ——— Registro de ViewModels (Transient) ———
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<FeedViewModel>();
             builder.Services.AddTransient<ProfileViewModel>();
             builder.Services.AddTransient<ChatViewModel>();
 
-            // ─── Registro de Pages (Transient) ───
+            // ——— Registro de Pages (Transient) ———
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<FeedPage>();
             builder.Services.AddTransient<ProfilePage>();
@@ -44,7 +44,7 @@ namespace SkillSwap
             builder.Services.AddTransient<SavedPostViewModel>();
             builder.Services.AddTransient<SavedPostPage>();
 
-            // ─── Shell ───
+            // ——— Shell ———
             builder.Services.AddSingleton<AppShell>();
 
             return builder.Build();

@@ -1,3 +1,5 @@
+using System;
+using Microsoft.Maui.Controls;
 using SkillSwap.ViewModels;
 
 namespace SkillSwap.Views
@@ -27,6 +29,24 @@ namespace SkillSwap.Views
                 _vm.CategoriaSeleccionada = btn.Text;
                 await _vm.CargarPostsAsync();
             }
+        }
+
+        private void OnMenuClicked(object sender, EventArgs e)
+        {
+            Shell.Current.FlyoutIsPresented = true;
+        }
+
+        // Firma requerida por XAML: SearchBar SearchButtonPressed
+        private void OnSearchButtonPressed(object sender, EventArgs e)
+        {
+            if (BindingContext is ViewModels.FeedViewModel vm && vm.SearchCommand.CanExecute(null))
+            {
+                vm.SearchCommand.Execute(null);
+            }
+
+            // Opcional: quitar foco para cerrar teclado
+            if (sender is SearchBar sb)
+                sb.Unfocus();
         }
     }
 }
