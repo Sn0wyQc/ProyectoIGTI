@@ -6,17 +6,16 @@ namespace SkillSwap
         {
             InitializeComponent();
 
-            // Sincronizar el switch con el tema actual al abrir
-            DarkModeSwitch.IsToggled = Application.Current?.RequestedTheme == AppTheme.Dark;
-
-            // Cuando el Flyout se cierra, desactivarlo para ocultar el botón automático
-            this.PropertyChanged += (s, e) =>
+            // Sincronizar el switch con la preferencia actual (UserAppTheme),
+            // usando RequestedTheme como fallback si no hay preferencia.
+            var app = Application.Current;
+            bool isDark = false;
+            if (app != null)
             {
-                if (e.PropertyName == nameof(FlyoutIsPresented) && !FlyoutIsPresented)
-                {
-                    FlyoutBehavior = FlyoutBehavior.Disabled;
-                }
-            };
+                isDark = app.UserAppTheme == AppTheme.Dark
+                         || (app.UserAppTheme == AppTheme.Unspecified && app.RequestedTheme == AppTheme.Dark);
+            }
+            DarkModeSwitch.IsToggled = isDark;
         }
 
         private void OnDarkModeToggled(object sender, ToggledEventArgs e)

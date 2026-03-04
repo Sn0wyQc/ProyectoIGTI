@@ -38,7 +38,7 @@
                     FontSize="20"
                     BackgroundColor="Transparent"
                     Command="{Binding AbrirReporteCommand}"
-                    IsVisible="{Binding ContactoSeleccionado, Converter={StaticResource IsNotNullConverter}}"/>
+                    IsVisible="{Binding ContactoSeleccionado}"/>
         </Grid>
 
         <!-- Selector de contacto (Row 1) -->
