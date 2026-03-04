@@ -67,6 +67,11 @@
         <CollectionView Grid.Row="2"
                         ItemsSource="{Binding Posts}"
                         Margin="12,10,12,0">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
+            </CollectionView.ItemsLayout>
+
             <CollectionView.EmptyView>
                 <Label Text="No hay anuncios aun. Se el primero!"
                        HorizontalOptions="Center"
@@ -78,17 +83,31 @@
                 <DataTemplate x:DataType="models:Post">
                     <Frame BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
                            CornerRadius="12"
-                           Margin="0,0,0,10"
                            Padding="16"
                            HasShadow="True"
                            BorderColor="{AppThemeBinding Light=Transparent, Dark=#333333}">
                         <VerticalStackLayout Spacing="6">
 
-                            <HorizontalStackLayout Spacing="8">
-                                <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="6" Padding="8,3" HasShadow="False">
+                            <Grid ColumnDefinitions="*, Auto" Margin="0,0,0,5">
+
+                                <Frame Grid.Column="0" HorizontalOptions="Start" BackgroundColor="{StaticResource Primary}" CornerRadius="6" Padding="8,3" HasShadow="False">
                                     <Label Text="{Binding Categoria}" TextColor="White" FontSize="11"/>
                                 </Frame>
-                            </HorizontalStackLayout>
+
+                                <Label Grid.Column="1" 
+                                        Text="&#x22EE;" 
+                                        FontSize="22" 
+                                        FontAttributes="Bold"
+                                        TextColor="{AppThemeBinding Light=#666666, Dark=#CCCCCC}"
+                                        VerticalOptions="Center"
+                                        Padding="15,0,0,0">
+                                     <Label.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                             Command="{Binding Source={RelativeSource AncestorType={x:Type vm:FeedViewModel}}, Path=MostrarOpcionesCommand}"
+                                             CommandParameter="{Binding .}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
 
                             <Label Text="{Binding Titulo}"
                                    FontSize="15"
@@ -108,7 +127,6 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
         <Button Grid.Row="3"
                 Text="+ Publicar anuncio"
                 Command="{Binding MostrarFormularioCommand}"

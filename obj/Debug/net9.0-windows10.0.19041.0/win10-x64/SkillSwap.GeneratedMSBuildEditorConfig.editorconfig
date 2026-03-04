@@ -75,6 +75,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.LoginPage.
 build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
 
+[C:/Users/Yovany/Downloads/ProyectoIGTI-Yovany (1)/ProyectoIGTI-Yovany/Views/OpcionesAnuncioPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.OpcionesAnuncioPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\OpcionesAnuncioPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\OpcionesAnuncioPopup.xaml
+
 [C:/Users/Yovany/Downloads/ProyectoIGTI-Yovany (1)/ProyectoIGTI-Yovany/Views/ProfilePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ProfilePage.xaml
@@ -92,3 +98,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.ResultadoPopup.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ResultadoPopup.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ResultadoPopup.xaml
+
+[C:/Users/Yovany/Downloads/ProyectoIGTI-Yovany (1)/ProyectoIGTI-Yovany/Views/SavedPostPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = SkillSwap.Views.SavedPostPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SavedPostPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SavedPostPage.xaml

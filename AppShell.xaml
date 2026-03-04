@@ -63,6 +63,11 @@
                       ContentTemplate="{DataTemplate views:FeedPage}"/>
     </FlyoutItem>
 
+    <!--Post Guardados-->
+    <FlyoutItem Title="Guardados">
+        <ShellContent ContentTemplate="{DataTemplate views:SavedPostPage}" />
+    </FlyoutItem>
+    
     <!-- Mensajes -->
     <FlyoutItem Title="Mensajes">
         <ShellContent Route="ChatPage"
