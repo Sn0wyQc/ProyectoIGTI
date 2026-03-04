@@ -40,8 +40,6 @@
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="x:String">
                         <Button Text="{Binding .}"
-                                BackgroundColor="#3B4CCA"
-                                TextColor="White"
                                 CornerRadius="20"
                                 Padding="14,6"
                                 FontSize="12"
@@ -87,9 +85,6 @@
                 <HorizontalStackLayout Spacing="10">
                     <Button Text="Guardar"
                             Command="{Binding GuardarPostCommand}"
-                            BackgroundColor="#3B4CCA"
-                            TextColor="White"
-                            CornerRadius="8"
                             HorizontalOptions="FillAndExpand"/>
                     <Button Text="Cancelar"
                             Command="{Binding CancelarFormularioCommand}"
@@ -145,7 +140,21 @@
                                 <Frame BackgroundColor="#3B4CCA" CornerRadius="6" Padding="8,3" HasShadow="False">
                                     <Label Text="{Binding Categoria}" TextColor="White" FontSize="11"/>
                                 </Frame>
-                            </HorizontalStackLayout>
+
+                                <Label Grid.Column="1" 
+                                        Text="&#x22EE;" 
+                                        FontSize="22" 
+                                        FontAttributes="Bold"
+                                        TextColor="{AppThemeBinding Light=#666666, Dark=#CCCCCC}"
+                                        VerticalOptions="Center"
+                                        Padding="15,0,0,0">
+                                     <Label.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                             Command="{Binding Source={RelativeSource AncestorType={x:Type vm:FeedViewModel}}, Path=MostrarOpcionesCommand}"
+                                             CommandParameter="{Binding .}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
 
                             <Label Text="{Binding Titulo}"
                            FontSize="15"
@@ -170,12 +179,8 @@
         <Button Grid.Row="5"
                 Text="+ Publicar anuncio"
                 Command="{Binding MostrarFormularioCommand}"
-                BackgroundColor="#3B4CCA"
-                TextColor="White"
-                CornerRadius="10"
                 Margin="12,10,12,20"
-                HeightRequest="50"
-                FontAttributes="Bold"/>
+                HeightRequest="50"/>
 
     </Grid>
 </ContentPage>

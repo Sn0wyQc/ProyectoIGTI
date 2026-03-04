@@ -50,7 +50,6 @@ namespace SkillSwap.ViewModels
         {
             ErrorMessage = string.Empty;
             IsBusy = true;
-
             try
             {
                 var (exito, mensaje) = await _userService.IniciarSesionAsync(Correo, Password);
@@ -68,14 +67,13 @@ namespace SkillSwap.ViewModels
             {
                 IsBusy = false;
             }
+            finally { IsBusy = false; }
         }
-
         [RelayCommand]
         private async Task RegistrarAsync()
         {
             ErrorMessage = string.Empty;
             IsBusy = true;
-
             try
             {
                 var (exito, mensaje) = await _userService.RegistrarAsync(
@@ -100,7 +98,7 @@ namespace SkillSwap.ViewModels
             {
                 IsBusy = false;
             }
-        }
+        } 
 
         [RelayCommand]
         private void ToggleRegistro()
@@ -108,5 +106,5 @@ namespace SkillSwap.ViewModels
             MostrandoRegistro = !MostrandoRegistro;
             ErrorMessage = string.Empty;
         }
-    }
-}
+    } 
+} 

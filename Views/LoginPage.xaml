@@ -10,21 +10,19 @@
     <ScrollView>
         <VerticalStackLayout Padding="32,60,32,32" Spacing="0">
 
-            <!-- Header -->
             <Label Text="SkillSwap"
                    FontSize="36"
                    FontAttributes="Bold"
-                   TextColor="#3B4CCA"
+                   TextColor="{AppThemeBinding Light=#3B4CCA, Dark=#B0BEE8}"
                    HorizontalOptions="Center"
                    Margin="0,0,0,6"/>
 
-            <Label Text="Intercambia lo que sabes"
+            <Label Text="Exchange. Learn. Grow"
                    FontSize="14"
                    TextColor="{AppThemeBinding Light=#666666, Dark=#B0BEE8}"
                    HorizontalOptions="Center"
                    Margin="0,0,0,40"/>
 
-            <!-- Tarjeta LOGIN -->
             <Frame IsVisible="{Binding MostrandoRegistro, Converter={StaticResource InvertedBoolConverter}}"
                    BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
                    CornerRadius="16"
@@ -59,9 +57,6 @@
 
                     <Button Text="Entrar"
                             Command="{Binding IniciarSesionCommand}"
-                            BackgroundColor="#3B4CCA"
-                            TextColor="White"
-                            CornerRadius="10"
                             IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"/>
 
                     <ActivityIndicator IsRunning="{Binding IsBusy}"
@@ -80,7 +75,6 @@
                 </VerticalStackLayout>
             </Frame>
 
-            <!-- Tarjeta REGISTRO -->
             <Frame IsVisible="{Binding MostrandoRegistro}"
                    BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
                    CornerRadius="16"
@@ -133,9 +127,6 @@
 
                     <Button Text="Registrarme"
                             Command="{Binding RegistrarCommand}"
-                            BackgroundColor="#3B4CCA"
-                            TextColor="White"
-                            CornerRadius="10"
                             IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"/>
 
                     <ActivityIndicator IsRunning="{Binding IsBusy}"

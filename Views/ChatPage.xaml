@@ -81,7 +81,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Message">
                     <VerticalStackLayout Margin="0,4" Padding="4,0">
-                        <Frame BackgroundColor="#3B4CCA"
+                        <Frame BackgroundColor="{StaticResource Primary}"
                                CornerRadius="14"
                                Padding="12,8"
                                MaximumWidthRequest="280"
@@ -118,16 +118,19 @@
                    TextColor="{AppThemeBinding Light=Black, Dark=White}"
                    PlaceholderColor="{AppThemeBinding Light=#999, Dark=#555}"
                    ReturnCommand="{Binding EnviarMensajeCommand}"
-                   VerticalOptions="Center"/>
+                   VerticalOptions="Center"
+                   BackgroundColor="Transparent"/>
             <Button Grid.Column="1"
                     Text="Enviar"
                     Command="{Binding EnviarMensajeCommand}"
-                    BackgroundColor="#3B4CCA"
-                    TextColor="White"
-                    CornerRadius="8"
                     Margin="8,0,0,0"
-                    FontSize="13"/>
+                    FontSize="13"
+                    HeightRequest="40"/>
         </Grid>
 
     </Grid>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Reportar"
+             Command="{Binding AbrirReporteCommand}"/>
+    </ContentPage.ToolbarItems>
 </ContentPage>

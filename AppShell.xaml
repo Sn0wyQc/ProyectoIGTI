@@ -52,7 +52,7 @@
                    FontSize="20"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"/>
-            <Label Text="Intercambia lo que sabes"
+            <Label Text="Exchange. Learn. Grow"
                    TextColor="#B0BEE8"
                    FontSize="12"
                    HorizontalOptions="Center"/>
@@ -73,6 +73,11 @@
                       ContentTemplate="{DataTemplate views:FeedPage}"/>
     </FlyoutItem>
 
+    <!--Post Guardados-->
+    <FlyoutItem Title="Guardados">
+        <ShellContent ContentTemplate="{DataTemplate views:SavedPostPage}" />
+    </FlyoutItem>
+    
     <!-- Mensajes -->
     <FlyoutItem Title="Mensajes" Icon="messenger_icon.png">
         <ShellContent Route="ChatPage"

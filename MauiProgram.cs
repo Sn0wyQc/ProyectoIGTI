@@ -41,6 +41,8 @@ namespace SkillSwap
             builder.Services.AddTransient<FeedPage>();
             builder.Services.AddTransient<ProfilePage>();
             builder.Services.AddTransient<ChatPage>();
+            builder.Services.AddTransient<SavedPostViewModel>();
+            builder.Services.AddTransient<SavedPostPage>();
 
             // ——— Shell ———
             builder.Services.AddSingleton<AppShell>();

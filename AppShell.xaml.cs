@@ -1,8 +1,16 @@
-namespace SkillSwap
+using System.Windows.Input;
+
+namespace SkillSwap;
+
+public partial class AppShell : Shell
 {
-    public partial class AppShell : Shell
+    public ICommand ToggleThemeCommand { get; }
+
+    public AppShell()
     {
-        public AppShell()
+        InitializeComponent();
+
+        ToggleThemeCommand = new Command(() =>
         {
             InitializeComponent();
 

@@ -4,8 +4,9 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using SkillSwap.Models;
 using SkillSwap.Services;
-using SkillSwap.Views;
 using System.Collections.ObjectModel;
+using SkillSwap.Views; 
+using CommunityToolkit.Maui.Views; 
 
 namespace SkillSwap.ViewModels
 {
@@ -151,5 +152,23 @@ namespace SkillSwap.ViewModels
         {
             WeakReferenceMessenger.Default.Unregister<NuevoMensajeMessage>(this);
         }
+        [RelayCommand]
+        private async Task AbrirReporteAsync()
+        {
+            if (ContactoSeleccionado is null) return;
+
+            
+            var popup = new ReportePopup();
+
+            var resultado = await Shell.Current.CurrentPage.ShowPopupAsync(popup) as DatosReporte;
+
+            
+            if (resultado != null)
+            {
+                
+                await CrearReporteDesdeChatAsync(resultado.Motivo, resultado.Detalles);
+            }
+        }
     }
+
 }
