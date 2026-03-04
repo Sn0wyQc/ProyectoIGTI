@@ -1,4 +1,5 @@
 using SkillSwap.ViewModels;
+using SkillSwap.Views;
 
 namespace SkillSwap.Views
 {
@@ -19,7 +20,7 @@ namespace SkillSwap.Views
             await _vm.CargarPostsAsync();
         }
 
-        // filtro de categorías 
+        // Filtro de categorías
         private async void OnCategoriaClicked(object sender, EventArgs e)
         {
             if (sender is Button btn)
@@ -27,8 +28,8 @@ namespace SkillSwap.Views
                 _vm.CategoriaSeleccionada = btn.Text;
                 await _vm.CargarPostsAsync();
             }
-
         }
+
         private async void IrInicio(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("//FeedPage");
@@ -41,7 +42,10 @@ namespace SkillSwap.Views
 
         private async void IrNotificationPage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NotificationPage());
+            var page = App.Current.Handler.MauiContext.Services
+                   .GetRequiredService<NotificationPage>();
+
+            await Navigation.PushAsync(page);
         }
 
         private async void IrPerfil(object sender, EventArgs e)

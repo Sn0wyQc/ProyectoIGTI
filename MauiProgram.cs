@@ -35,12 +35,14 @@ namespace SkillSwap
             builder.Services.AddTransient<FeedViewModel>();
             builder.Services.AddTransient<ProfileViewModel>();
             builder.Services.AddTransient<ChatViewModel>();
+            builder.Services.AddTransient<NotificacionesViewModel>();
 
             // ─── Registro de Pages (Transient) ───
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<FeedPage>();
             builder.Services.AddTransient<ProfilePage>();
             builder.Services.AddTransient<ChatPage>();
+            builder.Services.AddTransient<NotificationPage>();
 
             // ─── Shell ───
             builder.Services.AddSingleton<AppShell>();
