@@ -6,43 +6,11 @@
              x:Class="SkillSwap.Views.ChatPage"
              x:DataType="vm:ChatViewModel"
              Title="Mensajes"
-             Shell.NavBarIsVisible="False"
              BackgroundColor="{AppThemeBinding Light=#F0F4FF, Dark=#121212}">
 
-    <Grid RowDefinitions="Auto,Auto,*,Auto">
-
-        <!-- Barra superior (Row 0) -->
-        <Grid Grid.Row="0"
-              BackgroundColor="{AppThemeBinding Light=#1E2A6E, Dark=#0A0A1A}"
-              Padding="10,10,10,10"
-              ColumnDefinitions="50, *, 50">
-
-            <Button Grid.Column="0"
-                    Text="☰"
-                    TextColor="White"
-                    FontSize="24"
-                    BackgroundColor="Transparent"
-                    Clicked="OnMenuClicked"/>
-
-            <Label Grid.Column="1"
-                   Text="Mensajes"
-                   TextColor="White"
-                   FontSize="18"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
-
-            <Button Grid.Column="2"
-                    Text="⚑"
-                    TextColor="#FF6B6B"
-                    FontSize="20"
-                    BackgroundColor="Transparent"
-                    Command="{Binding AbrirReporteCommand}"
-                    IsVisible="{Binding ContactoSeleccionado}"/>
-        </Grid>
-
-        <!-- Selector de contacto (Row 1) -->
-        <Frame Grid.Row="1"
+    <Grid RowDefinitions="Auto,*,Auto">
+    <!--Selector de contacto-->
+        <Frame Grid.Row="0"
                BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
                Padding="12,8"
                HasShadow="True"
@@ -61,19 +29,18 @@
                         SelectedItem="{Binding ContactoSeleccionado}"
                         Title="Selecciona un usuario"
                         TextColor="{AppThemeBinding Light=#222222, Dark=White}"
-                        TitleColor="{AppThemeBinding Light=#999999, Dark=#666666}"/>
+                        TitleColor="{AppThemeBinding Light=#999999, Dark=#B0BEE8}"/>
             </Grid>
         </Frame>
-
-        <!-- Mensajes (Row 2) -->
-        <CollectionView Grid.Row="2"
+        <!--Mensajes de la conversación-->
+        <CollectionView Grid.Row="1"
                         x:Name="MensajesCollection"
                         ItemsSource="{Binding Mensajes}"
                         Margin="10,8">
             <CollectionView.EmptyView>
                 <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
                     <Label Text="Selecciona un contacto para chatear"
-                           TextColor="{AppThemeBinding Light=#aaaaaa, Dark=#555555}"
+                           TextColor="{AppThemeBinding Light=#aaaaaa, Dark=#666666}"
                            HorizontalOptions="Center"
                            FontSize="14"/>
                 </VerticalStackLayout>
@@ -105,18 +72,14 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
-        <!-- Input mensaje (Row 3) -->
-        <Grid Grid.Row="3"
+        <!--Input para nuevo mensaje-->
+        <Grid Grid.Row="2"
               ColumnDefinitions="*,Auto"
               BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
               Padding="12,8">
             <Entry Grid.Column="0"
                    Placeholder="Escribe un mensaje..."
                    Text="{Binding NuevoMensaje}"
-                   BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2A2A2A}"
-                   TextColor="{AppThemeBinding Light=Black, Dark=White}"
-                   PlaceholderColor="{AppThemeBinding Light=#999, Dark=#555}"
                    ReturnCommand="{Binding EnviarMensajeCommand}"
                    VerticalOptions="Center"
                    BackgroundColor="Transparent"/>

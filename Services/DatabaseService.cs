@@ -24,10 +24,14 @@ namespace SkillSwap.Services
             await _database.CreateTableAsync<Post>();
             await _database.CreateTableAsync<Message>();
             await _database.CreateTableAsync<Skill>();
-            await _database.CreateTableAsync<Report>();
+            await _database.CreateTableAsync<Report>(); // Aseguramos que los reportes también se creen
+            await _database.CreateTableAsync<Conversation>();
+
+            // ✨ LA NUEVA TABLA PARA GUARDAR ANUNCIOS ✨
+            await _database.CreateTableAsync<SavedPost>();
         }
 
-        // ——————————————————————————— USUARIOS ———————————————————————————
+        // ─────────────────────────── USUARIOS ───────────────────────────
 
         public async Task<User?> GetUserByEmailAsync(string correo)
         {
@@ -55,7 +59,7 @@ namespace SkillSwap.Services
             return await _database!.Table<User>().ToListAsync();
         }
 
-        // ——————————————————————————— POSTS ———————————————————————————
+        // ─────────────────────────── POSTS ───────────────────────────
 
         public async Task<List<Post>> GetAllPostsAsync()
         {
@@ -91,7 +95,46 @@ namespace SkillSwap.Services
             return await _database!.DeleteAsync(post);
         }
 
-        // ——————————————————————————— MENSAJES ———————————————————————————
+        // ─────────────────────────── ANUNCIOS GUARDADOS (¡NUEVO!) ───────────────────────────
+
+        public async Task GuardarAnuncioAsync(int userId, int postId)
+        {
+            await InitAsync();
+
+            // Verificamos si ya lo había guardado para no duplicar datos
+            var existe = await _database!.Table<SavedPost>()
+                                         .Where(x => x.UserId == userId && x.PostId == postId)
+                                         .FirstOrDefaultAsync();
+            if (existe == null)
+            {
+                await _database.InsertAsync(new SavedPost { UserId = userId, PostId = postId });
+            }
+        }
+
+        public async Task<List<Post>> ObtenerAnunciosGuardadosAsync(int userId)
+        {
+            await InitAsync();
+
+            // 1. Buscamos los registros de guardado de este usuario
+            var guardados = await _database!.Table<SavedPost>()
+                                            .Where(x => x.UserId == userId)
+                                            .ToListAsync();
+
+            // Si no tiene nada guardado, devolvemos lista vacía de inmediato
+            if (!guardados.Any())
+                return new List<Post>();
+
+            // 2. Extraemos solo los IDs de los posts
+            var idsGuardados = guardados.Select(g => g.PostId).ToList();
+
+            // 3. Traemos todos los posts y filtramos los que guardó el usuario, ordenados por los más recientes
+            var todosLosPosts = await _database.Table<Post>().ToListAsync();
+            return todosLosPosts.Where(p => idsGuardados.Contains(p.Id))
+                                .OrderByDescending(p => p.FechaPublicacion)
+                                .ToList();
+        }
+
+        // ─────────────────────────── MENSAJES ───────────────────────────
 
         public async Task<List<Message>> GetConversacionAsync(int userId1, int userId2)
         {
@@ -140,12 +183,31 @@ namespace SkillSwap.Services
                 .CountAsync();
         }
 
-        // ——————————————————————————— REPORTES ———————————————————————————
+        //─────────────────────────── REPORTES ───────────────────────────
 
         public async Task<int> SaveReportAsync(Report report)
         {
             await InitAsync();
             return await _database!.InsertAsync(report);
+        }
+
+        // ─────────────────────────── CONVERSATION ───────────────────────────
+
+        public async Task<Conversation?> GetConversationAsync(int user1Id, int user2Id)
+        {
+            await InitAsync();
+
+            return await _database!.Table<Conversation>()
+                .Where(c =>
+                    (c.User1Id == user1Id && c.User2Id == user2Id) ||
+                    (c.User1Id == user2Id && c.User2Id == user1Id))
+                .FirstOrDefaultAsync();
+        }
+
+        public async Task<int> SaveConversationAsync(Conversation conversation)
+        {
+            await InitAsync();
+            return await _database!.InsertAsync(conversation);
         }
     }
 }

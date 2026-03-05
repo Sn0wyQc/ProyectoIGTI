@@ -1,10 +1,9 @@
-using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
+using System.Collections.ObjectModel;
 using SkillSwap.Models;
 using SkillSwap.Services;
-using System.Collections.ObjectModel;
 using SkillSwap.Views; 
 using CommunityToolkit.Maui.Views; 
 
@@ -38,14 +37,17 @@ namespace SkillSwap.ViewModels
             _chatService = chatService;
             _userService = userService;
 
+            // Registrarse para recibir notificaciones de nuevos mensajes
             WeakReferenceMessenger.Default.Register<NuevoMensajeMessage>(this);
         }
 
+        // Se ejecuta cuando llega un nuevo mensaje por el Messenger
         public void Receive(NuevoMensajeMessage message)
         {
             var msg = message.Value;
             var userId = UserService.UsuarioActual?.Id;
 
+            // Si estamos en la conversación activa, añadir el mensaje a la lista
             if (ContactoSeleccionado is not null &&
                ((msg.EmisorId == userId && msg.ReceptorId == ContactoSeleccionado.Id) ||
                 (msg.EmisorId == ContactoSeleccionado.Id && msg.ReceptorId == userId)))
@@ -53,6 +55,7 @@ namespace SkillSwap.ViewModels
                 MainThread.BeginInvokeOnMainThread(() => Mensajes.Add(msg));
             }
 
+            // Actualizar contador de no leídos
             _ = ActualizarNoLeidosAsync();
         }
 
@@ -121,7 +124,8 @@ namespace SkillSwap.ViewModels
 
         public async Task CrearReporteDesdeChatAsync(string reason, string? customReason = null)
         {
-            if (ContactoSeleccionado is null || UserService.UsuarioActual is null) return;
+            if (ContactoSeleccionado is null || UserService.UsuarioActual is null)
+                return;
 
             await _chatService.CrearReporteAsync(
                 UserService.UsuarioActual.Id,
@@ -132,20 +136,6 @@ namespace SkillSwap.ViewModels
 
             var popup = new ResultadoPopup("Reporte enviado. Revisaremos el caso.");
             Shell.Current.CurrentPage.ShowPopup(popup);
-        }
-
-        [RelayCommand]
-        private async Task AbrirReporteAsync()
-        {
-            if (ContactoSeleccionado is null) return;
-
-            var popup = new ReportePopup();
-            var resultado = await Shell.Current.CurrentPage.ShowPopupAsync(popup) as DatosReporte;
-
-            if (resultado != null)
-            {
-                await CrearReporteDesdeChatAsync(resultado.Motivo, resultado.Detalles);
-            }
         }
 
         public void Cleanup()

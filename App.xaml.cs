@@ -5,10 +5,6 @@ namespace SkillSwap
         public App(AppShell shell)
         {
             InitializeComponent();
-
-            // Iniciar la aplicación en modo claro por defecto
-            this.UserAppTheme = AppTheme.Light;
-
             MainPage = shell;
         }
 

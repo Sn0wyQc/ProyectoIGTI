@@ -1,8 +1,8 @@
-using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using SkillSwap.Services;
-using SkillSwap.Views;
+using SkillSwap.Views; 
+using CommunityToolkit.Maui.Views; 
 
 namespace SkillSwap.ViewModels
 {
@@ -21,6 +21,21 @@ namespace SkillSwap.ViewModels
 
         [ObservableProperty]
         private bool isBusy = false;
+
+        // --- LÓGICA DE MOSTRAR/OCULTAR ---
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(PasswordIcon))]
+        private bool isPasswordHidden = true;
+
+        // Esta propiedad cambia el nombre del archivo de imagen automáticamente
+        public string PasswordIcon => IsPasswordHidden ? "ojo_cerrado.png" : "ojo_abierto.png";
+
+        [RelayCommand]
+        private void TogglePassword()
+        {
+            IsPasswordHidden = !IsPasswordHidden;
+        }
+        // ---------------------------------
 
         [ObservableProperty]
         private string regNombre = string.Empty;
@@ -53,19 +68,8 @@ namespace SkillSwap.ViewModels
             try
             {
                 var (exito, mensaje) = await _userService.IniciarSesionAsync(Correo, Password);
-
-                if (exito)
-                {
-                    await Shell.Current.GoToAsync("//FeedPage");
-                }
-                else
-                {
-                    ErrorMessage = mensaje;
-                }
-            }
-            finally
-            {
-                IsBusy = false;
+                if (exito) await Shell.Current.GoToAsync("//FeedPage");
+                else ErrorMessage = mensaje;
             }
             finally { IsBusy = false; }
         }
@@ -76,18 +80,14 @@ namespace SkillSwap.ViewModels
             IsBusy = true;
             try
             {
-                var (exito, mensaje) = await _userService.RegistrarAsync(
-                    RegNombre, RegCorreo, RegPassword, RegDescripcion, RegHabilidades);
-
+                var (exito, mensaje) = await _userService.RegistrarAsync(RegNombre, RegCorreo, RegPassword, RegDescripcion, RegHabilidades);
                 if (exito)
                 {
+                    var popup = new ResultadoPopup("¡Registro Exitoso!");
+                    Shell.Current.CurrentPage.ShowPopup(popup);
+
                     MostrandoRegistro = false;
                     Correo = RegCorreo;
-                    Password = string.Empty;
-
-                    // Popup de éxito
-                    var popup = new ResultadoPopup("¡Cuenta creada! Ya puedes iniciar sesión.");
-                    Shell.Current.CurrentPage.ShowPopup(popup);
                 }
                 else
                 {

@@ -16,7 +16,6 @@ namespace SkillSwap.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
             await _vm.CargarContactosAsync();
         }
 
@@ -25,10 +24,40 @@ namespace SkillSwap.Views
             base.OnDisappearing();
             _vm.Cleanup();
         }
-
-        private void OnMenuClicked(object sender, EventArgs e)
+        private async void OnReportClicked(object sender, EventArgs e)
         {
-            Shell.Current.FlyoutIsPresented = true;
+            if (_vm.ContactoSeleccionado == null)
+                return;
+
+            string action = await DisplayActionSheet(
+                "Razón del reporte",
+                "Cancelar",
+                null,
+                "Acoso",
+                "Uso indebido del chat",
+                "Mensajes hirientes",
+                "Otro"
+            );
+
+            if (action == "Cancelar")
+                return;
+
+            string? customReason = null;
+
+            if (action == "Otro")
+            {
+                customReason = await DisplayPromptAsync(
+                    "Describe el motivo",
+                    "Escribe la razón específica:"
+                );
+
+                if (string.IsNullOrWhiteSpace(customReason))
+                    return;
+            }
+
+            await _vm.CrearReporteDesdeChatAsync(action, customReason);
+
+            await DisplayAlert("Reporte enviado", "Gracias por tu reporte.", "OK");
         }
     }
 }
