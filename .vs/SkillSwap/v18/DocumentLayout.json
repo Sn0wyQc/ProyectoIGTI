@@ -1,0 +1,265 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Visual\\ProyectoIGTIE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\visual\\proyectoigtie\\views\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\visual\\proyectoigtie\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\visual\\proyectoigtie\\views\\savedpostpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\savedpostpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\visual\\proyectoigtie\\viewmodels\\savedpostviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:viewmodels\\savedpostviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\visual\\proyectoigtie\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\visual\\proyectoigtie\\views\\resultadopopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\resultadopopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\visual\\proyectoigtie\\views\\savedpostpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\savedpostpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\visual\\proyectoigtie\\views\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\visual\\proyectoigtie\\views\\resultadopopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\resultadopopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\visual\\proyectoigtie\\views\\reportepopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\reportepopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\visual\\proyectoigtie\\viewmodels\\feedviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:viewmodels\\feedviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\visual\\proyectoigtie\\views\\opcionesanunciopopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\opcionesanunciopopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\visual\\proyectoigtie\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SavedPostPage.xaml.cs",
+              "DocumentMoniker": "C:\\Visual\\ProyectoIGTIE\\Views\\SavedPostPage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\SavedPostPage.xaml.cs",
+              "ToolTip": "C:\\Visual\\ProyectoIGTIE\\Views\\SavedPostPage.xaml.cs",
+              "RelativeToolTip": "Views\\SavedPostPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T19:52:49.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ResultadoPopup.xaml",
+              "DocumentMoniker": "C:\\Visual\\ProyectoIGTIE\\Views\\ResultadoPopup.xaml",
+              "RelativeDocumentMoniker": "Views\\ResultadoPopup.xaml",
+              "ToolTip": "C:\\Visual\\ProyectoIGTIE\\Views\\ResultadoPopup.xaml",
+              "RelativeToolTip": "Views\\ResultadoPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-06T19:46:58.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReportePopup.xaml",
+              "DocumentMoniker": "C:\\Visual\\ProyectoIGTIE\\Views\\ReportePopup.xaml",
+              "RelativeDocumentMoniker": "Views\\ReportePopup.xaml",
+              "ToolTip": "C:\\Visual\\ProyectoIGTIE\\Views\\ReportePopup.xaml",
+              "RelativeToolTip": "Views\\ReportePopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-06T19:46:46.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FeedViewModel.cs",
+              "DocumentMoniker": "C:\\Visual\\ProyectoIGTIE\\ViewModels\\FeedViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\FeedViewModel.cs",
+              "ToolTip": "C:\\Visual\\ProyectoIGTIE\\ViewModels\\FeedViewModel.cs",
+              "RelativeToolTip": "ViewModels\\FeedViewModel.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAwOgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T19:44:51.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OpcionesAnuncioPopup.xaml",
+              "DocumentMoniker": "C:\\Visual\\ProyectoIGTIE\\Views\\OpcionesAnuncioPopup.xaml",
+              "RelativeDocumentMoniker": "Views\\OpcionesAnuncioPopup.xaml",
+              "ToolTip": "C:\\Visual\\ProyectoIGTIE\\Views\\OpcionesAnuncioPopup.xaml",
+              "RelativeToolTip": "Views\\OpcionesAnuncioPopup.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-06T19:35:33.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Visual\\ProyectoIGTIE\\Views\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "Views\\LoginPage.xaml",
+              "ToolTip": "C:\\Visual\\ProyectoIGTIE\\Views\\LoginPage.xaml",
+              "RelativeToolTip": "Views\\LoginPage.xaml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-06T19:33:41.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SavedPostPage.xaml",
+              "DocumentMoniker": "C:\\Visual\\ProyectoIGTIE\\Views\\SavedPostPage.xaml",
+              "RelativeDocumentMoniker": "Views\\SavedPostPage.xaml",
+              "ToolTip": "C:\\Visual\\ProyectoIGTIE\\Views\\SavedPostPage.xaml",
+              "RelativeToolTip": "Views\\SavedPostPage.xaml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAcwFIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-06T19:54:59.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Visual\\ProyectoIGTIE\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Visual\\ProyectoIGTIE\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAEwIMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T19:27:17.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ResultadoPopup.xaml.cs",
+              "DocumentMoniker": "C:\\Visual\\ProyectoIGTIE\\Views\\ResultadoPopup.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\ResultadoPopup.xaml.cs",
+              "ToolTip": "C:\\Visual\\ProyectoIGTIE\\Views\\ResultadoPopup.xaml.cs",
+              "RelativeToolTip": "Views\\ResultadoPopup.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T19:52:50.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SavedPostViewModel.cs",
+              "DocumentMoniker": "C:\\Visual\\ProyectoIGTIE\\ViewModels\\SavedPostViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\SavedPostViewModel.cs",
+              "ToolTip": "C:\\Visual\\ProyectoIGTIE\\ViewModels\\SavedPostViewModel.cs",
+              "RelativeToolTip": "ViewModels\\SavedPostViewModel.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAwwDoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T19:53:37.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Visual\\ProyectoIGTIE\\AppShell.xaml",
+              "RelativeDocumentMoniker": "AppShell.xaml",
+              "ToolTip": "C:\\Visual\\ProyectoIGTIE\\AppShell.xaml",
+              "RelativeToolTip": "AppShell.xaml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-05T05:40:25.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Visual\\ProyectoIGTIE\\Views\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\Visual\\ProyectoIGTIE\\Views\\LoginPage.xaml.cs",
+              "RelativeToolTip": "Views\\LoginPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T19:47:40.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Visual\\ProyectoIGTIE\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Visual\\ProyectoIGTIE\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAACUAAAAAAAAAAAAewDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-05T05:52:17.647Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

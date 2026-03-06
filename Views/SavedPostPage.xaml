@@ -11,7 +11,7 @@
 
     <Grid RowDefinitions="Auto,*">
 
-        <!-- Barra superior (igual que FeedPage) -->
+        <!-- Barra superior -->
         <Grid Grid.Row="0"
               BackgroundColor="{AppThemeBinding Light=#1E2A6E, Dark=#0A0A1A}"
               Padding="10,10,10,10"
@@ -31,7 +31,7 @@
                    VerticalOptions="Center"/>
         </Grid>
 
-        <!-- Lista de posts guardados (Row 1) -->
+        <!-- Lista de posts guardados -->
         <CollectionView Grid.Row="1"
                         ItemsSource="{Binding PostsGuardados}"
                         Margin="12,10,12,0"
@@ -57,11 +57,26 @@
                            HasShadow="True"
                            BorderColor="{AppThemeBinding Light=Transparent, Dark=#333333}">
                         <VerticalStackLayout Spacing="6">
-                            <HorizontalStackLayout Spacing="8">
-                                <Frame BackgroundColor="#3B4CCA" CornerRadius="6" Padding="8,3" HasShadow="False">
+
+                            <!-- Fila: categoría + botón eliminar -->
+                            <Grid ColumnDefinitions="Auto, *, Auto" VerticalOptions="Center">
+                                <Frame Grid.Column="0"
+                                       BackgroundColor="#3B4CCA" CornerRadius="6"
+                                       Padding="8,3" HasShadow="False"
+                                       VerticalOptions="Center" HorizontalOptions="Start">
                                     <Label Text="{Binding Categoria}" TextColor="White" FontSize="11"/>
                                 </Frame>
-                            </HorizontalStackLayout>
+                                <Button Grid.Column="2"
+                                        ImageSource="cross.png"
+                                        BackgroundColor="Transparent"
+                                        Padding="0"
+                                        WidthRequest="32"
+                                        HeightRequest="28"
+                                        VerticalOptions="Center"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:SavedPostViewModel}}, Path=EliminarGuardadoCommand}"
+                                        CommandParameter="{Binding .}"/>
+                            </Grid>
+
                             <Label Text="{Binding Titulo}"
                                    FontSize="15"
                                    FontAttributes="Bold"

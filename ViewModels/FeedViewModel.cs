@@ -216,30 +216,10 @@ namespace SkillSwap.ViewModels
                 case "Guardar":
                     var usuario = UserService.UsuarioActual;
                     if (usuario is not null)
-                        await _db.GuardarAnuncioAsync(usuario.Id, post.Id);
-                    break;
-                case "Reportar":
-                    // Abrir popup de reporte y guardar en base de datos si el usuario confirma
-                    var reportePopup = new ReportePopup();
-                    var datos = await Shell.Current.CurrentPage.ShowPopupAsync(reportePopup) as DatosReporte;
-                    if (datos is not null)
                     {
-                        var usuarioActual = UserService.UsuarioActual;
-                        if (usuarioActual is not null)
-                        {
-                            var report = new Report
-                            {
-                                ReporterId = usuarioActual.Id,
-                                ReportedUserId = post.UsuarioId,
-                                Reason = datos.Motivo,
-                                CustomReason = string.IsNullOrWhiteSpace(datos.Detalles) ? null : datos.Detalles
-                            };
-
-                            await _db.SaveReportAsync(report);
-
-                            var confirmado = new ResultadoPopup("Reporte enviado. Revisaremos el caso.");
-                            Shell.Current.CurrentPage.ShowPopup(confirmado);
-                        }
+                        await _db.GuardarAnuncioAsync(usuario.Id, post.Id);
+                        var confirmacion = new ResultadoPopup("Anuncio guardado.");
+                        Shell.Current.CurrentPage.ShowPopup(confirmacion);
                     }
                     break;
             }

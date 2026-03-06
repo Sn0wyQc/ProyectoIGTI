@@ -30,14 +30,12 @@ namespace SkillSwap.ViewModels
         {
             if (IsBusy) return;
             IsBusy = true;
-
             try
             {
                 var usuario = UserService.UsuarioActual;
                 if (usuario is null) return;
 
                 var posts = await _database.ObtenerAnunciosGuardadosAsync(usuario.Id);
-
                 PostsGuardados.Clear();
                 foreach (var post in posts)
                     PostsGuardados.Add(post);
@@ -46,6 +44,16 @@ namespace SkillSwap.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        [RelayCommand]
+        public async Task EliminarGuardadoAsync(Post post)
+        {
+            var usuario = UserService.UsuarioActual;
+            if (usuario is null) return;
+
+            await _database.EliminarAnuncioGuardadoAsync(usuario.Id, post.Id);
+            PostsGuardados.Remove(post);
         }
     }
 }

@@ -18,7 +18,7 @@
                    HorizontalOptions="Center"
                    Margin="0,0,0,6"/>
 
-            <Label Text="Intercambia lo que sabes"
+            <Label Text="Exchange. Learn. Grow."
                    FontSize="14"
                    TextColor="{AppThemeBinding Light=#666666, Dark=#B0BEE8}"
                    HorizontalOptions="Center"
@@ -45,12 +45,29 @@
                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
                            PlaceholderColor="{AppThemeBinding Light=#999, Dark=#666}"/>
 
-                    <Entry Placeholder="Contraseña"
-                           Text="{Binding Password}"
-                           IsPassword="True"
-                           BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2A2A2A}"
-                           TextColor="{AppThemeBinding Light=Black, Dark=White}"
-                           PlaceholderColor="{AppThemeBinding Light=#999, Dark=#666}"/>
+                    <Border BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2A2A2A}"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 6">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Entry Grid.Column="0"
+                                   Placeholder="Contraseña"
+                                   Text="{Binding Password}"
+                                   IsPassword="{Binding PasswordOculta}"
+                                   ReturnType="Go"
+                                   ReturnCommand="{Binding IniciarSesionCommand}"
+                                   BackgroundColor="Transparent"
+                                   TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                   PlaceholderColor="{AppThemeBinding Light=#999, Dark=#666}"/>
+                            <ImageButton Grid.Column="1"
+                                         Source="{Binding IconoPassword}"
+                                         Command="{Binding TogglePasswordCommand}"
+                                         BackgroundColor="Transparent"
+                                         WidthRequest="44"
+                                         HeightRequest="44"
+                                         Padding="12"
+                                         VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
 
                     <Label Text="{Binding ErrorMessage}"
                            TextColor="#FF5252"
@@ -107,12 +124,27 @@
                            TextColor="{AppThemeBinding Light=Black, Dark=White}"
                            PlaceholderColor="{AppThemeBinding Light=#999, Dark=#666}"/>
 
-                    <Entry Placeholder="Contraseña (mín. 6 caracteres)"
-                           Text="{Binding RegPassword}"
-                           IsPassword="True"
-                           BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2A2A2A}"
-                           TextColor="{AppThemeBinding Light=Black, Dark=White}"
-                           PlaceholderColor="{AppThemeBinding Light=#999, Dark=#666}"/>
+                    <Border BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#2A2A2A}"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 6">
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Entry Grid.Column="0"
+                                   Placeholder="Contraseña (mín. 6 caracteres)"
+                                   Text="{Binding RegPassword}"
+                                   IsPassword="{Binding RegPasswordOculta}"
+                                   BackgroundColor="Transparent"
+                                   TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                                   PlaceholderColor="{AppThemeBinding Light=#999, Dark=#666}"/>
+                            <ImageButton Grid.Column="1"
+                                         Source="{Binding IconoRegPassword}"
+                                         Command="{Binding ToggleRegPasswordCommand}"
+                                         BackgroundColor="Transparent"
+                                         WidthRequest="44"
+                                         HeightRequest="44"
+                                         Padding="12"
+                                         VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
 
                     <Editor Placeholder="Descripción breve de ti..."
                             Text="{Binding RegDescripcion}"

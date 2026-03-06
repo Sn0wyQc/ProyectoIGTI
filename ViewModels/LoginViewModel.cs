@@ -40,6 +40,18 @@ namespace SkillSwap.ViewModels
         [ObservableProperty]
         private bool mostrandoRegistro = false;
 
+        [ObservableProperty]
+        private bool passwordOculta = true;
+
+        [ObservableProperty]
+        private string iconoPassword = "eye_off.png";
+
+        [ObservableProperty]
+        private bool regPasswordOculta = true;
+
+        [ObservableProperty]
+        private string iconoRegPassword = "eye_off.png";
+
         public LoginViewModel(UserService userService)
         {
             _userService = userService;
@@ -107,6 +119,20 @@ namespace SkillSwap.ViewModels
         {
             MostrandoRegistro = !MostrandoRegistro;
             ErrorMessage = string.Empty;
+        }
+
+        [RelayCommand]
+        private void TogglePassword()
+        {
+            PasswordOculta = !PasswordOculta;
+            IconoPassword = PasswordOculta ? "eye_off.png" : "eye.png";
+        }
+
+        [RelayCommand]
+        private void ToggleRegPassword()
+        {
+            RegPasswordOculta = !RegPasswordOculta;
+            IconoRegPassword = RegPasswordOculta ? "eye_off.png" : "eye.png";
         }
     }
 }
