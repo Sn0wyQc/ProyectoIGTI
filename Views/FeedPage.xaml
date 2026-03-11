@@ -8,9 +8,9 @@
              Title="Anuncios"
              BackgroundColor="{AppThemeBinding Light=#F0F4FF, Dark=#121212}">
 
-
     <Grid>
         <Grid RowDefinitions="Auto,Auto,*,80">
+
             <ScrollView Grid.Row="0" Orientation="Horizontal" Margin="12,12,12,0">
                 <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Categorias}" Spacing="8">
                     <BindableLayout.ItemTemplate>
@@ -24,7 +24,6 @@
                     </BindableLayout.ItemTemplate>
                 </HorizontalStackLayout>
             </ScrollView>
-
 
             <Frame Grid.Row="1"
                    IsVisible="{Binding MostrandoFormulario}"
@@ -55,6 +54,7 @@
                         <Button Text="Guardar"
                                 Command="{Binding GuardarPostCommand}"
                                 HorizontalOptions="FillAndExpand"/>
+
                         <Button Text="Cancelar"
                                 Command="{Binding CancelarFormularioCommand}"
                                 BackgroundColor="#cccccc"
@@ -62,8 +62,8 @@
                                 HorizontalOptions="FillAndExpand"/>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
-            </Frame>
 
+            </Frame>
 
             <CollectionView Grid.Row="2"
                             ItemsSource="{Binding Posts}"
@@ -106,79 +106,71 @@
 
                                 <Label Text="{Binding NombreUsuario, StringFormat='Por: {0}'}"
                                        FontSize="12"/>
+
                             </VerticalStackLayout>
+
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
+
             </CollectionView>
 
-            <!-- BARRA INFERIOR -->
-            <Grid Grid.Row="3"
-                  BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
-                  ColumnDefinitions="*,*,*,*,*"
-                  HeightRequest="80">
+            <Grid Grid.Row="3" HeightRequest="90">
 
-                <VerticalStackLayout Grid.Column="0"
-                                     HorizontalOptions="Center"
-                                     VerticalOptions="Center">
-                    <Label Text="Inicio" FontSize="12">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="IrInicio"/>
-                        </Label.GestureRecognizers>
-                    </Label>
-                </VerticalStackLayout>
+                <!-- BARRA INFERIOR -->
+                <Grid BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
+                      ColumnDefinitions="*,*,*,*,*"
+                      HeightRequest="80"
+                      VerticalOptions="End">
 
-                <VerticalStackLayout Grid.Column="1"
-                                     HorizontalOptions="Center"
-                                     VerticalOptions="Center">
-                    <Label Text="Mensajes" FontSize="12">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="IrMensajes"/>
-                        </Label.GestureRecognizers>
-                    </Label>
-                </VerticalStackLayout>
+                    <ImageButton Grid.Column="0"
+                                 Source="hogar.png"
+                                 BackgroundColor="Transparent"
+                                 Clicked="IrInicio"
+                                 WidthRequest="30"
+                                 HorizontalOptions="Center"/>
 
-                <Grid Grid.Column="2"/>
+                    <ImageButton Grid.Column="1"
+                                 Source="charlando.png"
+                                 BackgroundColor="Transparent"
+                                 Clicked="IrMensajes"
+                                 WidthRequest="30"
+                                 HorizontalOptions="Center"/>
 
-                <VerticalStackLayout Grid.Column="3"
-                                     HorizontalOptions="Center"
-                                     VerticalOptions="Center">
-                    <Label Text="Notificaciones" FontSize="12">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="IrNotificationPage"/>
-                        </Label.GestureRecognizers>
-                    </Label>
-                </VerticalStackLayout>
+                    <BoxView Grid.Column="2" BackgroundColor="Transparent"/>
 
-                <VerticalStackLayout Grid.Column="4"
-                                     HorizontalOptions="Center"
-                                     VerticalOptions="Center">
-                    <Label Text="Perfil" FontSize="12">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="IrPerfil"/>
-                        </Label.GestureRecognizers>
-                    </Label>
-                </VerticalStackLayout>
+                    <ImageButton Grid.Column="3"
+                                 Source="notificacion.png"
+                                 BackgroundColor="Transparent"
+                                 Clicked="IrNotificationPage"
+                                 WidthRequest="30"
+                                 HorizontalOptions="Center"/>
+
+                    <ImageButton Grid.Column="4"
+                                 Source="usuario.png"
+                                 BackgroundColor="Transparent"
+                                 Clicked="IrPerfil"
+                                 WidthRequest="30"
+                                 HorizontalOptions="Center"/>
+
+                </Grid>
+
+                <!-- BOTÓN + -->
+                <Button Text="+"
+                        WidthRequest="60"
+                        HeightRequest="60"
+                        CornerRadius="30"
+                        BackgroundColor="#3F51B5"
+                        TextColor="White"
+                        FontSize="30"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        Margin="0,-30,0,0"
+                        Clicked="AgregarPublicacion"/>
 
             </Grid>
 
         </Grid>
-
-        <!-- BOTÓN FLOTANTE -->
-        <Button
-            Text="+"
-            Command="{Binding MostrarFormularioCommand}"
-            HeightRequest="75"
-            WidthRequest="75"
-            CornerRadius="37"
-            BackgroundColor="{StaticResource Primary}"
-            TextColor="White"
-            FontSize="30"
-            HorizontalOptions="Center"
-            VerticalOptions="End"
-            Margin="0,0,0,40"
-            ZIndex="10"/>
-
     </Grid>
 
 </ContentPage>

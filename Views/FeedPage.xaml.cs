@@ -52,5 +52,9 @@ namespace SkillSwap.Views
         {
             await Shell.Current.GoToAsync("//ProfilePage");
         }
+        private void AgregarPublicacion(object sender, EventArgs e)
+        {
+            _vm.MostrandoFormulario = true;
+        }
     }
 }

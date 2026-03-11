@@ -3,52 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\views\\notificationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\notificationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\viewmodels\\notificationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:viewmodels\\notificationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\views\\notificationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\notificationpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\views\\notificationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\notificationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\views\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\views\\feedpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\feedpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\views\\feedpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\feedpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\views\\feedpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:views\\feedpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}|SkillSwap.csproj|c:\\users\\admin\\documents\\proyectoj\\proyectoigti\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -64,19 +60,6 @@
           "DockedWidth": 200,
           "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MauiProgram.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\MauiProgram.cs",
-              "RelativeDocumentMoniker": "MauiProgram.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\MauiProgram.cs*",
-              "RelativeToolTip": "MauiProgram.cs*",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T04:58:08.572Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -99,33 +82,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DatabaseService.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Services\\DatabaseService.cs",
-              "RelativeDocumentMoniker": "Services\\DatabaseService.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Services\\DatabaseService.cs*",
-              "RelativeToolTip": "Services\\DatabaseService.cs*",
-              "ViewState": "AgIAAK8AAAAAAAAAAAAywNgAAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "NotificationViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\ViewModels\\NotificationViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\NotificationViewModel.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\ViewModels\\NotificationViewModel.cs",
+              "RelativeToolTip": "ViewModels\\NotificationViewModel.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAAEMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T04:11:11.084Z",
+              "WhenOpened": "2026-03-10T17:22:17.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NotificationPage.xaml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\NotificationPage.xaml",
+              "RelativeDocumentMoniker": "Views\\NotificationPage.xaml",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\NotificationPage.xaml",
+              "RelativeToolTip": "Views\\NotificationPage.xaml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-10T17:20:16.765Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "NotificationViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\ViewModels\\NotificationViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\NotificationViewModel.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\ViewModels\\NotificationViewModel.cs*",
-              "RelativeToolTip": "ViewModels\\NotificationViewModel.cs*",
-              "ViewState": "AgIAABgAAAAAAAAAAAAIwEEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:17:03.276Z",
-              "EditorCaption": ""
+              "Title": "FeedPage.xaml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\FeedPage.xaml",
+              "RelativeDocumentMoniker": "Views\\FeedPage.xaml",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\FeedPage.xaml",
+              "RelativeToolTip": "Views\\FeedPage.xaml",
+              "ViewState": "AgIAADcAAAAAAAAAAAAlwHkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-03T17:04:40.057Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "FeedPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\FeedPage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\FeedPage.xaml.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\FeedPage.xaml.cs",
+              "RelativeToolTip": "Views\\FeedPage.xaml.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowDcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T16:57:47.899Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Models\\Notification.cs",
+              "RelativeDocumentMoniker": "Models\\Notification.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Models\\Notification.cs",
+              "RelativeToolTip": "Models\\Notification.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA1wCkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T20:04:53.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DatabaseService.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Services\\DatabaseService.cs",
+              "RelativeDocumentMoniker": "Services\\DatabaseService.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Services\\DatabaseService.cs",
+              "RelativeToolTip": "Services\\DatabaseService.cs",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAiwNgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T04:11:11.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -133,87 +163,59 @@
               "RelativeToolTip": "App.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-03T16:59:09.184Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-03T16:59:09.184Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NotificationPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\NotificationPage.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\NotificationPage.xaml.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\NotificationPage.xaml.cs*",
-              "RelativeToolTip": "Views\\NotificationPage.xaml.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T18:55:41.822Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Notification.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Models\\Notification.cs",
-              "RelativeDocumentMoniker": "Models\\Notification.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Models\\Notification.cs*",
-              "RelativeToolTip": "Models\\Notification.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAIwCkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:04:53.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "NotificationPage.xaml",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\NotificationPage.xaml",
-              "RelativeDocumentMoniker": "Views\\NotificationPage.xaml",
-              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\NotificationPage.xaml",
-              "RelativeToolTip": "Views\\NotificationPage.xaml",
-              "ViewState": "AgIAADgAAAAAAAAAAAAIwGEAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-03T16:56:57.588Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "AppShell.xaml",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\AppShell.xaml",
               "RelativeDocumentMoniker": "AppShell.xaml",
               "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\AppShell.xaml",
               "RelativeToolTip": "AppShell.xaml",
-              "ViewState": "AgIAACAAAAAAAAAAAAAuwDwAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwE4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-03-03T16:59:33.278Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FeedPage.xaml",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\FeedPage.xaml",
-              "RelativeDocumentMoniker": "Views\\FeedPage.xaml",
-              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\FeedPage.xaml",
-              "RelativeToolTip": "Views\\FeedPage.xaml",
-              "ViewState": "AgIAAHYAAAAAAAAAAAD4v4sAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-03T17:04:40.057Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 4,
               "Title": "AppShell.xaml.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\AppShell.xaml.cs",
               "RelativeDocumentMoniker": "AppShell.xaml.cs",
               "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\AppShell.xaml.cs",
               "RelativeToolTip": "AppShell.xaml.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAcwBkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T17:27:35.844Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 7,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "MauiProgram.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\MauiProgram.cs",
+              "RelativeToolTip": "MauiProgram.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwCUAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T04:58:08.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T18:38:02.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
@@ -222,30 +224,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T16:59:11.27Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "LoginPage.xaml",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\LoginPage.xaml",
-              "RelativeDocumentMoniker": "Views\\LoginPage.xaml",
-              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\LoginPage.xaml",
-              "RelativeToolTip": "Views\\LoginPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-03T17:29:28.755Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FeedPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\FeedPage.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\FeedPage.xaml.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\Documents\\ProyectoJ\\ProyectoIGTI\\Views\\FeedPage.xaml.cs",
-              "RelativeToolTip": "Views\\FeedPage.xaml.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAuwDQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T16:57:47.899Z"
             }
           ]
         }

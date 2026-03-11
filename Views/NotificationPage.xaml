@@ -1,98 +1,102 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SkillSwap.Views.NotificationPage"
-             BackgroundColor="#F5F6FA">
+             BackgroundColor="{AppThemeBinding Light=#F5F6FA, Dark=#121212}">
 
-    <VerticalStackLayout Padding="20" Spacing="15">
+    <Grid RowDefinitions="Auto, *" Padding="20, 20, 20, 0">
 
-        <!-- HEADER -->
-        <Label Text="Notificaciones"
+        <Label Grid.Row="0"
+               Text="Notificaciones"
                FontSize="28"
                FontAttributes="Bold"
-               TextColor="#111827"/>
+               TextColor="{AppThemeBinding Light=#111827, Dark=White}"
+               Margin="0,0,0,15"/>
 
-        <!-- LISTA -->
-        <CollectionView ItemsSource="{Binding Notificaciones}"
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding Notificaciones}"
                         SelectionMode="None">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="0"/>
+            </CollectionView.ItemsLayout>
 
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-
                     <SwipeView>
 
-                        <!-- BOTON ELIMINAR -->
                         <SwipeView.RightItems>
-                            <SwipeItems Mode="Execute">
+                            <SwipeItems Mode="Reveal">
                                 <SwipeItem Text="Eliminar"
                                            BackgroundColor="#EF4444"
                                            Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EliminarCommand}"
-                                           CommandParameter="{Binding .}" />
+                                           CommandParameter="{Binding .}"/>
                             </SwipeItems>
                         </SwipeView.RightItems>
 
-                        <Frame CornerRadius="18"
+                        <Frame CornerRadius="12"
                                Padding="15"
-                               Margin="0,5"
-                               HasShadow="True"
-                               BackgroundColor="White">
+                               Margin="0,4"
+                               HasShadow="False"
+                               BorderColor="{AppThemeBinding Light=#E5E7EB, Dark=#2A2A2A}"
+                               BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}">
 
-                            <Grid ColumnDefinitions="Auto,*,Auto"
-                                  ColumnSpacing="12">
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
 
-                                <!-- ICONO -->
-                                <Image Source="{Binding Icono}"
-                                       WidthRequest="40"
-                                       HeightRequest="40"/>
+                                <Image Grid.Column="0"
+                                       Source="{Binding Icono}"
+                                       WidthRequest="32"
+                                       HeightRequest="32"
+                                       VerticalOptions="Center"/>
 
-                                <!-- TEXTO -->
                                 <VerticalStackLayout Grid.Column="1"
-                                                     Spacing="4">
+                                                     VerticalOptions="Center"
+                                                     Spacing="2">
 
                                     <Label Text="{Binding Titulo}"
-                                           FontSize="16"
+                                           FontSize="15"
                                            FontAttributes="Bold"
-                                           TextColor="#111827"/>
+                                           TextColor="{AppThemeBinding Light=#111827, Dark=White}"/>
 
                                     <Label Text="{Binding Mensaje}"
                                            FontSize="13"
-                                           TextColor="#6B7280"/>
+                                           TextColor="{AppThemeBinding Light=#6B7280, Dark=#B0B0B0}"/>
 
                                 </VerticalStackLayout>
 
-                                <!-- DERECHA -->
                                 <VerticalStackLayout Grid.Column="2"
-                                                     Spacing="5"
-                                                     HorizontalOptions="End">
+                                                     HorizontalOptions="End"
+                                                     VerticalOptions="Start">
 
                                     <Label Text="{Binding Fecha}"
-                                           FontSize="11"
-                                           TextColor="#9CA3AF"/>
+                                           FontSize="10"
+                                           TextColor="{AppThemeBinding Light=#9CA3AF, Dark=#9CA3AF}"/>
 
-                                    <BoxView WidthRequest="10"
-                                             HeightRequest="10"
-                                             CornerRadius="5"
+                                    <BoxView WidthRequest="8"
+                                             HeightRequest="8"
+                                             CornerRadius="4"
                                              BackgroundColor="#6366F1"
                                              IsVisible="{Binding NoLeida}"
-                                             HorizontalOptions="End"/>
+                                             HorizontalOptions="End"
+                                             Margin="0,5,0,0"/>
+
                                 </VerticalStackLayout>
 
                             </Grid>
 
-                           
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.MarcarLeidaCommand}"
-                                    CommandParameter="{Binding .}" />
+                                    CommandParameter="{Binding .}"/>
                             </Frame.GestureRecognizers>
 
                         </Frame>
 
                     </SwipeView>
-
                 </DataTemplate>
             </CollectionView.ItemTemplate>
 
         </CollectionView>
 
-    </VerticalStackLayout>
+    </Grid>
+
 </ContentPage>
