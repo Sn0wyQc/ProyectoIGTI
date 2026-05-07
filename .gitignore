@@ -1,0 +1,3 @@
+#Ignorar carpetas de salida de compilación
+[Bb]in/
+[Oo]bj/

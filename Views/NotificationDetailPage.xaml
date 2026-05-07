@@ -1,0 +1,93 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SkillSwap.Views.NotificationDetailPage"
+             BackgroundColor="{AppThemeBinding Light=#F2F4F7, Dark=#121212}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- CARD -->
+            <Frame CornerRadius="20"
+                   Padding="20"
+                   HasShadow="False"
+                   BackgroundColor="{AppThemeBinding Light=White, Dark=#1E1E1E}"
+                   BorderColor="{AppThemeBinding Light=#E5E7EB, Dark=#2A2A2A}">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <!-- ICONO y FECHA -->
+                    <HorizontalStackLayout Spacing="12">
+
+                        <Frame WidthRequest="50"
+                               HeightRequest="50"
+                               CornerRadius="25"
+                               Padding="10"
+                               HasShadow="False"
+                               BackgroundColor="{AppThemeBinding Light=#EEF2FF, Dark=#2C2C3A}">
+
+                            <Image Source="dotnet_bot.png"/>
+                        </Frame>
+
+                        <VerticalStackLayout VerticalOptions="Center">
+
+                            <Label Text="{Binding Fecha}"
+                                   FontSize="12"
+                                   TextColor="{AppThemeBinding Light=#6B7280, Dark=#A1A1AA}"/>
+
+                            <Label Text="Notificación"
+                                   FontSize="12"
+                                   TextColor="{AppThemeBinding Light=#9CA3AF, Dark=#71717A}"/>
+                        </VerticalStackLayout>
+
+                    </HorizontalStackLayout>
+
+                    <!-- TÍTULO -->
+                    <Label Text="{Binding Titulo}"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light=#111827, Dark=White}" />
+
+                    <!-- MENSAJE -->
+                    <Label Text="{Binding Mensaje}"
+                           FontSize="15"
+                           LineHeight="1.4"
+                           TextColor="{AppThemeBinding Light=#374151, Dark=#D4D4D8}" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- BOTONES -->
+            <HorizontalStackLayout Spacing="12">
+
+                <!-- MARCAR LEÍDA -->
+                <Button x:Name="BtnLeida"
+                        Text="Marcar como leída"
+                        CornerRadius="12"
+                        BackgroundColor="#4F46E5"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        Clicked="OnMarcarLeidaClicked"
+                        IsVisible="{Binding NoLeida}">
+
+
+
+                </Button>
+
+                <!-- ELIMINAR -->
+                <Button x:Name="BtnEliminar"
+        Text="Eliminar"
+        CornerRadius="12"
+        BackgroundColor="#DC2626"
+        TextColor="White"
+        FontAttributes="Bold"
+        Padding="15,8"
+        WidthRequest="120"
+        HeightRequest="45"
+        HorizontalOptions="Start"
+        Clicked="OnEliminarClicked"/>
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage> 

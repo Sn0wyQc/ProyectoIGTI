@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:SkillSwap.Views"
+       x:Class="SkillSwap.AppShell"
+       FlyoutIcon="{x:Null}"
+       FlyoutBackgroundColor="#1E2A6E">
+
+    <Shell.Resources>
+        <Style x:Key="FlyoutItemLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light=White, Dark=White}" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+    </Shell.Resources>
+
+    <!-- Plantilla del flyout: icono a la izquierda + texto -->
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="20,14" HeightRequest="52" ColumnDefinitions="Auto, *" RowDefinitions="Auto">
+                <Image Source="{Binding Icon}"
+                       WidthRequest="24"
+                       HeightRequest="24"
+                       VerticalOptions="Center"
+                       Margin="0,0,12,0"/>
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       Style="{StaticResource FlyoutItemLabelStyle}"
+                       Margin="0,0,0,0" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <!-- Header del Flyout -->
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout Padding="20,40,20,20" BackgroundColor="#3B4CCA" Spacing="6">
+            <Frame BackgroundColor="White"
+                   CornerRadius="35"
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   HorizontalOptions="Center"
+                   Padding="6"
+                   HasShadow="False">
+                <Image Source="skillswap_logo.png"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </Frame>
+
+            <Label Text="SkillSwap"
+                   TextColor="White"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <Label Text="Exchange. Learn. Grow."
+                   TextColor="#B0BEE8"
+                   FontSize="12"
+                   HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+    <!-- Login (oculto del menú) -->
+    <ShellContent Title="Login"
+                  Route="LoginPage"
+                  ContentTemplate="{DataTemplate views:LoginPage}"
+                  FlyoutItemIsVisible="False"
+                  Shell.NavBarIsVisible="False"/>
+
+    <!-- Anuncios -->
+    <FlyoutItem Title="Anuncios" Icon="dashboard_icon.png">
+        <ShellContent Route="FeedPage"
+                      Shell.NavBarIsVisible="False"
+                      ContentTemplate="{DataTemplate views:FeedPage}"/>
+    </FlyoutItem>
+
+    <!-- Guardados -->
+    <FlyoutItem Title="Guardados" Icon="bookmark.png">
+        <ShellContent Route="SavedPostPage"
+                      Shell.NavBarIsVisible="False"
+                      ContentTemplate="{DataTemplate views:SavedPostPage}"/>
+    </FlyoutItem>
+
+    <!-- Mensajes -->
+    <FlyoutItem Title="Mensajes" Icon="messenger_icon.png">
+        <ShellContent Route="ChatPage"
+                      Shell.NavBarIsVisible="False"
+                      ContentTemplate="{DataTemplate views:ChatPage}"/>
+    </FlyoutItem>
+    <!-- Notificaciones -->
+    <FlyoutItem Title="Notificaciones" Icon="notifications_icon.png">
+        <ShellContent Route="ProfilePage"
+                  Shell.NavBarIsVisible="False"
+                  ContentTemplate="{DataTemplate views:NotificationPage}"/>
+    </FlyoutItem>
+
+    <!-- Perfil -->
+    <FlyoutItem Title="Mi Perfil" Icon="user_icon.png">
+        <ShellContent Route="ProfilePage"
+                      Shell.NavBarIsVisible="False"
+                      ContentTemplate="{DataTemplate views:ProfilePage}"/>
+    </FlyoutItem>
+
+    <!-- Modo Oscuro (al final del menú) -->
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout Padding="20,10,20,30" BackgroundColor="#1E2A6E">
+            <BoxView HeightRequest="1" BackgroundColor="#3B4CCA" Margin="0,0,0,15"/>
+            <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center">
+                <Image Source="dark_mode.png"
+                       WidthRequest="20"
+                       HeightRequest="20"
+                       VerticalOptions="Center"
+                       Margin="0,0,12,0"/>
+                <Label Grid.Column="1"
+                       Text="Modo oscuro"
+                       TextColor="White"
+                       FontSize="15"
+                       VerticalOptions="Center"/>
+                <Switch Grid.Column="2"
+                        x:Name="DarkModeSwitch"
+                        OnColor="#3B4CCA"
+                        ThumbColor="White"
+                        Toggled="OnDarkModeToggled"
+                        HorizontalOptions="End"/>
+            </Grid>
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
+
+</Shell>
